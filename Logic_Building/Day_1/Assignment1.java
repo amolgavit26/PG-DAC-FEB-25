@@ -8,18 +8,32 @@ class Assignment1{
 
 	
 /*
+
+
 	System.out.println("Hello\nAmol Gavit");	//Q1 "\n is for Line Brake	
+
+
+
+
 	
 
 	int a = 74;
 	int b = 36;					//Q2
 	System.out.println(a+b);
+
 	
+
+
+
 
 
 	int c = 50;
 	int d = 3;					//Q3
 	System.out.println(c/d);
+
+
+
+
 
 
 
@@ -42,6 +56,12 @@ class Assignment1{
 
 
 
+
+
+
+
+
+
 	Scanner x = new Scanner(System.in);
 	
 	System.out.println("Enter First Number:");	//Q5
@@ -50,6 +70,13 @@ class Assignment1{
 	int second = x.nextInt();
 
 	System.out.println(first*second);
+
+
+
+
+
+
+
 
 
 	Scanner x = new Scanner(System.in);
@@ -66,6 +93,12 @@ class Assignment1{
 	System.out.println(first%second);
 	
 
+
+
+
+
+
+
 	
 	Scanner x = new Scanner(System.in);
 	
@@ -75,6 +108,11 @@ class Assignment1{
 	for (int z = 0; z < 10; z++)
 	{System.out.println(first + " X " + (z + 1) + " = " + (first * (z + 1)));
 	}
+
+
+
+
+
 
 	
 
@@ -92,12 +130,21 @@ class Assignment1{
 	System.out.println("first = " + first + " second = " + second);
 
 
+
+
+
+
+
 	
 	Scanner x = new Scanner(System.in);
 
 	System.out.println("Enter The Radius of Circle");
 	int radius = x.nextInt();						//Q9
 	System.out.println("Area of Circle is : "+(3.14*(radius*radius)));
+
+
+
+
 
 
 
@@ -114,6 +161,12 @@ class Assignment1{
 	else{
 	System.out.println("The number "+Number+" is Odd");
 	}
+
+
+
+
+
+
 
 
 
@@ -140,6 +193,14 @@ class Assignment1{
 
 
 
+
+
+
+
+
+
+
+
 	Scanner x = new Scanner(System.in);
 
 	System.out.print("Enter thr number you want to reverse");
@@ -160,6 +221,15 @@ class Assignment1{
 
 
 
+
+
+
+
+
+
+
+
+
 	Scanner x = new Scanner(System.in);
 
 	System.out.println("Enter First Number");
@@ -170,6 +240,10 @@ class Assignment1{
 	int Third = x.nextInt();
 
 	System.out.println("The average is : "+(First+Second+Third)/3);
+
+
+
+
 
 
 
@@ -196,6 +270,11 @@ class Assignment1{
 
 
 
+
+
+
+
+
 	Scanner x = new Scanner(System.in);
 	System.out.println("Enter the Number");
 	int Number = x.nextInt();
@@ -207,6 +286,40 @@ class Assignment1{
 	}
 
 	System.out.println("Factorial of "+Number+"is"+Fact);
+
+
+
+
+
+
+
+
+
+
+
+
+	Scanner x = new Scanner(System.in);
+	System.out.println("Enter the Number");
+	int number = x.nextInt();
+
+	int count = 0;
+
+	for (int i = 1; i <= number / 2; i++) {				//Q16
+	if (number % i == 0) {
+        count++;
+      				}
+					}
+
+	if (count > 1) { 
+		System.out.println("The number " + number + " is not prime");	
+		}
+
+	else {
+		System.out.println("The number " + number + " is prime");
+		}
+
+
+
 
 
 
@@ -230,11 +343,17 @@ class Assignment1{
 
 
 
+
+
 	Scanner x = new Scanner(System.in);
 	System.out.println("Enter the Temp. in Celsius");
 	int Temp = x.nextInt();					//Q18
 	int Fahr = (Temp*9/5)+32;
 	System.out.println(Temp+"C is equal to "+Fahr+"F");
+
+
+
+
 
 
 
@@ -259,6 +378,10 @@ class Assignment1{
 
 
 
+
+
+
+
 	Scanner x = new Scanner(System.in);
 	System.out.println("Enter the Number");
 	int Number = x.nextInt();
@@ -276,6 +399,11 @@ class Assignment1{
 
 
 */
+
+
+
+
+
 
 
 
