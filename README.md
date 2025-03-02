@@ -1,3 +1,7 @@
 # PG-DAC-FEB-25
 
-## In this Repository I'm Uploading all the given Assignments Modulewise.
+### This repository contains all my the given assignments from the **PG-DAC** Modulewise.
+
+## Technologies Used
+
+[![My Skills](https://skillicons.dev/icons?i=java,linux)](https://skillicons.dev)
