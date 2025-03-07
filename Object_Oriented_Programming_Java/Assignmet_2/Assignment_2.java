@@ -268,9 +268,107 @@ class Assignment_2{
 		}
 		
 		
+	// Q21 Write a program that increments a number without using + or ++ operators.
+			// Hint: Use bitwise - (~x).
+
+	void question_21(int first){
+		System.out.println(-~first);
+		
+		}
+		
+		
+		
+	// Q22 Implement a calculator that takes two numbers and an operator (+, -, *, /) as input and prints the result using only switch-case
+		
+	void question_22(int first, int second, char operator){
+
+	float Result = 0f;
+
+        switch (operator) {
+
+	case '+':
+	Result = first + second;
+		break;
+
+	case '-':
+	Result = first - second;
+		break;
+
+	case '*':
+	Result = first * second;
+		break;
+
+	case '/':
+		if (second == 0){
+			System.out.println("Arithmetic Error Can't Devide by Zero");
+				}
+		else{
+		Result = (float) first / (float) second;
+		}
+		break;
+	
+		
+	
+	default:
+	System.out.println("You have select illegal operator.");
+
+				}
+
+	System.out.println("Result " + Result);		
+		
+		}
+		
+		
+		
+		
+	// Q23 Given a number, find whether it is odd or even using the & bitwise operator and print the result without using if-else.
+		
+		
+	void question_23(int first){
+		
+		System.out.println((first & 1) == 0 ? first + " is even" : first + " is odd");
+	
+		}
+		
+		
+	// Q24 Write a program that prints all even numbers from 1 to 100 using only bitwise AND (&) and for loop
+		
+	void question_24(){
+		
+		for (int i = 1; i <= 100; i++) {
+			
+            if ((i & 1) == 0) {
+				
+                System.out.print(i + " ");
+				
+				}
+			}
+		}
+		
+				
+		
+		
+	// Q25 Implement a program that reverses an integer number without using string conversion (StringBuilder or toCharArray).
+			// Hint: Use while(n!=0) { rev = rev * 10 + n % 10; n /= 10; }
+				
+		void question_25(int first){		
+				
+		int rev = 0;
+		int counter = first;
+		
+		while(first!=0){
+			rev = rev * 10 + first % 10;
+			first = first/10;
+		}
+		System.out.println("Reverse of " + counter + " is " + rev);
+				
+		}
+		
 		
 		
 	}
+	
+	
 	
 	
 	
@@ -281,7 +379,7 @@ class Answers{
 			Assignment_2 x1 = new Assignment_2();
 			
 									// {PUT the Required Parameteers Correctly.}
-			x1.question_20(-20);		// Otherwise be ready to get the ERROR.
+			x1.question_25(1564);		// Otherwise be ready to get the ERROR.
 									// reqired: int --------> found int,int,string
 									// reason: actual and formal argument lists differ in length
 		}
