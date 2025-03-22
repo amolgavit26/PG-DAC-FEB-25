@@ -1,6 +1,6 @@
 
 # :books: Library Management System :ledger:
-## This is a Console Based Application to manage the library System.
+## This is a Console Based Application to manage the library.
 
 **Object-Oriented Programming (OOP)** – Uses classes, objects, encapsulation and polymorphism to manage books, members, and the library.
 
