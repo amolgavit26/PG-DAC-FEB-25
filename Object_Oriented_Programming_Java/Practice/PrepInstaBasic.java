@@ -11,7 +11,7 @@
 /*
 	Q1 Check if a Number is Positive or Negative in Java
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -37,7 +37,7 @@ class PrepInsta{
 
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -58,7 +58,7 @@ class PrepInsta{
 
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -81,7 +81,7 @@ class PrepInsta{
 
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -104,7 +104,7 @@ class PrepInsta{
 
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -123,7 +123,7 @@ class PrepInsta{
 	Q6 Find the Greatest Number Among Three Numbers in Java
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -141,7 +141,7 @@ class PrepInsta{
 	Q7 Java Program to Check Leap Year or not
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -161,7 +161,7 @@ class PrepInsta{
 
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -194,7 +194,7 @@ class PrepInsta{
 
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -214,7 +214,7 @@ class PrepInsta{
 
 	Q10 Reverse a given number in Java
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -238,7 +238,7 @@ class PrepInsta{
 	Q11 Palindrome Program in Java
 
 	
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -266,7 +266,7 @@ class PrepInsta{
 	
 
 
-class PrepInsta{
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -285,10 +285,10 @@ class PrepInsta{
 }
 
 	Q13 Factorial of a Number in Java
-*/
 
 
-class PrepInsta{
+
+class PrepInstaBasic{
 	
 	public static void main(String args[]){
 		
@@ -302,3 +302,13 @@ class PrepInsta{
 	System.out.print("Factorial of " + num + " is " + sum);
 	}
 }
+
+
+*/
+
+
+
+
+
+
+
