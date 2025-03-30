@@ -1,21 +1,16 @@
 
-# :books: Library Management System :ledger:
-## This is a Console Based Application to manage the library.
+# :telephone: Contact Management System :ledger:
+## This is a Console Based Application to manage Contact Numbers.
 
-### Mini-Project based on core-Java concepts
+### Mini-Project 1 based on DataStructurs of Java (Singly  LinkedList).
 
-**Object-Oriented Programming (OOP)** – Uses classes, objects, encapsulation and polymorphism to manage books, members, and the library.
+**Singly Linked List Implementation** – The contact list is managed using a singly linked list, where each node contains a contact’s name, phone number, and a reference to the next node.
 
-**Collections Framework** – Uses List (ArrayList), Map (HashMap), and Set (HashSet) to efficiently store and manage books and members.
+**CRUD Operations** – The program supports adding contacts at the end, removing contacts by name, searching for a contact, and displaying all contacts.
 
-**Book & Member Management** – Allows adding books and members, storing details like title, author, ISBN, and member ID.
+**Efficient Traversal & Updates** – Contacts are searched and removed by traversing the linked list, ensuring dynamic memory allocation without fixed size constraints.
 
-**Borrow & Return Functionality** – Members can borrow and return books easly.
-
-**Exception Handling** – Custom exceptions handle errors like unavailable books, invalid member IDs, and already borrowed books.
-
-**Library Statistics & Display** – Provides data about total books, members, and borrowed books, along with a list of borrowed books.
-
+**Console-Based Interaction** – he main method demonstrates adding, searching, displaying, and removing contacts, providing a simple text-based interface.
 
 ## Technologies Used
 
