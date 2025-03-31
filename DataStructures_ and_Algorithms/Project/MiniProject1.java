@@ -24,7 +24,7 @@ class MiniProject1{
 			new_node.next = start;
 			start = new_node;
 		}
-		//System.out.println("Contact added: " + name + ", " + phone);
+	
 	}
 	
 	
