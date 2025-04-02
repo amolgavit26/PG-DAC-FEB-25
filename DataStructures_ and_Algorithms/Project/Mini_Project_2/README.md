@@ -1,29 +1,29 @@
 
-# :musical_score: Music Playlist Manager :headphones:
-## :keyboard: This is a Console Based Menu Driven Music Playlist Manager.:computer_mouse:
+# :iphone: web browser history manager :earth_asia:
+## :keyboard: This is a Console Based Menu Driven Web Browser Manager.:computer_mouse:
 
-### :rocket: Mini-Project 3 based on DataStructurs of Java (Circular Doubly LinkedList).
+### :rocket: Mini-Project 2 based on DataStructurs of Java (Doubly LinkedList).
 
 ## :dart: **Objective**
-This project is to implement a music playlist manager using a Circular Doubly Linked List (CDLL) in Java. This playlist allows users to add, remove, and navigate through songs efficiently while maintaining a circular structure for continuous playback.
+This project implements a console-based web browser history manager using a doubly linked list in Java. It allows users to visit web pages, navigate forward and backward through their history, and clear their browsing history. The project demonstrates key data structure operations such as insertion, deletion, and traversal, providing a realistic simulation of browser navigation.
 
 ## :sparkles: **Key Features**
 
-:white_check_mark: **Add & Remove Songs**
-- Users can dynamically add new songs to the playlist.
-- Songs can be removed by their title, ensuring flexible playlist management.
+:white_check_mark: **Doubly Linked List Implementation**
+- The browsing history is stored using a doubly linked list, where each node represents a visited web page.
+- This enables efficient forward and backward navigation through history.
 
-:white_check_mark: **Circular Playback**
-- The playlist is implemented using a circular doubly linked list, allowing users to move to the next or previous song seamlessly.
-- The last song connects back to the first, ensuring an infinite loop of music playback.
+:white_check_mark: **Forward & Backward Navigation**
+- Users can move forward to the next page or backward to the previous page in their browsing history.
+- Ensures a seamless browsing experience similar to real web browsers.
+  
+:white_check_mark: **Clear Browsing History**
+- Users can delete their entire browsing history in one step.
+- This resets the navigation, requiring users to visit new pages before continuing.
 
-:white_check_mark: **Play Next & Previous Songs**
-- Users can navigate forward (playNext()) or backward (playPrevious()) through the playlist.
-- This mimics a real-world music player with continuous song transitions.
-
-:white_check_mark: **Display Current Song & Entire Playlist**
-- Users can check the currently playing song.
-- A complete playlist display option allows users to view all songs in the queue.
+:white_check_mark: **Console-Based Interaction**
+- A user-friendly text-based menu allows interaction via the console.
+- Users can visit new websites, navigate history, view the current page, and clear history.
 
 
 
