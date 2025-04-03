@@ -1,17 +1,32 @@
 
-# :telephone: Contact Management System :ledger:
-## This is a Console Based Application to manage Contact Numbers.
+# :iphone: web browser history manager :earth_asia:
+## :keyboard: This is a Console Based Menu Driven Web Browser Manager.:computer_mouse:
 
-### Mini-Project 1 based on DataStructurs of Java (Singly  LinkedList).
+### :rocket: Mini-Project 2 based on DataStructurs of Java (Doubly LinkedList).
 
-**Singly Linked List Implementation** – The contact list is managed using a singly linked list, where each node contains a contact’s name, phone number, and a reference to the next node.
+## :dart: **Objective**
+This project implements a console-based web browser history manager using a doubly linked list in Java. It allows users to visit web pages, navigate forward and backward through their history, and clear their browsing history. The project demonstrates key data structure operations such as insertion, deletion, and traversal, providing a realistic simulation of browser navigation.
 
-**CRUD Operations** – The program supports adding contacts at the end, removing contacts by name, searching for a contact, and displaying all contacts.
+## :sparkles: **Key Features**
 
-**Efficient Traversal & Updates** – Contacts are searched and removed by traversing the linked list, ensuring dynamic memory allocation without fixed size constraints.
+:white_check_mark: **Doubly Linked List Implementation**
+- The browsing history is stored using a doubly linked list, where each node represents a visited web page.
+- This enables efficient forward and backward navigation through history.
 
-**Console-Based Interaction** – he main method demonstrates adding, searching, displaying, and removing contacts, providing a simple text-based interface.
+:white_check_mark: **Forward & Backward Navigation**
+- Users can move forward to the next page or backward to the previous page in their browsing history.
+- Ensures a seamless browsing experience similar to real web browsers.
+  
+:white_check_mark: **Clear Browsing History**
+- Users can delete their entire browsing history in one step.
+- This resets the navigation, requiring users to visit new pages before continuing.
 
-## Technologies Used
+:white_check_mark: **Console-Based Interaction**
+- A user-friendly text-based menu allows interaction via the console.
+- Users can visit new websites, navigate history, view the current page, and clear history.
+
+
+
+## :technologist: Technologies Used
 
 [![My Skills](https://skillicons.dev/icons?i=java)](https://skillicons.dev) ![Notepad++ Icon](https://img.shields.io/badge/-90E59A?style=for-the-badge&logo=notepad%2B%2B&logoColor=black)
