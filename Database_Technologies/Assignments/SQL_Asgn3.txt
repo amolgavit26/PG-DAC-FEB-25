@@ -1,0 +1,34 @@
+Assignment –2
+Introducing Relational Databases.
+
+
+
+
+1) Does ANSI recognize the data type DATE?
+
+Yes, ANSI SQL recognize the DATE data type. It is used for storing date values in
+a standard format----> YYYY-MM-DD.
+
+
+
+2) Which subdivision of SQL is used to insert values in tables?
+
+DML's (Data Manipulation Language) Insert statement is used to add values in the table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
