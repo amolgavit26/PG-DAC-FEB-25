@@ -1,0 +1,64 @@
+
+
+mysql> SELECT ONUM, AMT, UPPER(DATE_FORMAT(ODATE, '%d-%b-%Y')) AS ODATE FROM ORDERS;
++------+---------+-------------+
+| ONUM | AMT     | ODATE       |
++------+---------+-------------+
+| 3001 |   18.69 | 03-OCT-1990 |
+| 3003 |  767.19 | 03-OCT-1990 |
+| 3002 | 1900.10 | 03-OCT-1990 |
+| 3005 | 5160.45 | 03-OCT-1990 |
+| 3006 | 1098.16 | 03-OCT-1990 |
+| 3009 | 1713.23 | 04-OCT-1990 |
+| 3007 |   75.75 | 04-OCT-1990 |
+| 3008 | 4723.00 | 05-OCT-1990 |
+| 3010 | 1309.95 | 06-OCT-1990 |
+| 3011 | 9891.88 | 06-OCT-1990 |
++------+---------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM CUSTOMERS
+    -> WHERE SNUM = 1001;
++------+---------+--------+--------+------+
+| CNUM | CNAME   | CITY   | RATING | SNUM |
++------+---------+--------+--------+------+
+| 2001 | Hoffman | London |    100 | 1001 |
+| 2006 | Clemens | London |    100 | 1001 |
++------+---------+--------+--------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT CITY, SNAME, SNUM, COMM FROM SALESPEOPLE;
++-----------+---------+------+------+
+| CITY      | SNAME   | SNUM | COMM |
++-----------+---------+------+------+
+| London    | Peel    | 1001 | 0.12 |
+| San jose  | Serres  | 1002 | 0.13 |
+| London    | Motika  | 1004 | 0.11 |
+| Barcelona | Rifkin  | 1007 | 0.15 |
+| New York  | Axelrod | 1003 | 0.10 |
++-----------+---------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT RATING, CNAME FROM CUSTOMERS
+    -> WHERE CITY = 'SAN JOSE';
++--------+----------+
+| RATING | CNAME    |
++--------+----------+
+|    200 | Liu      |
+|    300 | Cisneros |
++--------+----------+
+2 rows in set (0.00 sec)
+
+
+mysql> SELECT DISTINCT SNUM FROM ORDERS;
++------+
+| SNUM |
++------+
+| 1007 |
+| 1001 |
+| 1004 |
+| 1002 |
+| 1003 |
++------+
+5 rows in set (0.00 sec)
+

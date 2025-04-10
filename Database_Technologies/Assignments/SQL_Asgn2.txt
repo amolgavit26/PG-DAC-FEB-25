@@ -1,0 +1,72 @@
+Assignment –2
+Introducing Relational Databases.
+
+
+
+
+1) Which field of the Customers table is the primary key?
+
+mysql> select * from customers;
++------+----------+----------+--------+------+
+| CNUM | CNAME    | CITY     | RATING | SNUM |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
++------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
+	
+The primary key is the CNUM, because it uniq and identifies each customers in the
+table.
+
+
+
+2) What is the 4th column of the Customers table?
+
+mysql> desc customers;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| CNUM   | int         | YES  |     | NULL    |       |
+| CNAME  | varchar(10) | YES  |     | NULL    |       |
+| CITY   | varchar(10) | YES  |     | NULL    |       |
+| RATING | int         | YES  |     | NULL    |       |
+| SNUM   | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+The 4th column is RATING, which is of type int.
+
+
+
+3) What is another word for row? For column?
+
+Rows are called as record or tuple and Columns are called as field or attribute.
+
+
+
+4) Why isn’t it possible to see the first five rows of a table?
+
+It's possible to view the first five rows, but we must use LIMIT explicitly.
+
+mysql> SELECT * FROM CUSTOMERS LIMIT 5;
++------+----------+----------+--------+------+
+| CNUM | CNAME    | CITY     | RATING | SNUM |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | London   |    100 | 1001 |
++------+----------+----------+--------+------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
