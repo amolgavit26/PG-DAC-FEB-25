@@ -1,0 +1,142 @@
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| classwork          |
+| information_schema |
+| performance_schema |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> use classwork
+Database changed
+mysql> show tables;
+Empty set (0.04 sec)
+
+mysql> create table SALESPEOPLE(
+    -> SNUM int(4),
+    -> SNAME varchar(10),
+    -> CITY varchar(10),
+    -> COMM float(3,2));
+Query OK, 0 rows affected, 2 warnings (0.09 sec)
+
+mysql> show tables;
++--------------+
+| Tables_in_a1 |
++--------------+
+| salespeople  |
++--------------+
+1 row in set (0.01 sec)
+
+mysql> select * from salespeople;
+Empty set (0.01 sec)
+
+mysql> insert into salespeople (SNUM, SNAME, CITY, COMM)
+    -> values
+    -> ('1001', 'Peel', 'London', '.12'),
+    -> ('1002', 'Serres', 'San jose', '.13'),
+    -> ('1004', 'Motika', 'London', '.11'),
+    -> ('1007', 'Rifkin', 'Barcelona', '.15'),
+    -> ('1003', 'Axelrod', 'New York', '.10');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from salespeople;
++------+---------+-----------+------+
+| SNUM | SNAME   | CITY      | COMM |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San jose  | 0.13 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.00 sec)
+
+mysql> CREATE TABLE CUSTOMERS(
+    -> CNUM int(4),
+    -> CNAME varchar(10),
+    -> CITY varchar(10),
+    -> RATING int(4),
+    -> SNUM int(4))
+    -> ;
+Query OK, 0 rows affected, 3 warnings (0.05 sec)
+
+mysql> show tables
+    -> ;
++--------------+
+| Tables_in_a1 |
++--------------+
+| customers    |
+| salespeople  |
++--------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into customers (CNUM, CNAME, CITY, RATING, SNUM)
+    -> values
+    -> ('2001', 'Hoffman', 'London', '100', '1001'),
+    -> ('2002', 'Giovanni', 'Rome', '200', '1003'),
+    -> ('2003', 'Liu', 'San Jose', '200', '1002'),
+    -> ('2004', 'Grass', 'Berlin', '300', '1002'),
+    -> ('2006', 'Clemens', 'London', '100', '1001'),
+    -> ('2008', 'Cisneros', 'San Jose', '300', '1007'),
+    -> ('2007', 'Pereira', 'Rome', '100', '1004');
+Query OK, 7 rows affected (0.01 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from customers;
++------+----------+----------+--------+------+
+| CNUM | CNAME    | CITY     | RATING | SNUM |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
++------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
+
+mysql> CREATE TABLE ORDERS(
+    -> ONUM int(4),
+    -> AMT float(7,2),
+    -> ODATE date,
+    -> CNUM int(4),
+    -> SNUM int(4));
+Query OK, 0 rows affected, 4 warnings (0.21 sec)
+
+mysql> INSERT INTO ORDERS(ONUM, AMT, ODATE, CNUM, SNUM)
+    -> values
+    -> ('3001', '18.69', STR_TO_DATE('03-OCT-1990', '%d-%b-%Y'), '2008', '1007'),
+    -> ('3003', '767.19', STR_TO_DATE('03-OCT-1990', '%d-%b-%Y'), '2001', '1001'),
+    -> ('3002', '1900.10', STR_TO_DATE('03-OCT-1990', '%d-%b-%Y'), '2007', '1004'),
+    -> ('3005', '5160.45', STR_TO_DATE('03-OCT-1990', '%d-%b-%Y'), '2003', '1002'),
+    -> ('3006', '1098.16', STR_TO_DATE('03-OCT-1990', '%d-%b-%Y'), '2008', '1007'),
+    -> ('3009', '1713.23', STR_TO_DATE('04-OCT-1990', '%d-%b-%Y'), '2002', '1003'),
+    -> ('3007', '75.75', STR_TO_DATE('04-OCT-1990', '%d-%b-%Y'), '2004', '1002'),
+    -> ('3008', '4723.00', STR_TO_DATE('05-OCT-1990', '%d-%b-%Y'), '2006', '1001'),
+    -> ('3010', '1309.95', STR_TO_DATE('06-OCT-1990', '%d-%b-%Y'), '2004', '1002'),
+    -> ('3011', '9891.88', STR_TO_DATE('06-OCT-1990', '%d-%b-%Y'), '2006', '1001');
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT ONUM, AMT, UPPER(DATE_FORMAT(ODATE, '%d-%b-%Y')) AS ODATE, CNUM, SNUM FROM ORDERS;
++------+---------+-------------+------+------+
+| ONUM | AMT     | ODATE       | CNUM | SNUM |
++------+---------+-------------+------+------+
+| 3001 |   18.69 | 03-OCT-1990 | 2008 | 1007 |
+| 3003 |  767.19 | 03-OCT-1990 | 2001 | 1001 |
+| 3002 | 1900.10 | 03-OCT-1990 | 2007 | 1004 |
+| 3005 | 5160.45 | 03-OCT-1990 | 2003 | 1002 |
+| 3006 | 1098.16 | 03-OCT-1990 | 2008 | 1007 |
+| 3009 | 1713.23 | 04-OCT-1990 | 2002 | 1003 |
+| 3007 |   75.75 | 04-OCT-1990 | 2004 | 1002 |
+| 3008 | 4723.00 | 05-OCT-1990 | 2006 | 1001 |
+| 3010 | 1309.95 | 06-OCT-1990 | 2004 | 1002 |
+| 3011 | 9891.88 | 06-OCT-1990 | 2006 | 1001 |
++------+---------+-------------+------+------+
+10 rows in set (0.00 sec)
+
+mysql>

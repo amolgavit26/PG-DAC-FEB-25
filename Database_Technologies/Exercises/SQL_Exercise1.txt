@@ -1,0 +1,403 @@
+Microsoft Windows [Version 10.0.26100.3775]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\amolg>mysql -u amolgavit26 -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 24
+Server version: 8.4.4 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE CLASSWORK
+Database changed
+mysql> CREATE TABLE SEMP(
+    -> EMPNO CHAR(4),
+    -> EMPNAME CHAR(20),
+    -> BASIC FLOAT,
+    -> DEPTNO CHAR(2),
+    -> DEPTHEAD CHAR(4));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO SEMP (EMPNO, EMPNAME, BASIC, DEPTNO, DEPTHEAD)
+    -> VALUES
+    -> ('0001', 'SUNIL', '6000', '10', NULL),
+    -> ('0002', 'HIREN', '8000', '20', NULL),
+    -> ('0003', 'ALI', '4000', '10', '0001'),
+    -> ('0004', 'GEORGE', '6000', NULL, '0002');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SEMP;
++-------+---------+-------+--------+----------+
+| EMPNO | EMPNAME | BASIC | DEPTNO | DEPTHEAD |
++-------+---------+-------+--------+----------+
+| 0001  | SUNIL   |  6000 | 10     | NULL     |
+| 0002  | HIREN   |  8000 | 20     | NULL     |
+| 0003  | ALI     |  4000 | 10     | 0001     |
+| 0004  | GEORGE  |  6000 | NULL   | 0002     |
++-------+---------+-------+--------+----------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE SDEPT (
+    -> DEPTNO CHAR(2),
+    -> DEPTNAME CHAR(15));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO SDEPT (DEPTNO, DEPTNAME)
+    -> VALUES
+    -> ('10', 'Development'),
+    -> ('20', 'Training');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SDEPT;
++--------+-------------+
+| DEPTNO | DEPTNAME    |
++--------+-------------+
+| 10     | Development |
+| 20     | Training    |
++--------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE S (
+    -> `S#` CHAR(3),
+    -> Sname VARCHAR(20),
+    -> Status INT (3),
+    -> City VARCHAR(10));
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+
+mysql> INSERT INTO S (`S#`, Sname, Status, City)
+    -> VALUES
+    -> ('S1', 'Ajay', 10, 'London'),
+    -> ('S2', 'Vinayak', 20, 'Paris'),
+    -> ('S3', 'Purva', 30, 'Athens'),
+    -> ('S4', 'Aayush', 40, 'London'),
+    -> ('S5', 'Jivita', 50, 'Mumbai'),
+    -> ('S6', 'Mayur', 60, 'Delhi'),
+    -> ('S7', 'Harry', 70, 'Washington'),
+    -> ('S8', 'Blake', 80, 'Paris'),
+    -> ('S9', 'Pratiksha', 90, 'London'),
+    -> ('S10', 'Nipun', 100, 'Rome');
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM S;
++------+-----------+--------+------------+
+| S#   | Sname     | Status | City       |
++------+-----------+--------+------------+
+| S1   | Ajay      |     10 | London     |
+| S2   | Vinayak   |     20 | Paris      |
+| S3   | Purva     |     30 | Athens     |
+| S4   | Aayush    |     40 | London     |
+| S5   | Jivita    |     50 | Mumbai     |
+| S6   | Mayur     |     60 | Delhi      |
+| S7   | Harry     |     70 | Washington |
+| S8   | Blake     |     80 | Paris      |
+| S9   | Pratiksha |     90 | London     |
+| S10  | Nipun     |    100 | Rome       |
++------+-----------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> CREATE TABLE P (
+    -> `P#` CHAR(3),
+    -> Pname VARCHAR(10),
+    -> Color VARCHAR(10),
+    -> Weight FLOAT,
+    -> City VARCHAR(10));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO P (`P#`, Pname, Color, Weight, City)
+    -> VALUES
+    -> ('P1', 'Nut', 'Red', 12.3, 'Mumbai'),
+    -> ('P2', 'Bolt', 'Blue', 11.8, 'London'),
+    -> ('P3', 'Piston', 'Black', 9.2, 'Paris'),
+    -> ('P4', 'Cam', 'Silver', 14.0, 'Athens'),
+    -> ('P5', 'Crank', 'Yellow', 11.0, 'Berlin'),
+    -> ('P6', 'Pin', 'Green', 15.1, 'Washington'),
+    -> ('P7', 'Clamp', 'Blue', 10.0, 'London'),
+    -> ('P8', 'Nut', 'Black', 13.5, 'Paris'),
+    -> ('P9', 'Gear', 'Red', 12.5, 'Athens'),
+    -> ('P10', 'Stud', 'Green', 16.0, 'Delhi');
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM P;
++------+--------+--------+--------+------------+
+| P#   | Pname  | Color  | Weight | City       |
++------+--------+--------+--------+------------+
+| P1   | Nut    | Red    |   12.3 | Mumbai     |
+| P2   | Bolt   | Blue   |   11.8 | London     |
+| P3   | Piston | Black  |    9.2 | Paris      |
+| P4   | Cam    | Silver |     14 | Athens     |
+| P5   | Crank  | Yellow |     11 | Berlin     |
+| P6   | Pin    | Green  |   15.1 | Washington |
+| P7   | Clamp  | Blue   |     10 | London     |
+| P8   | Nut    | Black  |   13.5 | Paris      |
+| P9   | Gear   | Red    |   12.5 | Athens     |
+| P10  | Stud   | Green  |     16 | Delhi      |
++------+--------+--------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> CREATE TABLE J (
+    ->  `J#` CHAR(3),
+    -> Jname VARCHAR(20),
+    -> City VARCHAR(10));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO J (`J#`, Jname, City) 
+    -> VALUES
+    -> ('J1', 'Engine', 'Berlin'),
+    -> ('J2', 'Display', 'Mumbai'),
+    -> ('J3', 'Tyre', 'Athens'),
+    -> ('J4', 'Door', 'Delhi'),
+    -> ('J5', 'Rim', 'London'),
+    -> ('J6', 'Transmision', 'Washington'),
+    -> ('J7', 'Alternator', 'Rome'),
+    -> ('J8', 'Bonnet', 'Berlin'),
+    -> ('J9', 'Monitor', 'Rome'),
+    -> ('J10', 'Fan', 'Paris');
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM J;
++------+-------------+------------+
+| J#   | Jname       | City       |
++------+-------------+------------+
+| J1   | Engine      | Berlin     |
+| J2   | Display     | Mumbai     |
+| J3   | Tyre        | Athens     |
+| J4   | Door        | Delhi      |
+| J5   | Rim         | London     |
+| J6   | Transmision | Washington |
+| J7   | Alternator  | Rome       |
+| J8   | Bonnet      | Berlin     |
+| J9   | Monitor     | Rome       |
+| J10  | Fan         | Paris      |
++------+-------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> CREATE TABLE SPJ (
+    -> `S#` CHAR(3),
+    -> `P#` CHAR(3),
+    -> `J#` CHAR(3),
+    -> Qty INT);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO SPJ (`S#`, `P#`, `J#`, Qty)
+    -> VALUES
+    -> ('S1', 'P1', 'J1', 200),
+    -> ('S2', 'P2', 'J2', 350),
+    -> ('S3', 'P3', 'J3', 500),
+    -> ('S4', 'P4', 'J4', 620),
+    -> ('S5', 'P5', 'J5', 250),
+    -> ('S6', 'P6', 'J6', 100),
+    -> ('S7', 'P7', 'J7', 350),
+    -> ('S8', 'P8', 'J8', 180),
+    -> ('S9', 'P9', 'J9', 210),
+    -> ('S10', 'P10', 'J10', 270);
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM SPJ;
++------+------+------+------+
+| S#   | P#   | J#   | Qty  |
++------+------+------+------+
+| S1   | P1   | J1   |  200 |
+| S2   | P2   | J2   |  350 |
+| S3   | P3   | J3   |  500 |
+| S4   | P4   | J4   |  620 |
+| S5   | P5   | J5   |  250 |
+| S6   | P6   | J6   |  100 |
+| S7   | P7   | J7   |  350 |
+| S8   | P8   | J8   |  180 |
+| S9   | P9   | J9   |  210 |
+| S10  | P10  | J10  |  270 |
++------+------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM S;
++------+-----------+--------+------------+
+| S#   | Sname     | Status | City       |
++------+-----------+--------+------------+
+| S1   | Ajay      |     10 | London     |
+| S2   | Vinayak   |     20 | Paris      |
+| S3   | Purva     |     30 | Athens     |
+| S4   | Aayush    |     40 | London     |
+| S5   | Jivita    |     50 | Mumbai     |
+| S6   | Mayur     |     60 | Delhi      |
+| S7   | Harry     |     70 | Washington |
+| S8   | Blake     |     80 | Paris      |
+| S9   | Pratiksha |     90 | London     |
+| S10  | Nipun     |    100 | Rome       |
++------+-----------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT `S#`, SNAME FROM S;
++------+-----------+
+| S#   | SNAME     |
++------+-----------+
+| S1   | Ajay      |
+| S2   | Vinayak   |
+| S3   | Purva     |
+| S4   | Aayush    |
+| S5   | Jivita    |
+| S6   | Mayur     |
+| S7   | Harry     |
+| S8   | Blake     |
+| S9   | Pratiksha |
+| S10  | Nipun     |
++------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT PNAME, COLOR FROM P
+    -> WHERE CITY = 'London';
++-------+-------+
+| PNAME | COLOR |
++-------+-------+
+| Bolt  | Blue  |
+| Clamp | Blue  |
++-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT SNAME FROM S
+    -> WHERE CITY = 'LONDON';
++-----------+
+| SNAME     |
++-----------+
+| Ajay      |
+| Aayush    |
+| Pratiksha |
++-----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT SNAME FROM S
+    -> WHERE CITY = 'PARIS' OR  CITY = 'ATHENS';
++---------+
+| SNAME   |
++---------+
+| Vinayak |
+| Purva   |
+| Blake   |
++---------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT JNAME FROM J
+    -> WHERE CITY = 'ATHENS';
++-------+
+| JNAME |
++-------+
+| Tyre  |
++-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT PNAME FROM P
+    -> WHERE WEIGHT >= '12' AND WEIGHT <= '14';
++-------+
+| PNAME |
++-------+
+| Nut   |
+| Cam   |
+| Nut   |
+| Gear  |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT SNAME FROM S
+    -> WHERE STATUS >= 20;
++-----------+
+| SNAME     |
++-----------+
+| Vinayak   |
+| Purva     |
+| Aayush    |
+| Jivita    |
+| Mayur     |
+| Harry     |
+| Blake     |
+| Pratiksha |
+| Nipun     |
++-----------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT SNAME FROM S
+    -> WHERE CITY != 'LONDON';
++---------+
+| SNAME   |
++---------+
+| Vinayak |
+| Purva   |
+| Jivita  |
+| Mayur   |
+| Harry   |
+| Blake   |
+| Nipun   |
++---------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT CITY FROM S;
++------------+
+| CITY       |
++------------+
+| London     |
+| Paris      |
+| Athens     |
+| London     |
+| Mumbai     |
+| Delhi      |
+| Washington |
+| Paris      |
+| London     |
+| Rome       |
++------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT PNAME, COLOR,
+    -> WEIGHT AS WEIGHT_GRAMS,
+    -> WEIGHT*1000 AS WEIGHT_MILLIGRAMS,
+    -> WEIGHT/1000 AS WEIGHT_KILOGRAMS
+    -> FROM P;
++--------+--------+--------------+--------------------+----------------------+
+| PNAME  | COLOR  | WEIGHT_GRAMS | WEIGHT_MILLIGRAMS  | WEIGHT_KILOGRAMS     |
++--------+--------+--------------+--------------------+----------------------+
+| Nut    | Red    |         12.3 | 12300.000190734863 | 0.012300000190734864 |
+| Bolt   | Blue   |         11.8 | 11800.000190734863 | 0.011800000190734863 |
+| Piston | Black  |          9.2 |  9199.999809265137 | 0.009199999809265136 |
+| Cam    | Silver |           14 |              14000 |                0.014 |
+| Crank  | Yellow |           11 |              11000 |                0.011 |
+| Pin    | Green  |         15.1 | 15100.000381469727 | 0.015100000381469726 |
+| Clamp  | Blue   |           10 |              10000 |                 0.01 |
+| Nut    | Black  |         13.5 |              13500 |               0.0135 |
+| Gear   | Red    |         12.5 |              12500 |               0.0125 |
+| Stud   | Green  |           16 |              16000 |                0.016 |
++--------+--------+--------------+--------------------+----------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT PNAME, COLOR,
+    -> ROUND(WEIGHT, 2) AS WEIGHT_GRAMS,
+    -> ROUND(WEIGHT*1000, 2) AS WEIGHT_MILLIGRAMS,
+    -> ROUND(WEIGHT/1000, 4) AS WEIGHT_KILOGRAMS
+    -> FROM P;
++--------+--------+--------------+-------------------+------------------+
+| PNAME  | COLOR  | WEIGHT_GRAMS | WEIGHT_MILLIGRAMS | WEIGHT_KILOGRAMS |
++--------+--------+--------------+-------------------+------------------+
+| Nut    | Red    |         12.3 |             12300 |           0.0123 |
+| Bolt   | Blue   |         11.8 |             11800 |           0.0118 |
+| Piston | Black  |          9.2 |              9200 |           0.0092 |
+| Cam    | Silver |           14 |             14000 |            0.014 |
+| Crank  | Yellow |           11 |             11000 |            0.011 |
+| Pin    | Green  |         15.1 |             15100 |           0.0151 |
+| Clamp  | Blue   |           10 |             10000 |             0.01 |
+| Nut    | Black  |         13.5 |             13500 |           0.0135 |
+| Gear   | Red    |         12.5 |             12500 |           0.0125 |
+| Stud   | Green  |           16 |             16000 |            0.016 |
++--------+--------+--------------+-------------------+------------------+
+10 rows in set (0.00 sec)
+
+mysql>
