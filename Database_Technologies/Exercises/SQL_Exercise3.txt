@@ -1,0 +1,268 @@
+
+
+1. Display all the Supplier names with the initial letter capital. 
+
+mysql> SELECT
+    -> CONCAT (
+    -> UPPER (SUBSTR( SNAME, 1,1) ),
+    -> LOWER (SUBSTR( SNAME, 2) )
+    -> ) AS Sname
+    -> FROM S;
++-----------+
+| Sname     |
++-----------+
+| Ajay      |
+| Vinayak   |
+| Purva     |
+| Aayush    |
+| Jivita    |
+| Mayur     |
+| Harry     |
+| Blake     |
+| Pratiksha |
+| Nipun     |
++-----------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2. Display all the Supplier names in upper case. 
+
+
+mysql> SELECT UPPER(SNAME) FROM S;
++--------------+
+| UPPER(SNAME) |
++--------------+
+| AJAY         |
+| VINAYAK      |
+| PURVA        |
+| AAYUSH       |
+| JIVITA       |
+| MAYUR        |
+| HARRY        |
+| BLAKE        |
+| PRATIKSHA    |
+| NIPUN        |
++--------------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+3. Display all the Supplier names in lower case.
+
+
+mysql> SELECT LOWER(SNAME) FROM S;
++--------------+
+| LOWER(SNAME) |
++--------------+
+| ajay         |
+| vinayak      |
+| purva        |
+| aayush       |
+| jivita       |
+| mayur        |
+| harry        |
+| blake        |
+| pratiksha    |
+| nipun        |
++--------------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+4. Display all the Supplier names padded to 25 characters, with spaces on the left. 
+
+
+mysql> SELECT
+    -> LPAD (SNAME, 25, ' ') AS Right_Justification
+    -> FROM S;
++---------------------------+
+| Right_Justification       |
++---------------------------+
+|                      Ajay |
+|                   Vinayak |
+|                     Purva |
+|                    Aayush |
+|                    Jivita |
+|                     Mayur |
+|                     Harry |
+|                     Blake |
+|                 Pratiksha |
+|                     Nipun |
++---------------------------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).
+ HINT: REPLACE.
+
+
+mysql> SELECT REPLACE (SNAME, 'la', 'ro') as REPLACE_LA_RO FROM S;
++---------------+
+| REPLACE_LA_RO |
++---------------+
+| Ajay          |
+| Vinayak       |
+| Purva         |
+| Aayush        |
+| Jivita        |
+| Mayur         |
+| Harry         |
+| Broke         |
+| Pratiksha     |
+| Nipun         |
++---------------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced
+with ‘o’
+
+
+mysql> SELECT
+    -> REPLACE (REPLACE (SNAME, 'l', 'r'), 'a', 'o')
+    -> AS REPLACE_lo
+    -> FROM S;
++------------+
+| REPLACE_lo |
++------------+
+| Ajoy       |
+| Vinoyok    |
+| Purvo      |
+| Aoyush     |
+| Jivito     |
+| Moyur      |
+| Horry      |
+| Broke      |
+| Protiksho  |
+| Nipun      |
++------------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+7. Display the Supplier names and the lengths of the names. 
+
+mysql> SELECT SNAME, LENGTH(SNAME) AS LENGTH_SNAME FROM S;
++-----------+--------------+
+| SNAME     | LENGTH_SNAME |
++-----------+--------------+
+| Ajay      |            4 |
+| Vinayak   |            7 |
+| Purva     |            5 |
+| Aayush    |            6 |
+| Jivita    |            6 |
+| Mayur     |            5 |
+| Harry     |            5 |
+| Blake     |            5 |
+| Pratiksha |            9 |
+| Nipun     |            5 |
++-----------+--------------+
+10 rows in set (0.00 sec)
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+8. Use the soundex function to search for a supplier by the name of ‘BLOKE’.
+
+
+mysql> SELECT * FROM S
+    -> WHERE SOUNDEX(SNAME) = SOUNDEX('BLOKE');
++------+-------+--------+-------+
+| S#   | Sname | Status | City  |
++------+-------+--------+-------+
+| S8   | Blake |     80 | Paris |
++------+-------+--------+-------+
+1 row in set (0.02 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+9. Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.). 
+
+
+mysql> SELECT SNAME,
+    -> CASE STATUS
+    -> WHEN 10 THEN 'Ten'
+    -> WHEN 20 THEN 'Twenty'
+    -> WHEN 30 THEN 'Tirty'
+    -> WHEN 40 THEN 'Fourty'
+    -> WHEN 50 THEN 'Fifty'
+    -> WHEN 60 THEN 'Sixty'
+    -> WHEN 70 THEN 'Seventy'
+    -> WHEN 80 THEN 'Eighty'
+    -> WHEN 90 THEN 'Ninety'
+    -> WHEN 100 THEN 'Hundred'
+    -> ELSE 'None'
+    -> END AS STATUS
+    -> FROM S;
++-----------+---------+
+| SNAME     | STATUS  |
++-----------+---------+
+| Ajay      | Ten     |
+| Vinayak   | Twenty  |
+| Purva     | Tirty   |
+| Aayush    | Fourty  |
+| Jivita    | Fifty   |
+| Mayur     | Sixty   |
+| Harry     | Seventy |
+| Blake     | Eighty  |
+| Pratiksha | Ninety  |
+| Nipun     | Hundred |
++-----------+---------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+10. Display the current day (e.g. Thursday)
+
+
+mysql> SELECT DAYNAME(CURDATE()) AS TODAYS_DAY;
++------------+
+| TODAYS_DAY |
++------------+
+| Saturday   |
++------------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

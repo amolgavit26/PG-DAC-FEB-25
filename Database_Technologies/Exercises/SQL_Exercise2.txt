@@ -1,0 +1,65 @@
+mysql> SELECT * FROM S
+    -> ORDER BY CITY DESC;
++------+-----------+--------+------------+
+| S#   | Sname     | Status | City       |
++------+-----------+--------+------------+
+| S7   | Harry     |     70 | Washington |
+| S10  | Nipun     |    100 | Rome       |
+| S2   | Vinayak   |     20 | Paris      |
+| S8   | Blake     |     80 | Paris      |
+| S5   | Jivita    |     50 | Mumbai     |
+| S1   | Ajay      |     10 | London     |
+| S4   | Aayush    |     40 | London     |
+| S9   | Pratiksha |     90 | London     |
+| S6   | Mayur     |     60 | Delhi      |
+| S3   | Purva     |     30 | Athens     |
++------+-----------+--------+------------+
+10 rows in set (0.00 sec)
+
+
+mysql> SELECT * FROM P
+    -> ORDER BY CITY, PNAME;
++------+--------+--------+--------+------------+
+| P#   | Pname  | Color  | Weight | City       |
++------+--------+--------+--------+------------+
+| P4   | Cam    | Silver |     14 | Athens     |
+| P9   | Gear   | Red    |   12.5 | Athens     |
+| P5   | Crank  | Yellow |     11 | Berlin     |
+| P10  | Stud   | Green  |     16 | Delhi      |
+| P2   | Bolt   | Blue   |   11.8 | London     |
+| P7   | Clamp  | Blue   |     10 | London     |
+| P1   | Nut    | Red    |   12.3 | Mumbai     |
+| P8   | Nut    | Black  |   13.5 | Paris      |
+| P3   | Piston | Black  |    9.2 | Paris      |
+| P6   | Pin    | Green  |   15.1 | Washington |
++------+--------+--------+--------+------------+
+10 rows in set (0.00 sec)
+
+
+
+mysql> SELECT SNAME FROM S
+    -> WHERE CITY LIKE 'L%';
++-----------+
+| SNAME     |
++-----------+
+| Ajay      |
+| Aayush    |
+| Pratiksha |
++-----------+
+3 rows in set (0.00 sec)
+
+
+
+mysql> SELECT * FROM J
+    -> WHERE JNAME LIKE '__n%';
++------+---------+--------+
+| J#   | Jname   | City   |
++------+---------+--------+
+| J8   | Bonnet  | Berlin |
+| J9   | Monitor | Rome   |
+| J10  | Fan     | Paris  |
++------+---------+--------+
+3 rows in set (0.00 sec)
+
+
+
