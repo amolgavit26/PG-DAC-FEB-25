@@ -1,0 +1,119 @@
+
+mysql> SELECT * FROM ORDERS
+    -> WHERE AMT > 1000;
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3002 | 1900.10 | 1990-10-03 | 2007 | 1004 |
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT SNAME, CITY FROM SALESPEOPLE
+    -> WHERE CITY = 'LONDON' AND COMM > 0.10;
++--------+--------+
+| SNAME  | CITY   |
++--------+--------+
+| Peel   | London |
+| Motika | London |
++--------+--------+
+2 rows in set (0.00 sec)
+
+
+mysql> SELECT * FROM CUSTOMERS
+    -> WHERE RATING > 100 OR CITY = 'Rome';
++------+----------+----------+--------+------+
+| CNUM | CNAME    | CITY     | RATING | SNUM |
++------+----------+----------+--------+------+
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    100 | 1004 |
++------+----------+----------+--------+------+
+5 rows in set (0.00 sec)
+
+
+4) What will be the output from the following query?
+
+ Select * from Orders				---> This will select all the rows from order table.
+ 	where (amt < 1000 OR			---> This will select where amount is less than 1000 this is true and also check the following condition is true or not.
+ 		NOT (odate = ‘1990-10-03’	--->  This will give rows where date is 1990-10-03.
+ 			AND cnum > 2003)); 	---> This will give rows where CNUM is grater than 2003. only if these condition true it will give ture
+						---> But we are using NOT that will give we inverse value False -> True & True -> False.
+
+
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |	AMT < 1000 (True)
+| 3003 |  767.19 | 1990-10-03 | 2001 | 1001 |	AMT < 1000 (True)
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |	AMT < 1000 (False) CNUM > 2003 (False)-Inverse->(True)
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |	AMT < 1000 (False) ODATE = '1990-10-03' (False)--Inverse->(True)	
+| 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |	AMT < 1000 (True)
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |	AMT < 1000 (False) ODATE = '1990-10-03' (False)--Inverse-->(True)
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |	AMT < 1000 (False) ODATE = '1990-10-03' (False)--Inverse-->(True)
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |	AMT < 1000 (False) ODATE = '1990-10-03' (False)--Inverse-->(True)
++------+---------+------------+------+------+
+
+In Summery:-
+This is use to show all orders, Whose amt < 1000  or except the orders which are placed on '1990-10-03' and CNUM is greater than 2003.
+
+
+Q5) What will be the output of the following query?
+
+ Select * from Orders				---> This will select all the rows from order table.
+ where NOT ((odate = ‘1990-10-03’ OR snum>1006) ---> First Check these condition odate = ‘1990-10-03’ or snum>1006 if these condition are true.
+it will give false because we are using NOT.
+ AND amt >= 1500); 				---> This will give rows where amt is greater or equal to 1500.
+
+Only if these condition satisfies we will print other than these because of NOT.
+
+
+
+
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |	odate = '1990-10-03' {True} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
+| 3003 |  767.19 | 1990-10-03 | 2001 | 1001 |	odate = '1990-10-03' {True} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |	odate = '1990-10-03' {True} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |	odate = '1990-10-03' {False} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
+| 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |	odate = '1990-10-03' {False} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |	odate = '1990-10-03' {False} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |	odate = '1990-10-03' {False} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |	odate = '1990-10-03' {False} --AND--> amt >= 1500 {False} ----> {False} --NOT-->  {{True}}
++------+---------+------------+------+------+
+
+
+In Summery:-
+This is use to show all orders, Whose amt >= 1500 except the orders that happened on '1990-10-03' or were snum is grater than 1006.
+
+
+mysql> Select snum, sname, city, comm From Salespeople
+    -> where COMM NOT BETWEEN 0.13 AND 0.14;
++------+---------+-----------+------+
+| snum | sname   | city      | comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San jose  | 0.13 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
