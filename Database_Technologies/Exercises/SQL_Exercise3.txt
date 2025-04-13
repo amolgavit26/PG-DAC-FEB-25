@@ -212,8 +212,8 @@ mysql> SELECT SNAME,
     -> CASE STATUS
     -> WHEN 10 THEN 'Ten'
     -> WHEN 20 THEN 'Twenty'
-    -> WHEN 30 THEN 'Tirty'
-    -> WHEN 40 THEN 'Fourty'
+    -> WHEN 30 THEN 'Thirty'
+    -> WHEN 40 THEN 'Forty'
     -> WHEN 50 THEN 'Fifty'
     -> WHEN 60 THEN 'Sixty'
     -> WHEN 70 THEN 'Seventy'
@@ -228,8 +228,8 @@ mysql> SELECT SNAME,
 +-----------+---------+
 | Ajay      | Ten     |
 | Vinayak   | Twenty  |
-| Purva     | Tirty   |
-| Aayush    | Fourty  |
+| Purva     | Thirty  |
+| Aayush    | Forty   |
 | Jivita    | Fifty   |
 | Mayur     | Sixty   |
 | Harry     | Seventy |
