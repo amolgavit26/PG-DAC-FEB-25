@@ -84,15 +84,20 @@ mysql> SELECT CNAME, SNAME, COMM FROM SALESPEOPLE, CUSTOMERS
 order by a customer with a rating above 100.
 
 
-
-
-
-
-
-
-
-
-
+mysql> SELECT SALESPEOPLE.SNAME, CUSTOMERS.RATING, ORDERS.ONUM, ROUND(ORDERS.AMT * SALESPEOPLE.COMM, 2) TOTAL_COMMISSION FROM ORDERS, CUSTOMERS, SALESPEOPLE
+    -> WHERE ORDERS.CNUM = CUSTOMERS.CNUM AND ORDERS.SNUM = SALESPEOPLE.SNUM
+    -> AND CUSTOMERS.RATING > 100;
++---------+--------+------+------------------+
+| SNAME   | RATING | ONUM | TOTAL_COMMISSION |
++---------+--------+------+------------------+
+| Serres  |    300 | 3010 |           170.29 |
+| Serres  |    300 | 3007 |             9.85 |
+| Serres  |    200 | 3005 |           670.86 |
+| Rifkin  |    300 | 3006 |           164.72 |
+| Rifkin  |    300 | 3001 |              2.8 |
+| Axelrod |    200 | 3009 |           171.32 |
++---------+--------+------+------------------+
+6 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------

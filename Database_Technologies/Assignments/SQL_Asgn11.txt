@@ -1,0 +1,66 @@
+
+
+1) Write a query that uses a subquery to obtain all orders for the customer named
+Cisneros. Assume you do not know his customer number (cnum).
+
+
+mysql> SELECT * FROM ORDERS
+    -> WHERE CNUM = (SELECT CNUM FROM CUSTOMERS
+    -> WHERE CNAME = 'CISNEROS');
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
++------+---------+------------+------+------+
+2 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2) Write a query that produces the names and ratings of all customers who have
+above-average orders.
+
+
+mysql> SELECT CUSTOMERS.CNAME, CUSTOMERS.RATING FROM CUSTOMERS, ORDERS
+    -> WHERE CUSTOMERS.CNUM = ORDERS.CNUM
+    -> AND ORDERS.AMT > (
+    -> SELECT AVG(AMT) FROM ORDERS);
++---------+--------+
+| CNAME   | RATING |
++---------+--------+
+| Liu     |    200 |
+| Clemens |    100 |
+| Clemens |    100 |
++---------+--------+
+3 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+3) Write a query that selects the total amount in orders for each salesperson for
+whom this total is greater than the amount of the largest order in the table.
+
+
+mysql> SELECT ORDERS.SNUM, SUM(ORDERS.AMT) FROM SALESPEOPLE, ORDERS
+    -> WHERE SALESPEOPLE.SNUM = ORDERS.SNUM
+    -> GROUP BY SALESPEOPLE.SNUM
+    -> HAVING SUM(AMT) > (
+    -> SELECT MAX(AMT) FROM ORDERS);
++------+-----------------+
+| SNUM | SUM(ORDERS.AMT) |
++------+-----------------+
+| 1001 |        15382.07 |
++------+-----------------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
