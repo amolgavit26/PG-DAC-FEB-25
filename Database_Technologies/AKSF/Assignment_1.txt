@@ -1,0 +1,698 @@
+
+TASK 1
+
+Create all three tables
+
+mysql> CREATE TABLE DEPARTMENTS (
+    -> DEPARTMENT_ID INT PRIMARY KEY,
+    -> DEPARTMENT_NAME VARCHAR(20) NOT NULL UNIQUE
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+
+
+mysql> CREATE TABLE EMPLOYEES (
+    -> EMPLOYEE_ID INT PRIMARY KEY,
+    -> FIRST_NAME VARCHAR(20) NOT NULL,
+    -> LAST_NAME VARCHAR(20) NOT NULL,
+    -> EMAIL VARCHAR(50) NOT NULL UNIQUE,
+    -> HIRE_DATE DATE NOT NULL,
+    -> SALARY INT NOT NULL,
+    -> DEPARTMENT_ID INT NOT NULL,
+    -> FOREIGN KEY (DEPARTMENT_ID) REFERENCES DEPARTMENTS(DEPARTMENT_ID)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+
+mysql> CREATE TABLE PROJECTS (
+    -> PROJECT_ID INT PRIMARY KEY,
+    -> PROJECT_NAME VARCHAR(50) NOT NULL,
+    -> START_DATE DATE NOT NULL,
+    -> END_DATE DATE,
+    -> DEPARTMENT_ID INT NOT NULL,
+    -> FOREIGN KEY (DEPARTMENT_ID) REFERENCES DEPARTMENTS(DEPARTMENT_ID)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+
+------------------------------------------------------------------------------------------
+
+
+Check all three tables
+
+mysql> DESC DEPARTMENTS;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| DEPARTMENT_ID   | int         | NO   | PRI | NULL    |       |
+| DEPARTMENT_NAME | varchar(20) | NO   | UNI | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+
+
+mysql> DESC EMPLOYEES;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| EMPLOYEE_ID   | int         | NO   | PRI | NULL    |       |
+| FIRST_NAME    | varchar(20) | NO   |     | NULL    |       |
+| LAST_NAME     | varchar(20) | NO   |     | NULL    |       |
+| EMAIL         | varchar(50) | NO   | UNI | NULL    |       |
+| HIRE_DATE     | date        | NO   |     | NULL    |       |
+| SALARY        | int         | NO   |     | NULL    |       |
+| DEPARTMENT_ID | int         | NO   | MUL | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+
+
+mysql> DESC PROJECTS;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| PROJECT_ID    | int         | NO   | PRI | NULL    |       |
+| PROJECT_NAME  | varchar(50) | NO   |     | NULL    |       |
+| START_DATE    | date        | NO   |     | NULL    |       |
+| END_DATE      | date        | YES  |     | NULL    |       |
+| DEPARTMENT_ID | int         | NO   | MUL | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+TASK 2
+
+
+
+mysql> INSERT INTO DEPARTMENTS(DEPARTMENT_ID, DEPARTMENT_NAME)
+    -> VALUES
+    -> (1, 'IT'),
+    -> (2, 'HR'),
+    -> (3, 'Sales'),
+    -> (4, 'Finance'),
+    -> (5, 'Marketing');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+
+mysql> INSERT INTO PROJECTS(PROJECT_ID, PROJECT_NAME, START_DATE, END_DATE, DEPARTMENT_ID)
+    -> VALUES
+    -> (201, 'Project Phoenix', '2021-01-15', '2022-07-30', 1),
+    -> (202, 'Client Onboarding', '2020-06-20', NULL, 3),
+    -> (203, 'Financial Overhaul', '2019-03-10', '2021-12-15', 4),
+    -> (204, 'Marketing Revamp', '2022-03-01', NULL, 5),
+    -> (205, 'Internal System Audit', '2023-02-15', NULL, 2);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO EMPLOYEES(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, SALARY, DEPARTMENT_ID)
+    -> VALUES
+    -> (101, 'Ravi', 'Sharma', 'ravi.sharma@specialforce.com', '2017-05-15', 55000, 1),
+    -> (102, 'Neha', 'Kapoor', 'neha.kapoor@specialforce.com', '2019-03-23', 48000, 2),
+    -> (103, 'Jyoti', 'Verma', 'jyoti.verma@specialforce.com', '2020-11-02', 60000, 1),
+    -> (104, 'Anil', 'Patil', 'anil.patil@specialforce.com', '2018-09-18', 70000, 3),
+    -> (105, 'Pooja', 'Singh', 'pooja.singh@specialforce.com', '2021-06-10', 40000, 4),
+    -> (106, 'Sanjay', 'Iyer', 'sanjay.iyer@specialforce.com', '2018-01-22', 75000, 3),
+    -> (107, 'Jatin', 'Reddy', 'jatin.reddy@specialforce.com', '2021-12-12', 85000, 2),
+    -> (108, 'Shreya', 'Mehta', 'shreya.mehta@specialforce.com', '2022-04-19', 30000, 5),
+    -> (109, 'Rajesh', 'Gupta', 'rajesh.gupta@specialforce.com', '2020-08-11', 90000, 1),
+    -> (110, 'Kavita', 'Nair', 'kavita.nair@specialforce.com', '2021-02-07', 50000, 2);
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+
+------------------------------------------------------------------------------------------
+
+
+mysql> SELECT * FROM DEPARTMENTS;;
++---------------+-----------------+
+| DEPARTMENT_ID | DEPARTMENT_NAME |
++---------------+-----------------+
+|             4 | Finance         |
+|             2 | HR              |
+|             1 | IT              |
+|             5 | Marketing       |
+|             3 | Sales           |
++---------------+-----------------+
+5 rows in set (0.00 sec)
+
+
+mysql> SELECT * FROM PROJECTS;
++------------+-----------------------+------------+------------+---------------+
+| PROJECT_ID | PROJECT_NAME          | START_DATE | END_DATE   | DEPARTMENT_ID |
++------------+-----------------------+------------+------------+---------------+
+|        201 | Project Phoenix       | 2021-01-15 | 2022-07-30 |             1 |
+|        202 | Client Onboarding     | 2020-06-20 | NULL       |             3 |
+|        203 | Financial Overhaul    | 2019-03-10 | 2021-12-15 |             4 |
+|        204 | Marketing Revamp      | 2022-03-01 | NULL       |             5 |
+|        205 | Internal System Audit | 2023-02-15 | NULL       |             2 |
++------------+-----------------------+------------+------------+---------------+
+5 rows in set (0.00 sec)
+
+
+mysql> SELECT * FROM EMPLOYEES;
++-------------+------------+-----------+-------------------------------+------------+--------+---------------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | EMAIL                         | HIRE_DATE  | SALARY | DEPARTMENT_ID |
++-------------+------------+-----------+-------------------------------+------------+--------+---------------+
+|         101 | Ravi       | Sharma    | ravi.sharma@specialforce.com  | 2017-05-15 |  55000 |             1 |
+|         102 | Neha       | Kapoor    | neha.kapoor@specialforce.com  | 2019-03-23 |  48000 |             2 |
+|         103 | Jyoti      | Verma     | jyoti.verma@specialforce.com  | 2020-11-02 |  60000 |             1 |
+|         104 | Anil       | Patil     | anil.patil@specialforce.com   | 2018-09-18 |  70000 |             3 |
+|         105 | Pooja      | Singh     | pooja.singh@specialforce.com  | 2021-06-10 |  40000 |             4 |
+|         106 | Sanjay     | Iyer      | sanjay.iyer@specialforce.com  | 2018-01-22 |  75000 |             3 |
+|         107 | Jatin      | Reddy     | jatin.reddy@specialforce.com  | 2021-12-12 |  85000 |             2 |
+|         108 | Shreya     | Mehta     | shreya.mehta@specialforce.com | 2022-04-19 |  30000 |             5 |
+|         109 | Rajesh     | Gupta     | rajesh.gupta@specialforce.com | 2020-08-11 |  90000 |             1 |
+|         110 | Kavita     | Nair      | kavita.nair@specialforce.com  | 2021-02-07 |  50000 |             2 |
++-------------+------------+-----------+-------------------------------+------------+--------+---------------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 1: Write a query to retrieve the first name, last name, and department name of all
+employees. If an employee does not belong to any department, the department name should be
+NULL
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 2: Write a query to find all employees in the IT department who earn more than ₹50,000. 
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 3: Write a query to list the first name, last name, and email of all employees whose first
+name starts with 'J' and whose email contains specialforce.com. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 4: Write a query to find all the distinct department names in the Departments table. 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 5: Write a query to calculate the total salary expenditure of each department. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 6: Write a query to find the average salary of employees in the Finance department. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 7: Write a query to find the minimum and maximum salaries of employees in the Sales
+department. 
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 8: Write a query to count the number of employees in each department. 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+Query 9: Write a query to find all employees who were hired between January 1, 2018, and
+December 31, 2020. Sort the result by hire date in ascending order.
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 10: Write a query to list all employees who do not have an email address. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 11: Write a query to find all employees who work in HR, Finance, or IT departments
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 12: Write a query to list the first name, last name, and salary of employees earning
+between ₹30,000 and ₹70,000. Sort the results by salary in descending order. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+Transaction Management Tasks:
+ 
+
+
+Task 1: Increase HR Salaries:
+Write a query to increase the salaries of all employees in the HR department by 5%. Start a
+transaction before applying the changes. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+Task 2: Savepoint Before Sales Increase:
+Set a savepoint before increasing the salaries of employees in the Sales department by 3%. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+Task 3: Rollback Sales Salary Increase:
+Rollback to the savepoint created before the Sales salary increase.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+Task 4: Commit the Transaction:
+After rolling back the Sales increase, commit the changes made to the HR department salaries. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 13: Write a query to join the Employees and Departments tables to list employees and their
+department names. Make sure all employees are included, even if they don’t belong to any
+department. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 14: Write a query to list employees who are working on projects that started after January
+1, 2023. 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 15: Write a query to list all departments, even those without any employees assigned. 
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 16: Write a query to find the employee with the highest salary in each department. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 17: Write a query to remove all data from the Employees table but keep the structure intact. 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 18: Write a query to drop the Projects table from the database. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 19: SpecialForce Private Limited realized they need to store the phone numbers of
+employees. Write a query to add a new column phone_number (VARCHAR(15)) to the Employees
+table using the ALTER statement. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 20: The company also decided to track the budget for each project. Write a query to add a
+column budget (DECIMAL(10,2)) to the Projects table. 
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 21: Write a query to find the 2nd largest salary from the Employees table using:
+ A subquery.
+ The LIMIT clause. 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 22: Write a query to find the 3rd largest salary from the Employees table using:
+ A subquery.
+ The LIMIT clause. 
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 23: Write a query to drop the Projects table. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Query 24: Write a query to truncate the Employees table. 
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
