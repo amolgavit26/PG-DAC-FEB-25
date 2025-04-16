@@ -1,0 +1,104 @@
+
+
+1) Write a query that selects all customers whose ratings are equal to or greater than
+ANY of Serres’. 
+
+
+mysql> SELECT CUSTOMERS.CNAME FROM CUSTOMERS
+    -> WHERE RATING >= ANY(
+    -> SELECT RATING FROM CUSTOMERS
+    -> WHERE SNUM = (
+    -> SELECT SNUM FROM SALESPEOPLE
+    -> WHERE SNAME = 'SERRES')
+    -> );
++----------+
+| CNAME    |
++----------+
+| Giovanni |
+| Liu      |
+| Grass    |
+| Cisneros |
++----------+
+4 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+2) Write a query using ANY or ALL that will find all salespeople who have no
+customers located in their city. 
+
+
+mysql> SELECT SALESPEOPLE.SNAME FROM SALESPEOPLE
+    -> WHERE SALESPEOPLE.CITY <> ALL(
+    -> SELECT CUSTOMERS.CITY FROM CUSTOMERS
+    -> WHERE CUSTOMERS.SNUM = SALESPEOPLE.SNUM);
++---------+
+| SNAME   |
++---------+
+| Motika  |
+| Rifkin  |
+| Axelrod |
++---------+
+3 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+3) Write a query that selects all orders for amounts greater than any for the
+customers in London. 
+
+
+mysql> SELECT * FROM ORDERS
+    -> WHERE AMT > ANY(
+    -> SELECT ORDERS.AMT FROM ORDERS, CUSTOMERS
+    -> WHERE CUSTOMERS.CNUM = ORDERS.CNUM AND CITY = 'LONDON');
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3002 | 1900.10 | 1990-10-03 | 2007 | 1004 |
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+7 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+4) Write the above query using MIN or MAX. 
+
+
+mysql> SELECT * FROM ORDERS
+    -> WHERE AMT > (
+    -> SELECT MIN(ORDERS.AMT) FROM ORDERS, CUSTOMERS
+    -> WHERE ORDERS.CNUM = CUSTOMERS.CNUM AND CUSTOMERS.CITY = 'LONDON');
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3002 | 1900.10 | 1990-10-03 | 2007 | 1004 |
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+7 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
