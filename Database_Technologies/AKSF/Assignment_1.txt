@@ -5,7 +5,7 @@ Create all three tables
 
 mysql> CREATE TABLE DEPARTMENTS (
     -> DEPARTMENT_ID INT PRIMARY KEY,
-    -> DEPARTMENT_NAME VARCHAR(20) NOT NULL UNIQUE
+    -> DEPARTMENT_NAME VARCHAR(20) UNIQUE
     -> );
 Query OK, 0 rows affected (0.07 sec)
 
@@ -15,10 +15,10 @@ mysql> CREATE TABLE EMPLOYEES (
     -> EMPLOYEE_ID INT PRIMARY KEY,
     -> FIRST_NAME VARCHAR(20) NOT NULL,
     -> LAST_NAME VARCHAR(20) NOT NULL,
-    -> EMAIL VARCHAR(50) NOT NULL UNIQUE,
+    -> EMAIL VARCHAR(50) UNIQUE,
     -> HIRE_DATE DATE NOT NULL,
-    -> SALARY INT NOT NULL,
-    -> DEPARTMENT_ID INT NOT NULL,
+    -> SALARY INT,
+    -> DEPARTMENT_ID INT,
     -> FOREIGN KEY (DEPARTMENT_ID) REFERENCES DEPARTMENTS(DEPARTMENT_ID)
     -> );
 Query OK, 0 rows affected (0.04 sec)
@@ -26,10 +26,10 @@ Query OK, 0 rows affected (0.04 sec)
 
 mysql> CREATE TABLE PROJECTS (
     -> PROJECT_ID INT PRIMARY KEY,
-    -> PROJECT_NAME VARCHAR(50) NOT NULL,
-    -> START_DATE DATE NOT NULL,
+    -> PROJECT_NAME VARCHAR(50),
+    -> START_DATE DATE,
     -> END_DATE DATE,
-    -> DEPARTMENT_ID INT NOT NULL,
+    -> DEPARTMENT_ID INT,
     -> FOREIGN KEY (DEPARTMENT_ID) REFERENCES DEPARTMENTS(DEPARTMENT_ID)
     -> );
 Query OK, 0 rows affected (0.03 sec)
@@ -45,7 +45,7 @@ mysql> DESC DEPARTMENTS;
 | Field           | Type        | Null | Key | Default | Extra |
 +-----------------+-------------+------+-----+---------+-------+
 | DEPARTMENT_ID   | int         | NO   | PRI | NULL    |       |
-| DEPARTMENT_NAME | varchar(20) | NO   | UNI | NULL    |       |
+| DEPARTMENT_NAME | varchar(20) | YES  | UNI | NULL    |       |
 +-----------------+-------------+------+-----+---------+-------+
 2 rows in set (0.01 sec)
 
@@ -58,10 +58,10 @@ mysql> DESC EMPLOYEES;
 | EMPLOYEE_ID   | int         | NO   | PRI | NULL    |       |
 | FIRST_NAME    | varchar(20) | NO   |     | NULL    |       |
 | LAST_NAME     | varchar(20) | NO   |     | NULL    |       |
-| EMAIL         | varchar(50) | NO   | UNI | NULL    |       |
+| EMAIL         | varchar(50) | YES  | UNI | NULL    |       |
 | HIRE_DATE     | date        | NO   |     | NULL    |       |
-| SALARY        | int         | NO   |     | NULL    |       |
-| DEPARTMENT_ID | int         | NO   | MUL | NULL    |       |
+| SALARY        | int         | YES  |     | NULL    |       |
+| DEPARTMENT_ID | int         | YES  | MUL | NULL    |       |
 +---------------+-------------+------+-----+---------+-------+
 7 rows in set (0.00 sec)
 
@@ -72,10 +72,10 @@ mysql> DESC PROJECTS;
 | Field         | Type        | Null | Key | Default | Extra |
 +---------------+-------------+------+-----+---------+-------+
 | PROJECT_ID    | int         | NO   | PRI | NULL    |       |
-| PROJECT_NAME  | varchar(50) | NO   |     | NULL    |       |
-| START_DATE    | date        | NO   |     | NULL    |       |
+| PROJECT_NAME  | varchar(50) | YES  |     | NULL    |       |
+| START_DATE    | date        | YES  |     | NULL    |       |
 | END_DATE      | date        | YES  |     | NULL    |       |
-| DEPARTMENT_ID | int         | NO   | MUL | NULL    |       |
+| DEPARTMENT_ID | int         | YES  | MUL | NULL    |       |
 +---------------+-------------+------+-----+---------+-------+
 5 rows in set (0.00 sec)
 
@@ -182,14 +182,24 @@ Query 1: Write a query to retrieve the first name, last name, and department nam
 employees. If an employee does not belong to any department, the department name should be
 NULL
 
-
-
-
-
-
-
-
-
+mysql> SELECT E.FIRST_NAME, E.LAST_NAME, D.DEPARTMENT_NAME
+    -> FROM EMPLOYEES E LEFT JOIN DEPARTMENTS D
+    -> ON E.DEPARTMENT_ID = D.DEPARTMENT_ID;
++------------+-----------+-----------------+
+| FIRST_NAME | LAST_NAME | DEPARTMENT_NAME |
++------------+-----------+-----------------+
+| Ravi       | Sharma    | IT              |
+| Neha       | Kapoor    | HR              |
+| Jyoti      | Verma     | IT              |
+| Anil       | Patil     | Sales           |
+| Pooja      | Singh     | Finance         |
+| Sanjay     | Iyer      | Sales           |
+| Jatin      | Reddy     | HR              |
+| Shreya     | Mehta     | Marketing       |
+| Rajesh     | Gupta     | IT              |
+| Kavita     | Nair      | HR              |
++------------+-----------+-----------------+
+10 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -199,13 +209,18 @@ NULL
 Query 2: Write a query to find all employees in the IT department who earn more than ₹50,000. 
 
 
-
-
-
-
-
-
-
+mysql> SELECT E.FIRST_NAME, E.LAST_NAME, E.SALARY, D.DEPARTMENT_NAME
+    -> FROM EMPLOYEES E JOIN DEPARTMENTS D
+    -> ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+    -> WHERE D.DEPARTMENT_NAME = 'IT' AND E.SALARY > 50000;
++------------+-----------+--------+-----------------+
+| FIRST_NAME | LAST_NAME | SALARY | DEPARTMENT_NAME |
++------------+-----------+--------+-----------------+
+| Ravi       | Sharma    |  55000 | IT              |
+| Jyoti      | Verma     |  60000 | IT              |
+| Rajesh     | Gupta     |  90000 | IT              |
++------------+-----------+--------+-----------------+
+3 rows in set (0.00 sec)
 
 
 
@@ -217,15 +232,16 @@ Query 3: Write a query to list the first name, last name, and email of all emplo
 name starts with 'J' and whose email contains specialforce.com. 
 
 
-
-
-
-
-
-
-
-
-
+mysql> SELECT FIRST_NAME, LAST_NAME, EMAIL FROM EMPLOYEES
+    -> WHERE FIRST_NAME LIKE 'J%'
+    -> AND EMAIL LIKE '%specialforce.com';
++------------+-----------+------------------------------+
+| FIRST_NAME | LAST_NAME | EMAIL                        |
++------------+-----------+------------------------------+
+| Jyoti      | Verma     | jyoti.verma@specialforce.com |
+| Jatin      | Reddy     | jatin.reddy@specialforce.com |
++------------+-----------+------------------------------+
+2 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -234,15 +250,22 @@ name starts with 'J' and whose email contains specialforce.com.
 
 Query 4: Write a query to find all the distinct department names in the Departments table. 
 
+mysql> SELECT DISTINCT DEPARTMENT_NAME FROM DEPARTMENTS;
++-----------------+
+| DEPARTMENT_NAME |
++-----------------+
+| Finance         |
+| HR              |
+| IT              |
+| Marketing       |
+| Sales           |
++-----------------+
+5 rows in set (0.00 sec)
 
 
-
-
-
-
-
-
-
+BUT THE THING HERE IS, I HAVE ALREADY SPECIFIED THE DEPARTMENT_NAME IN DEPARTMENTS TABLE IS UNIQUE VALUE.
+SO WITHOUT USING DISTINCT IT'S SHOWING DISTINCT DEPARTMENTS.
+ 
 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
@@ -251,15 +274,19 @@ Query 4: Write a query to find all the distinct department names in the Departme
 Query 5: Write a query to calculate the total salary expenditure of each department. 
 
 
-
-
-
-
-
-
-
-
-
+mysql> SELECT D.DEPARTMENT_NAME, SUM(SALARY) FROM EMPLOYEES E, DEPARTMENTS D
+    -> WHERE D.DEPARTMENT_ID = E.DEPARTMENT_ID
+    -> GROUP BY D.DEPARTMENT_NAME;
++-----------------+-------------+
+| DEPARTMENT_NAME | SUM(SALARY) |
++-----------------+-------------+
+| Finance         |       40000 |
+| HR              |      183000 |
+| IT              |      205000 |
+| Marketing       |       30000 |
+| Sales           |      145000 |
++-----------------+-------------+
+5 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -269,16 +296,14 @@ Query 5: Write a query to calculate the total salary expenditure of each departm
 Query 6: Write a query to find the average salary of employees in the Finance department. 
 
 
-
-
-
-
-
-
-
-
-
-
+mysql> SELECT AVG(E.SALARY) AVERAGE_SALARY_FINANCE FROM EMPLOYEES E, DEPARTMENTS D
+    -> WHERE D.DEPARTMENT_ID = E.DEPARTMENT_ID AND D.DEPARTMENT_NAME = 'FINANCE';
++------------------------+
+| AVERAGE_SALARY_FINANCE |
++------------------------+
+|             40000.0000 |
++------------------------+
+1 row in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -289,12 +314,15 @@ Query 7: Write a query to find the minimum and maximum salaries of employees in 
 department. 
 
 
-
-
-
-
-
-
+mysql> SELECT MIN(E.SALARY) MINIMUM_SALARY, MAX(E.SALARY) MAXIMUM_SALARY FROM EMPLOYEES E, DEPARTMENTS D
+    -> WHERE D.DEPARTMENT_ID = E.DEPARTMENT_ID
+    -> AND D.DEPARTMENT_NAME = 'SALES';
++----------------+----------------+
+| MINIMUM_SALARY | MAXIMUM_SALARY |
++----------------+----------------+
+|          70000 |          75000 |
++----------------+----------------+
+1 row in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -304,13 +332,19 @@ department.
 Query 8: Write a query to count the number of employees in each department. 
 
 
-
-
-
-
-
-
-
+mysql> SELECT D.DEPARTMENT_NAME, COUNT(*) FROM EMPLOYEES E, DEPARTMENTS D
+    -> WHERE D.DEPARTMENT_ID = E.DEPARTMENT_ID
+    -> GROUP BY D.DEPARTMENT_NAME;
++-----------------+----------+
+| DEPARTMENT_NAME | COUNT(*) |
++-----------------+----------+
+| Finance         |        1 |
+| HR              |        3 |
+| IT              |        3 |
+| Marketing       |        1 |
+| Sales           |        2 |
++-----------------+----------+
+5 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -320,14 +354,19 @@ Query 9: Write a query to find all employees who were hired between January 1, 2
 December 31, 2020. Sort the result by hire date in ascending order.
 
 
-
-
-
-
-
-
-
-
+mysql> SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, HIRE_DATE FROM EMPLOYEES
+    -> WHERE HIRE_DATE BETWEEN '2018-01-01' AND '2020-12-31'
+    -> ORDER BY HIRE_DATE;
++-------------+------------+-----------+------------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | HIRE_DATE  |
++-------------+------------+-----------+------------+
+|         106 | Sanjay     | Iyer      | 2018-01-22 |
+|         104 | Anil       | Patil     | 2018-09-18 |
+|         102 | Neha       | Kapoor    | 2019-03-23 |
+|         109 | Rajesh     | Gupta     | 2020-08-11 |
+|         103 | Jyoti      | Verma     | 2020-11-02 |
++-------------+------------+-----------+------------+
+5 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -336,17 +375,9 @@ December 31, 2020. Sort the result by hire date in ascending order.
 
 Query 10: Write a query to list all employees who do not have an email address. 
 
-
-
-
-
-
-
-
-
-
-
-
+mysql> SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME FROM EMPLOYEES
+    -> WHERE EMAIL IS NULL;
+Empty set (0.00 sec)
 
 
 
@@ -356,13 +387,21 @@ Query 10: Write a query to list all employees who do not have an email address.
 
 Query 11: Write a query to find all employees who work in HR, Finance, or IT departments
 
-
-
-
-
-
-
-
+mysql> SELECT D.DEPARTMENT_NAME, E.FIRST_NAME, E.LAST_NAME FROM EMPLOYEES E, DEPARTMENTS D
+    -> WHERE D.DEPARTMENT_ID = E.DEPARTMENT_ID AND
+    -> D.DEPARTMENT_NAME IN ('HR', 'FINANCE', 'IT');
++-----------------+------------+-----------+
+| DEPARTMENT_NAME | FIRST_NAME | LAST_NAME |
++-----------------+------------+-----------+
+| Finance         | Pooja      | Singh     |
+| HR              | Neha       | Kapoor    |
+| HR              | Jatin      | Reddy     |
+| HR              | Kavita     | Nair      |
+| IT              | Ravi       | Sharma    |
+| IT              | Jyoti      | Verma     |
+| IT              | Rajesh     | Gupta     |
++-----------------+------------+-----------+
+7 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
