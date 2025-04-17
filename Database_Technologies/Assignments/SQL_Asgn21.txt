@@ -1,0 +1,68 @@
+
+
+1) Give Amit the right to change the ratings of the customers.
+
+
+GRANT UPDATE (RATING) ON CUSTOMERS TO 'Amit'@'localhost';
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2) Give Manoj the right to give other users the right to query the Orders table.
+
+
+
+GRANT SELECT ON ORDERS TO 'manoj'@'localhost' WITH GRANT OPTION;
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+3) Take the INSERT privilege on Salespeople away from Ajita.
+
+
+REVOKE INSERT ON SALESPEOPLES FROM 'ajita'@'localhost';
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+4) Grant Abhijeet the right to insert or update the Customers table while keeping her
+possible rating values in the range of 100 to 500.
+
+
+CREATE VIEW Customers_Rating_RANGE AS
+SELECT * FROM CUSTOMERS
+WHERE RATING BETWEEN 100 AND 500;
+
+
+GRANT INSERT, UPDATE ON Customers_Rating_RANGE TO 'abhijit'@'localhost';
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+5) Allow Vikram to query the Customers table, but restrict his access to those
+customers whose rating is the lowest.
+
+
+
+CREATE VIEW LOWEST_RATING_CUSTOMERS AS
+SELECT * FROM CUSTOMERS
+WHERE RATING < (SELECT MIN(RATING) FROM CUSTOMERS);
+
+
+GRANT SELECT ON LOWEST_RATING_CUSTOMERS TO 'vikram'@'localhost';
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
