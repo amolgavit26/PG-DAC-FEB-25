@@ -1,0 +1,65 @@
+
+1) Create a table called Cityorders. This will contain the same onum, amt and snum
+fields as the Orders table, and the same cnum and city fields as the Customers
+table, so that each customer’s order will be entered into this table along with his
+or her city. Onum will be the primary key of Cityorders. All of the fields in
+Cityorders will be constrained to match the Customers and Orders tables. Assume
+the parent keys in these tables already have the proper constraints.
+
+
+mysql> CREATE TABLE CITYORDERS (
+    -> ONUM INT PRIMARY KEY,
+    -> AMT FLOAT (10,2),
+    -> CNUM INT NOT NULL,
+    -> CITY VARCHAR(20) NOT NULL,
+    -> SNUM INT NOT NULL,
+    -> FOREIGN KEY (CNUM) REFERENCES CUSTOMERS(CNUM),
+    -> FOREIGN KEY (SNUM) REFERENCES SALESPEOPLE(SNUM)
+    -> );
+ERROR 6125 (HY000): Failed to add the foreign key constraint. Missing unique key for constraint 'cityorders_ibfk_1' in the referenced table 'customers'
+
+
+
+GOT AN ERROE BECAUSE THE IN CUSTOMERS CNUM IS NOT CONSTRINT, BUT SINCE IN QUESTION THEY HAVE GIVEN US TO ASSUME ALL PARENTS ARE PROPERLY CONTRAINTS THE QUEARY ARE CORRECT.
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2) Redefine the Orders table as follows:- add a new column called prev, which will
+identify, for each order, the onum of the previous order for that current customer.
+Implement this with a foreign key referring to the Orders table itself. The foreign
+key should refer as well to the cnum of the customer, providing a definite
+enforced link between the current order and the one referenced.
+
+
+
+mysql> ALTER TABLE ORDERS
+    -> ADD PREV INT NOT NULL;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE ORDERS
+    -> ADD CONSTRAINT unique_cnum_onum UNIQUE (CNUM, ONUM);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> ALTER TABLE ORDERS
+    -> ADD CONSTRAINT fk_cnum_prev FOREIGN KEY (CNUM, ONUM)
+    -> REFERENCES ORDERS(CNUM, ONUM);
+ERROR 6125 (HY000): Failed to add the foreign key constraint. Missing unique key for constraint 'fk_cnum_prev' in the referenced table 'orders'
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
