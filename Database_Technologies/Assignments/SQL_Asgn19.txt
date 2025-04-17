@@ -1,0 +1,103 @@
+
+
+1) Create a view that shows all of the customers who have the highest ratings.
+
+mysql> CREATE VIEW top_rating_customers AS
+    -> SELECT * FROM CUSTOMERS
+    -> WHERE RATING = (
+    -> SELECT MAX(RATING) FROM CUSTOMERS
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> SELECT * FROM TOP_RATING_CUSTOMERS;
++------+----------+----------+--------+------+
+| CNUM | CNAME    | CITY     | RATING | SNUM |
++------+----------+----------+--------+------+
+| 2002 | Giovanni | Rome     |    300 | 1003 |
+| 2004 | Grass    | Berlin   |    300 | 1004 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
++------+----------+----------+--------+------+
+3 rows in set (0.01 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2) Create a view that shows the number of salespeople in each city
+
+
+mysql> CREATE VIEW TOTAL_SALESPEOPLES_PER_CITY AS
+    -> SELECT CITY, COUNT(*) AS TOTAL_SALESPEOPLES FROM SALESPEOPLE
+    -> GROUP BY CITY;
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> SELECT * FROM TOTAL_SALESPEOPLES_PER_CITY;
++-----------+--------------------+
+| CITY      | TOTAL_SALESPEOPLES |
++-----------+--------------------+
+| London    |                  2 |
+| San jose  |                  2 |
+| Barcelona |                  1 |
+| New York  |                  1 |
++-----------+--------------------+
+4 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+3) Create a view that shows the average and total orders for each salesperson after
+his or her name. Assume all names are unique
+
+
+mysql> CREATE VIEW SALESPERSON_ORDERS_AVG AS
+    -> SELECT S.SNAME,
+    -> SUM(O.AMT) AS TOTAL_ORDERS,
+    -> AVG(O.AMT) AS AVERAGE_ORDERS
+    -> FROM SALESPEOPLE S, ORDERS O
+    -> WHERE S.SNUM = O.SNUM
+    -> GROUP BY S.SNAME;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM SALESPERSON_ORDERS_AVG;
++---------+--------------+----------------+
+| SNAME   | TOTAL_ORDERS | AVERAGE_ORDERS |
++---------+--------------+----------------+
+| Peel    |       767.19 |     767.190002 |
+| Serres  |      6546.15 |    2182.050049 |
+| Motika  |      1900.10 |    1900.099976 |
+| Rifkin  |      1116.85 |     558.425017 |
+| Axelrod |      1713.23 |    1713.229980 |
++---------+--------------+----------------+
+5 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+4) Create a view that shows each salesperson with multiple customers.
+
+
+
+mysql> CREATE VIEW SALESPEOPLE_WITH_MULTIPLE_CUSTOMERS AS
+    -> SELECT SNUM, COUNT(*) AS TOLAT_CUSTOMERS
+    -> FROM CUSTOMERS
+    -> GROUP BY SNUM
+    -> HAVING COUNT(*) > 1;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM SALESPEOPLE_WITH_MULTIPLE_CUSTOMERS;
++------+-----------------+
+| SNUM | TOLAT_CUSTOMERS |
++------+-----------------+
+| 1004 |               3 |
++------+-----------------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
