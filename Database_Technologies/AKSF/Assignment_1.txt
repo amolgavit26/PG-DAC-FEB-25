@@ -412,15 +412,20 @@ Query 12: Write a query to list the first name, last name, and salary of employe
 between ₹30,000 and ₹70,000. Sort the results by salary in descending order. 
 
 
-
-
-
-
-
-
-
-
-
+mysql> SELECT FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+    -> WHERE SALARY BETWEEN 30000 AND 70000;
++------------+-----------+--------+
+| FIRST_NAME | LAST_NAME | SALARY |
++------------+-----------+--------+
+| Ravi       | Sharma    |  55000 |
+| Neha       | Kapoor    |  48000 |
+| Jyoti      | Verma     |  60000 |
+| Anil       | Patil     |  70000 |
+| Pooja      | Singh     |  40000 |
+| Shreya     | Mehta     |  30000 |
+| Kavita     | Nair      |  50000 |
++------------+-----------+--------+
+7 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -429,29 +434,43 @@ between ₹30,000 and ₹70,000. Sort the results by salary in descending order.
 Transaction Management Tasks:
  
 
-
 Task 1: Increase HR Salaries:
 Write a query to increase the salaries of all employees in the HR department by 5%. Start a
 transaction before applying the changes. 
 
 
 
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> UPDATE EMPLOYEES
+    -> SET SALARY = SALARY * 1.05
+    -> WHERE DEPARTMENT_ID = (
+    -> SELECT DEPARTMENT_ID FROM DEPARTMENTS
+    -> WHERE DEPARTMENT_NAME = 'HR');
+Query OK, 3 rows affected (0.00 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
 
 
+mysql> SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+    -> WHERE DEPARTMENT_ID = (
+    -> SELECT DEPARTMENT_ID FROM DEPARTMENTS
+    -> WHERE DEPARTMENT_NAME = 'HR');
++-------------+------------+-----------+--------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | SALARY |
++-------------+------------+-----------+--------+
+|         102 | Neha       | Kapoor    |  50400 |
+|         107 | Jatin      | Reddy     |  89250 |
+|         110 | Kavita     | Nair      |  52500 |
++-------------+------------+-----------+--------+
+3 rows in set (0.00 sec)
 
 
-
-
-
-
-
-
-
+mysql> COMMIT;
+Query OK, 0 rows affected (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
-
-
 
 
 Task 2: Savepoint Before Sales Increase:
