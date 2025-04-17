@@ -1,0 +1,168 @@
+
+1) Which of these views are updateable (will allow DML operations)?
+
+#1 Create View Dailyorders
+as Select Distinct cnum, snum, onum, odate from Orders;
+
+No, this view is not updatable.
+There is distinct keyword.
+MySQL does not allowed DML operation (Insert, Update, Delete) on views that use:
+• Distinct
+• Group By
+• Having
+• Union
+
+
+-------------------------------------------------------------------------------------------
+
+
+#2 Create View Custotals
+as Select cname, Sum (amt) Sum_Amt from Orders, Customers
+where Orders.cnum=Customers.cnum
+Group by cname;
+
+
+No, this view is not updatable.
+As like the Q1 here we are using Sum & Group By.
+
+
+-------------------------------------------------------------------------------------------
+
+
+#3 Create view Thirdorders
+as Select * from Dailyorders where
+odate=’1990-10-03’;
+
+
+No, this view is not updatable.
+because Thirdorders is based on Dailyorders and dailyorders use distinct.
+
+-------------------------------------------------------------------------------------------
+
+
+#4 Create view Nullcities
+as Select snum, sname, city
+from Salespeople
+where city is NULL
+OR sname BETWEEN ‘A’ and ‘MZ’; 
+
+Yes, it this view is upgradable because it uses a single table, with no joins, aggregates, or grouping.
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2) Create a view of the Salespeople table called Commissions. This view will include
+only the snum and comm fields. Through this view, someone could enter or change
+commissions, but only to values between .10 and .20. 
+
+
+mysql> CREATE VIEW CAMMISSIONS AS
+    -> SELECT SNUM, COMM FROM SALESPEOPLE
+    -> WHERE COMM BETWEEN 0.10 AND 0.20
+    -> WITH CHECK OPTION;
+Query OK, 0 rows affected (0.04 sec)
+
+
+
+mysql> UPDATE CAMMISSIONS
+    -> SET COMM = 0.02
+    -> WHERE SNUM = 1003;
+ERROR 1369 (HY000): CHECK OPTION failed 'classwork.cammissions'
+
+
+
+mysql> UPDATE CAMMISSIONS
+    -> SET COMM = 0.15
+    -> WHERE SNUM = 1002;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+mysql> SELECT * FROM CAMMISSIONS;
++------+------+
+| SNUM | COMM |
++------+------+
+| 1001 | 0.12 |
+| 1002 | 0.15 |		0.16 ----> 0.15
+| 1004 | 0.11 |
+| 1007 | 0.15 |
+| 1003 | 0.10 |
++------+------+
+5 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+3) Some SQL implementations have a built-in constant representing the current date,
+sometimes called “CURDATE” or “SYSDATE”. The word SYSDATE can
+therefore be used in a SQL statement, and be replaced by the current date when the
+value is accessed by commands such as Select or Insert. We will use a view of the
+Orders table called Entryorders to insert rows into the Orders table. Create the
+Orders table, so that SYSDATE is automatically inserted for odate if no value is
+given. Then create the Entryorders view so that no values can be given. 
+
+I CREATED SEPERATE ORDER TABLE TO DEMPNSTRATE THIS Q.
+I USED CURRENT_TIMESTAMP INSTED OF SYSDATE DUE TO IT IS NOT WORK AS DEFAULT VALUE IN MySQL.
+
+
+mysql> CREATE TABLE ORDERS1 (
+    ->     ONUM INT,
+    ->     AMT FLOAT(10,2),
+    ->     ODATE DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ->     CNUM INT,
+    ->     SNUM INT
+    -> );
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+
+mysql> INSERT INTO ORDERS1 (ONUM, AMT, CNUM, SNUM)
+    -> VALUES (3001, 1500.00, 2001, 1001);
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql> SELECT * FROM ORDERS1;
++------+---------+---------------------+------+------+
+| ONUM | AMT     | ODATE               | CNUM | SNUM |
++------+---------+---------------------+------+------+
+| 3001 | 1500.00 | 2025-04-17 23:08:49 | 2001 | 1001 |
++------+---------+---------------------+------+------+
+1 row in set (0.00 sec)
+
+
+
+mysql> CREATE VIEW ENTRYORDERS AS
+    -> SELECT ONUM, AMT, ODATE, CNUM, SNUM
+    -> FROM ORDERS1
+    -> WITH CHECK OPTION;
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+mysql> INSERT INTO ENTRYORDERS (ONUM, AMT, CNUM, SNUM)
+    -> VALUES (1111, 60000, 2222, 3333);
+Query OK, 1 row affected (0.01 sec)
+
+
+
+mysql> SELECT * FROM ORDERS1;
++------+----------+---------------------+------+------+
+| ONUM | AMT      | ODATE               | CNUM | SNUM |
++------+----------+---------------------+------+------+
+| 3001 |  1500.00 | 2025-04-17 23:08:49 | 2001 | 1001 |
+| 1111 | 60000.00 | 2025-04-17 23:22:42 | 2222 | 3333 |
++------+----------+---------------------+------+------+
+2 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
