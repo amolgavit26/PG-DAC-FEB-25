@@ -35,6 +35,64 @@ class PrepInstaArrays{
 
 
 
+
+Q2 Java Code for finding the Smallest Element in an Array
+
+class PrepInstaArrays{
+	
+	public static void main(String args[]){
+
+     int arr[] = {15, 18, 1, 45, 76, 85};
+
+     int min = arr[0];
+
+     for(int i=0; i<arr.length; i++) { if(min > arr[i])
+         {
+            min = arr[i];
+         }
+
+     }
+
+     System.out.print(min); 
+  }
+}
+
+
+
+
+
+Q3 Java Program for Finding the Smallest and largest element in an array
+
+
+class PrepInstaArrays{
+	
+	public static void main(String args[]){
+
+       int arr[] = {2,82,64,21,12,36,14,3,3};
+
+       int largest = arr[0], smallest=arr[0];
+
+       for(int i=0; i<arr.length; i++){ 
+		if(smallest > arr[i])
+           smallest = arr[i];
+	   
+        if(largest < arr[i])
+           largest = arr[i];
+
+       }
+
+       System.out.println(smallest);
+       System.out.println(largest);
+   }
+}
+
+
+
+
+
+
+
+
 	Q4 Java program for finding the second smallest element in an array
 
 
@@ -94,7 +152,7 @@ class PrepInstaArrays{
 
 	Q6 Reverse an Array in Java
 	
-*/
+
 
 
 class PrepInstaArrays{
@@ -111,7 +169,5 @@ class PrepInstaArrays{
 	
 	}
 }
-
-
-
+*/
 
