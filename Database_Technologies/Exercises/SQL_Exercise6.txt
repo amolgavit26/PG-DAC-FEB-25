@@ -1,0 +1,195 @@
+
+1. Display all the Suppliers with the same Status as the supplier, ‘CLARK’. ---> CHANGING IT AS 'HARRY' BECAUSE WITH CLARK IT WILL GIVE EMPTY SET
+
+
+SELECT * FROM S
+WHERE STATUS = (
+SELECT STATUS FROM S
+WHERE SNAME = 'HARRY');
+
+
++------+-------+--------+------------+
+| S#   | Sname | Status | City       |
++------+-------+--------+------------+
+| S7   | Harry |     70 | Washington |
++------+-------+--------+------------+
+1 row in set (0.00 sec)
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2. Display all the Employees in the same department as the employee ‘MILLER’.  ---> CHANGING IT AS 'HIREN' BECAUSE WITH MILLER IT WILL GIVE EMPTY SET
+
+
+SELECT * FROM SEMP
+WHERE DEPTNO = (
+SELECT DEPTNO FROM SEMP
+WHERE EMPNAME = 'HIREN');
+
+
++-------+---------+-------+--------+----------+
+| EMPNO | EMPNAME | BASIC | DEPTNO | DEPTHEAD |
++-------+---------+-------+--------+----------+
+| 0002  | HIREN   |  8000 | 20     | NULL     |
++-------+---------+-------+--------+----------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+3. Display all the Parts which have more Weight than all the Red parts.  
+
+
+SELECT * FROM P
+WHERE WEIGHT > ALL (
+SELECT WEIGHT FROM P
+WHERE COLOR = 'RED');
+
+
++------+-------+--------+--------+------------+
+| P#   | Pname | Color  | Weight | City       |
++------+-------+--------+--------+------------+
+| P4   | Cam   | Silver |     14 | Athens     |
+| P6   | Pin   | Green  |   15.1 | Washington |
+| P8   | Nut   | Black  |   13.5 | Paris      |
+| P10  | Stud  | Green  |     16 | Delhi      |
++------+-------+--------+--------+------------+
+4 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+4. Display all the Projects going on in the same city as the project ‘TAPE’. 
+
+SELECT * FROM J
+WHERE CITY = (
+SELECT CITY FROM J
+WHERE JNAME = 'TAPE');
+
+
+mysql> SELECT * FROM J
+    -> WHERE CITY = (
+    -> SELECT CITY FROM J
+    -> WHERE JNAME = 'TAPE');
+Empty set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+5. Display all the Parts with Weight less than all the Green parts. 
+
+
+SELECT * FROM P
+WHERE WEIGHT < ALL (
+SELECT WEIGHT FROM P
+WHERE COLOR = 'GREEN' );
+
+
++------+--------+--------+--------+--------+
+| P#   | Pname  | Color  | Weight | City   |
++------+--------+--------+--------+--------+
+| P1   | Nut    | Red    |   12.3 | Mumbai |
+| P2   | Bolt   | Blue   |   11.8 | London |
+| P3   | Piston | Black  |    9.2 | Paris  |
+| P4   | Cam    | Silver |     14 | Athens |
+| P5   | Crank  | Yellow |     11 | Berlin |
+| P7   | Clamp  | Blue   |     10 | London |
+| P8   | Nut    | Black  |   13.5 | Paris  |
+| P9   | Gear   | Red    |   12.5 | Athens |
++------+--------+--------+--------+--------+
+8 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+6. Display the name of the Supplier who has sold the maximum Quantity (in one sale).  
+
+
+SELECT S.SNAME, SPJ.QTY FROM SPJ
+JOIN S ON SPJ.`S#` = S.`S#`
+WHERE SPJ.QTY = (
+SELECT MAX(QTY) FROM SPJ );
+
+
++--------+------+
+| SNAME  | QTY  |
++--------+------+
+| Aayush |  620 |
++--------+------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+7. Display the name of the Employee with the minimum Salary. 
+
+SELECT EMPNAME, BASIC FROM SEMP
+WHERE BASIC = (
+SELECT MIN(BASIC) FROM SEMP);
+
+
++---------+-------+
+| EMPNAME | BASIC |
++---------+-------+
+| ALI     |  4000 |
++---------+-------+
+1 row in set (0.00 sec)
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+8. Display the name of the Supplier who has sold the maximum overall Quantity (sum of Sales).  
+
+
+SELECT S.SNAME, SUM(SPJ.QTY) AS TOTAL FROM SPJ
+JOIN S ON SPJ.`S#` = S.`S#`
+GROUP BY S.SNAME
+ORDER BY TOTAL DESC
+LIMIT 1;
+
+
++--------+-------+
+| SNAME  | TOTAL |
++--------+-------+
+| Aayush |   620 |
++--------+-------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+9. Display the name of the Department with the maximum number of Employees.  
+
+SELECT SD.DEPTNAME, COUNT(*) TOTAL FROM SEMP SE
+JOIN SDEPT SD ON SD.DEPTNO = SE.DEPTNO
+GROUP BY SD.DEPTNAME
+ORDER BY TOTAL DESC
+LIMIT 1;
+
+
++-------------+-------+
+| DEPTNAME    | TOTAL |
++-------------+-------+
+| Development |     2 |
++-------------+-------+
+1 row in set (0.01 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
