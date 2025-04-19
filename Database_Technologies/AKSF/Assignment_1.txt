@@ -466,10 +466,6 @@ mysql> SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
 3 rows in set (0.00 sec)
 
 
-mysql> COMMIT;
-Query OK, 0 rows affected (0.00 sec)
-
-
 -------------------------------------------------------------------------------------------
 
 
@@ -478,41 +474,66 @@ Set a savepoint before increasing the salaries of employees in the Sales departm
 
 
 
+START TRANSACTION;
+
+Query OK, 0 rows affected (0.00 sec)
 
 
+SAVEPOINT S1;
+
+Query OK, 0 rows affected (0.00 sec)
 
 
+UPDATE EMPLOYEES
+SET SALARY = SALARY * 1.03
+WHERE DEPARTMENT_ID = (
+SELECT DEPARTMENT_ID FROM DEPARTMENTS
+WHERE DEPARTMENT_NAME = 'SALES');
+
+Query OK, 2 rows affected (0.02 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
 
 
+SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+WHERE DEPARTMENT_ID = (
+SELECT DEPARTMENT_ID FROM DEPARTMENTS
+WHERE DEPARTMENT_NAME = 'SALES');
 
-
-
-
++-------------+------------+-----------+--------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | SALARY |
++-------------+------------+-----------+--------+
+|         104 | Anil       | Patil     |  72100 |
+|         106 | Sanjay     | Iyer      |  77250 |
++-------------+------------+-----------+--------+
+2 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
-
-
-
 
 Task 3: Rollback Sales Salary Increase:
 Rollback to the savepoint created before the Sales salary increase.
 
 
+ROLLBACK TO SAVEPOINT S1;
+
+Query OK, 0 rows affected (0.02 sec)
 
 
+SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+WHERE DEPARTMENT_ID = (
+SELECT DEPARTMENT_ID FROM DEPARTMENTS
+WHERE DEPARTMENT_NAME = 'SALES');
 
-
-
-
-
-
-
-
++-------------+------------+-----------+--------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | SALARY |
++-------------+------------+-----------+--------+
+|         104 | Anil       | Patil     |  70000 |
+|         106 | Sanjay     | Iyer      |  75000 |
++-------------+------------+-----------+--------+
+2 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
-
 
 
 Task 4: Commit the Transaction:
@@ -520,42 +541,37 @@ After rolling back the Sales increase, commit the changes made to the HR departm
 
 
 
+COMMIT;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Query OK, 0 rows affected (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 
 
-Query 13: Write a query to join the Employees and Departments tables to list employees and their
-department names. Make sure all employees are included, even if they don’t belong to any
-department. 
+Query 13: Write a query to join the Employees and Departments tables to list employees and their department names. Make sure all employees are included, even if they don’t belong to any department. 
 
 
+SELECT E.FIRST_NAME, E.LAST_NAME, D.DEPARTMENT_NAME FROM EMPLOYEES E
+LEFT JOIN DEPARTMENTS D ON E.DEPARTMENT_ID = D.DEPARTMENT_ID;
 
 
-
-
-
-
-
-
-
++------------+-----------+-----------------+
+| FIRST_NAME | LAST_NAME | DEPARTMENT_NAME |
++------------+-----------+-----------------+
+| Ravi       | Sharma    | IT              |
+| Neha       | Kapoor    | HR              |
+| Jyoti      | Verma     | IT              |
+| Anil       | Patil     | Sales           |
+| Pooja      | Singh     | Finance         |
+| Sanjay     | Iyer      | Sales           |
+| Jatin      | Reddy     | HR              |
+| Shreya     | Mehta     | Marketing       |
+| Rajesh     | Gupta     | IT              |
+| Kavita     | Nair      | HR              |
++------------+-----------+-----------------+
+10 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -566,13 +582,20 @@ Query 14: Write a query to list employees who are working on projects that start
 1, 2023. 
 
 
+SELECT E.EMPLOYEE_ID, E.FIRST_NAME, E.LAST_NAME, P.PROJECT_NAME, P.START_DATE FROM EMPLOYEES E
+JOIN PROJECTS P ON E.DEPARTMENT_ID = P.DEPARTMENT_ID
+WHERE P.START_DATE > '2023-01-01'; 
 
 
 
-
-
-
-
++-------------+------------+-----------+-----------------------+------------+
+| EMPLOYEE_ID | FIRST_NAME | LAST_NAME | PROJECT_NAME          | START_DATE |
++-------------+------------+-----------+-----------------------+------------+
+|         102 | Neha       | Kapoor    | Internal System Audit | 2023-02-15 |
+|         107 | Jatin      | Reddy     | Internal System Audit | 2023-02-15 |
+|         110 | Kavita     | Nair      | Internal System Audit | 2023-02-15 |
++-------------+------------+-----------+-----------------------+------------+
+3 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -582,14 +605,25 @@ Query 14: Write a query to list employees who are working on projects that start
 Query 15: Write a query to list all departments, even those without any employees assigned. 
 
 
+SELECT D.DEPARTMENT_NAME, E.FIRST_NAME, E.LAST_NAME FROM DEPARTMENTS D
+LEFT JOIN EMPLOYEES E ON D.DEPARTMENT_ID = E.DEPARTMENT_ID;
 
 
-
-
-
-
-
-
++-----------------+------------+-----------+
+| DEPARTMENT_NAME | FIRST_NAME | LAST_NAME |
++-----------------+------------+-----------+
+| Finance         | Pooja      | Singh     |
+| HR              | Neha       | Kapoor    |
+| HR              | Jatin      | Reddy     |
+| HR              | Kavita     | Nair      |
+| IT              | Ravi       | Sharma    |
+| IT              | Jyoti      | Verma     |
+| IT              | Rajesh     | Gupta     |
+| Marketing       | Shreya     | Mehta     |
+| Sales           | Anil       | Patil     |
+| Sales           | Sanjay     | Iyer      |
++-----------------+------------+-----------+
+10 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -600,14 +634,22 @@ Query 16: Write a query to find the employee with the highest salary in each dep
 
 
 
+SELECT E.FIRST_NAME, E.LAST_NAME, E.SALARY, D.DEPARTMENT_NAME FROM EMPLOYEES E
+JOIN DEPARTMENTS D ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+WHERE E.SALARY = (
+SELECT MAX(SALARY) FROM EMPLOYEES
+WHERE DEPARTMENT_ID = E.DEPARTMENT_ID);
 
-
-
-
-
-
-
-
++------------+-----------+--------+-----------------+
+| FIRST_NAME | LAST_NAME | SALARY | DEPARTMENT_NAME |
++------------+-----------+--------+-----------------+
+| Pooja      | Singh     |  40000 | Finance         |
+| Jatin      | Reddy     |  89250 | HR              |
+| Rajesh     | Gupta     |  90000 | IT              |
+| Shreya     | Mehta     |  30000 | Marketing       |
+| Sanjay     | Iyer      |  75000 | Sales           |
++------------+-----------+--------+-----------------+
+5 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -617,13 +659,30 @@ Query 16: Write a query to find the employee with the highest salary in each dep
 Query 17: Write a query to remove all data from the Employees table but keep the structure intact. 
 
 
+TRUNCATE TABLE EMPLOYEES;
+
+Query OK, 0 rows affected (0.12 sec)
 
 
 
+SELECT * FROM EMPLOYEES;
+Empty set (0.00 sec)
 
 
-
-
+DESC EMPLOYEES;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| EMPLOYEE_ID   | int         | NO   | PRI | NULL    |       |
+| FIRST_NAME    | varchar(20) | NO   |     | NULL    |       |
+| LAST_NAME     | varchar(20) | NO   |     | NULL    |       |
+| EMAIL         | varchar(50) | YES  | UNI | NULL    |       |
+| HIRE_DATE     | date        | NO   |     | NULL    |       |
+| SALARY        | int         | YES  |     | NULL    |       |
+| DEPARTMENT_ID | int         | YES  | MUL | NULL    |       |
+| PHONE_NUMBER  | varchar(15) | YES  | UNI | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -633,15 +692,21 @@ Query 17: Write a query to remove all data from the Employees table but keep the
 Query 18: Write a query to drop the Projects table from the database. 
 
 
+DROP TABLE PROJECTS;
+
+Query OK, 0 rows affected (0.04 sec)
 
 
 
+SHOW TABLES;
 
-
-
-
-
-
++----------------+
+| Tables_in_aksf |
++----------------+
+| departments    |
+| employees      |
++----------------+
+2 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -653,31 +718,57 @@ employees. Write a query to add a new column phone_number (VARCHAR(15)) to the E
 table using the ALTER statement. 
 
 
+ALTER TABLE EMPLOYEES
+ADD PHONE_NUMBER VARCHAR(15) UNIQUE;
+
+Query OK, 0 rows affected (0.17 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
 
+DESC EMPLOYEES;
 
-
-
-
-
-
-
-
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| EMPLOYEE_ID   | int         | NO   | PRI | NULL    |       |
+| FIRST_NAME    | varchar(20) | NO   |     | NULL    |       |
+| LAST_NAME     | varchar(20) | NO   |     | NULL    |       |
+| EMAIL         | varchar(50) | YES  | UNI | NULL    |       |
+| HIRE_DATE     | date        | NO   |     | NULL    |       |
+| SALARY        | int         | YES  |     | NULL    |       |
+| DEPARTMENT_ID | int         | YES  | MUL | NULL    |       |
+| PHONE_NUMBER  | varchar(15) | YES  | UNI | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
 
 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 
 
-Query 20: The company also decided to track the budget for each project. Write a query to add a
-column budget (DECIMAL(10,2)) to the Projects table. 
+Query 20: The company also decided to track the budget for each project. Write a query to add a column budget (DECIMAL(10,2)) to the Projects table. 
 
 
+ALTER TABLE PROJECTS
+ADD BUDGET DECIMAL(10,2) CHECK(BUDGET >= 0);
+
+Query OK, 5 rows affected (0.15 sec)
+Records: 5  Duplicates: 0  Warnings: 0
 
 
+DESC PROJECTS;
 
-
-
++---------------+---------------+------+-----+---------+-------+
+| Field         | Type          | Null | Key | Default | Extra |
++---------------+---------------+------+-----+---------+-------+
+| PROJECT_ID    | int           | NO   | PRI | NULL    |       |
+| PROJECT_NAME  | varchar(50)   | YES  |     | NULL    |       |
+| START_DATE    | date          | YES  |     | NULL    |       |
+| END_DATE      | date          | YES  |     | NULL    |       |
+| DEPARTMENT_ID | int           | YES  | MUL | NULL    |       |
+| BUDGET        | decimal(10,2) | YES  |     | NULL    |       |
++---------------+---------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -689,13 +780,37 @@ Query 21: Write a query to find the 2nd largest salary from the Employees table 
  The LIMIT clause. 
 
 
+ A subquery.
+
+SELECT FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+WHERE SALARY = (
+SELECT MAX(SALARY) FROM EMPLOYEES
+WHERE SALARY < (
+SELECT MAX(SALARY) FROM EMPLOYEES)
+);
+
+
++------------+-----------+--------+
+| FIRST_NAME | LAST_NAME | SALARY |
++------------+-----------+--------+
+| Jatin      | Reddy     |  89250 |
++------------+-----------+--------+
+1 row in set (0.00 sec)
 
 
 
+ The LIMIT clause. 
 
+SELECT FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+ORDER BY SALARY DESC
+LIMIT 1 OFFSET 1;
 
-
-
++------------+-----------+--------+
+| FIRST_NAME | LAST_NAME | SALARY |
++------------+-----------+--------+
+| Jatin      | Reddy     |  89250 |
++------------+-----------+--------+
+1 row in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -707,14 +822,41 @@ Query 22: Write a query to find the 3rd largest salary from the Employees table 
  The LIMIT clause. 
 
 
+ A subquery.
+
+SELECT FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+WHERE SALARY = (
+	SELECT MAX(SALARY) FROM EMPLOYEES
+	WHERE SALARY < (
+		SELECT MAX(SALARY) FROM EMPLOYEES
+		WHERE SALARY < (
+			SELECT MAX(SALARY) FROM EMPLOYEES)
+			)
+		);
+		
+
++------------+-----------+--------+
+| FIRST_NAME | LAST_NAME | SALARY |
++------------+-----------+--------+
+| Sanjay     | Iyer      |  75000 |
++------------+-----------+--------+
+1 row in set (0.00 sec)
 
 
 
 
+ The LIMIT clause. 
 
+SELECT FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES
+ORDER BY SALARY DESC
+LIMIT 1 OFFSET 2;
 
-
-
++------------+-----------+--------+
+| FIRST_NAME | LAST_NAME | SALARY |
++------------+-----------+--------+
+| Sanjay     | Iyer      |  75000 |
++------------+-----------+--------+
+1 row in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -724,16 +866,21 @@ Query 22: Write a query to find the 3rd largest salary from the Employees table 
 Query 23: Write a query to drop the Projects table. 
 
 
+DROP TABLE PROJECTS;
+
+Query OK, 0 rows affected (0.04 sec)
 
 
 
+SHOW TABLES;
 
-
-
-
-
-
-
++----------------+
+| Tables_in_aksf |
++----------------+
+| departments    |
+| employees      |
++----------------+
+2 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
@@ -743,12 +890,30 @@ Query 23: Write a query to drop the Projects table.
 Query 24: Write a query to truncate the Employees table. 
 
 
+TRUNCATE TABLE EMPLOYEES;
+
+Query OK, 0 rows affected (0.12 sec)
 
 
 
+SELECT * FROM EMPLOYEES;
+Empty set (0.00 sec)
 
 
-
+DESC EMPLOYEES;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| EMPLOYEE_ID   | int         | NO   | PRI | NULL    |       |
+| FIRST_NAME    | varchar(20) | NO   |     | NULL    |       |
+| LAST_NAME     | varchar(20) | NO   |     | NULL    |       |
+| EMAIL         | varchar(50) | YES  | UNI | NULL    |       |
+| HIRE_DATE     | date        | NO   |     | NULL    |       |
+| SALARY        | int         | YES  |     | NULL    |       |
+| DEPARTMENT_ID | int         | YES  | MUL | NULL    |       |
+| PHONE_NUMBER  | varchar(15) | YES  | UNI | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
 
 
 -------------------------------------------------------------------------------------------
