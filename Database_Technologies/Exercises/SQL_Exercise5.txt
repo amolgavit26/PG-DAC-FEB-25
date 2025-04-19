@@ -1,0 +1,254 @@
+
+1. Display the Supplier name and the Quantity sold. 
+
+
+mysql> SELECT S.SNAME, SPJ.QTY FROM S, SPJ
+    -> WHERE S.`S#` = SPJ.`S#`;
++-----------+------+
+| SNAME     | QTY  |
++-----------+------+
+| Ajay      |  200 |
+| Vinayak   |  350 |
+| Purva     |  500 |
+| Aayush    |  620 |
+| Jivita    |  250 |
+| Mayur     |  100 |
+| Harry     |  350 |
+| Blake     |  180 |
+| Pratiksha |  210 |
+| Nipun     |  270 |
++-----------+------+
+10 rows in set (0.01 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2. Display the Part name and Quantity sold.
+
+
+mysql> SELECT P.PNAME, SPJ.QTY FROM P, SPJ
+    -> WHERE P.`P#` = SPJ.`P#`;
++--------+------+
+| PNAME  | QTY  |
++--------+------+
+| Nut    |  200 |
+| Bolt   |  350 |
+| Piston |  500 |
+| Cam    |  620 |
+| Crank  |  250 |
+| Pin    |  100 |
+| Clamp  |  350 |
+| Nut    |  180 |
+| Gear   |  210 |
+| Stud   |  270 |
++--------+------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+3. Display the Project name and Quantity sold. 
+
+
+mysql> SELECT J.JNAME, SPJ.QTY FROM J, SPJ
+    -> WHERE J.`J#` = SPJ.`J#`;
++-------------+------+
+| JNAME       | QTY  |
++-------------+------+
+| Engine      |  200 |
+| Display     |  350 |
+| Tyre        |  500 |
+| Door        |  620 |
+| Rim         |  250 |
+| Transmision |  100 |
+| Alternator  |  350 |
+| Bonnet      |  180 |
+| Monitor     |  210 |
+| Fan         |  270 |
++-------------+------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+4. Display the Supplier name, Part name, Project name and Quantity sold. 
+
+
+mysql> SELECT S.SNAME, P.PNAME, J.JNAME, SPJ.QTY
+    -> FROM SPJ
+    -> JOIN S ON SPJ.`S#` = S.`S#`
+    -> JOIN P ON SPJ.`P#` = P.`P#`
+    -> JOIN J ON SPJ.`J#` = J.`J#`;
++-----------+--------+-------------+------+
+| SNAME     | PNAME  | JNAME       | QTY  |
++-----------+--------+-------------+------+
+| Ajay      | Nut    | Engine      |  200 |
+| Vinayak   | Bolt   | Display     |  350 |
+| Purva     | Piston | Tyre        |  500 |
+| Aayush    | Cam    | Door        |  620 |
+| Jivita    | Crank  | Rim         |  250 |
+| Mayur     | Pin    | Transmision |  100 |
+| Harry     | Clamp  | Alternator  |  350 |
+| Blake     | Nut    | Bonnet      |  180 |
+| Pratiksha | Gear   | Monitor     |  210 |
+| Nipun     | Stud   | Fan         |  270 |
++-----------+--------+-------------+------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+5. Display the Supplier name, Supplying Parts to a Project in the same City. 
+
+mysql> SELECT DISTINCT S.SNAME, P.PNAME FROM SPJ
+    -> JOIN S ON SPJ.`S#` = S.`S#`
+    -> JOIN P ON SPJ.`P#` = P.`P#`
+    -> WHERE S.CITY = P.CITY;
++-------+-------+
+| SNAME | PNAME |
++-------+-------+
+| Blake | Nut   |
++-------+-------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+6. Display the Part name that is ‘Red’ is color, and the Quantity sold. 
+
+
+mysql> SELECT P.PNAME, SPJ.QTY FROM P, SPJ
+    -> WHERE P.`P#` = SPJ.`P#` AND P.COLOR = 'RED';
++-------+------+
+| PNAME | QTY  |
++-------+------+
+| Nut   |  200 |
+| Gear  |  210 |
++-------+------+
+2 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+7. Display all the Quantity sold by Suppliers with the Status = 20. 
+
+
+SELECT S.SNAME, SPJ.QTY FROM S, SPJ
+WHERE S.`S#` = SPJ.`S#` AND STATUS = 20;
+
+
++---------+------+
+| SNAME   | QTY  |
++---------+------+
+| Vinayak |  350 |
++---------+------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+8. Display all the Parts and Quantity with a Weight > 14. 
+
+
+SELECT P.PNAME, SPJ.QTY FROM P, SPJ
+WHERE P.`P#` = SPJ.`P#` AND WEIGHT > 14;
+
+
++-------+------+
+| PNAME | QTY  |
++-------+------+
+| Pin   |  100 |
+| Stud  |  270 |
++-------+------+
+2 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+9. Display all the Project names and City, which has bought more than 500 Parts. 
+
+
+SELECT J.JNAME, J.CITY FROM J
+JOIN SPJ ON SPJ.`J#` = J.`J#`
+GROUP BY J.JNAME, J.CITY
+HAVING SUM(SPJ.QTY) > 500;
+
+
++-------+-------+
+| JNAME | CITY  |
++-------+-------+
+| Door  | Delhi |
++-------+-------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+10. Display all the Part names and Quantity sold that have a Weight less than 15. 
+
+
+
+SELECT P.PNAME, SPJ.QTY FROM SPJ
+JOIN P ON P.`P#` = SPJ.`P#`
+WHERE WEIGHT < 15;
+
+
++--------+------+
+| PNAME  | QTY  |
++--------+------+
+| Nut    |  200 |
+| Bolt   |  350 |
+| Piston |  500 |
+| Cam    |  620 |
+| Crank  |  250 |
+| Clamp  |  350 |
+| Nut    |  180 |
+| Gear   |  210 |
++--------+------+
+8 rows in set (0.00 sec)
+
+
+----------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+11. Display all the Employee names and the name of their Managers. 
+
+
+SELECT E.EMPNAME AS EMPLOYEE, M.EMPNAME AS MANAGER FROM SEMP E
+LEFT JOIN SEMP M ON E.DEPTHEAD = M.EMPNO;
+
+
++----------+---------+
+| EMPLOYEE | MANAGER |
++----------+---------+
+| SUNIL    | NULL    |
+| HIREN    | NULL    |
+| ALI      | SUNIL   |
+| GEORGE   | HIREN   |
++----------+---------+
+4 rows in set (0.00 sec)
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+
