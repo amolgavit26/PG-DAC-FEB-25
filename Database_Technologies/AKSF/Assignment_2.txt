@@ -1,0 +1,800 @@
+
+☆ TASK 1
+
+1. Create a database named RailwayManagementDB.
+
+mysql> CREATE DATABASE RailwayManagementDB;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> GRANT ALL PRIVILEGES ON RailwayManagementDB.* TO amolgavit26@localhost;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+2. Create all tables
+
+mysql> CREATE TABLE TRAINS (
+    -> TRAINID INT,
+    -> TRAINNAME VARCHAR (50),
+    -> TRAINTYPE VARCHAR (20),
+    -> TOTALSEATS INT
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+
+mysql> CREATE TABLE ROUTES (
+    -> ROUTEID INT,
+    -> STARTSTATION VARCHAR (50),
+    -> ENDSTATION VARCHAR (50),
+    -> DISTANCE_KM INT
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+
+mysql> CREATE TABLE SCHEDULES (
+    -> SCHEDULEID INT,
+    -> TRAINID INT,
+    -> ROUTEID INT,
+    -> DEPARTURETIME DATETIME,
+    -> ARRIVALTIME DATETIME
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+
+mysql> CREATE TABLE PASSENGERS (
+    -> PASSENGERID INT,
+    -> FIRSTNAME VARCHAR (30),
+    -> LASTNAME VARCHAR (30),
+    -> AGE INT,
+    -> EMAIL VARCHAR (100)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+
+
+mysql> CREATE TABLE BOOKINGS (
+    -> BOOKINGID INT,
+    -> PASSENGERID INT,
+    -> SCHEDULEID INT,
+    -> BOOKINGDATE DATE,
+    -> SEATNUMBER INT
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+
+
+
+3. Insert sample data into the tables
+
+
+mysql> INSERT INTO TRAINS (TRAINID, TRAINNAME, TRAINTYPE, TOTALSEATS)
+    -> VALUES
+    -> (1, 'Rajdhani Express', 'Express', 300),
+    -> (2, 'Tejas Express', 'Superfast', 200),
+    -> (3, 'Shatabdi Express', 'Passenger', 250),
+    -> (4, 'Duronto Express', 'Superfast', 150),
+    -> (5, 'Garib Rath', 'Express', 350);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO ROUTES (ROUTEID, STARTSTATION, ENDSTATION, DISTANCE_KM)
+    -> VALUES
+    -> (1, 'DELHI', 'MUMBAI', 1400),
+    -> (2, 'KOLKATA', 'CHENNAI', 1650),
+    -> (3, 'JAIPUR', 'AHMEDABAD', 650);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO SCHEDULES (SCHEDULEID, TRAINID, ROUTEID, DEPARTURETIME, ARRIVALTIME)
+    -> VALUES
+    -> (1, 1, 1, '2024-10-20 09.00.00', '2024-10-20 21.00.00'),
+    -> (2, 2, 2, '2024-10-21 08.30.00', '2024-10-21 22.00.00'),
+    -> (3, 3, 3, '2024-10-22 06.00.00', '2024-10-22 14.00.00'),
+    -> (4, 4, 1, '2024-10-23 10.00.00', '2024-10-23 22.00.00'),
+    -> (5, 5, 2, '2024-10-24 07.00.00', '2024-10-24 21.00.00');
+Query OK, 5 rows affected, 10 warnings (0.18 sec)
+Records: 5  Duplicates: 0  Warnings: 10
+
+
+
+mysql> INSERT INTO PASSENGERS (PASSENGERID, FIRSTNAME, LASTNAME, AGE, EMAIL)
+    -> VALUES
+    -> (1, 'Rajesh', 'Sharma', 45, 'rajesh.sharma@specialforce.com'),
+    -> (2, 'Priya', 'Mehra', 32, 'priya.mehra@specialforce.com'),
+    -> (3, 'Ankit', 'Verma', 29, 'ankit.verma@specialforce.com'),
+    -> (4, 'Kavita', 'Gupta', 40, 'kavita.gupta@specialforce.com'),
+    -> (5, 'Arun', 'Patel', 50, 'arun.patel@specialforce.com'),
+    -> (6, 'Neha', 'Joshi', 27, 'neha.joshi@specialforce.com'),
+    -> (7, 'Suresh', 'Nair', 33, 'suresh.nair@specialforce.com'),
+    -> (8, 'Pooja', 'Reddy', 36, 'pooja.reddy@specialforce.com'),
+    -> (9, 'Vikram', 'Singh', 42, 'vikram.singh@specialforce.com'),
+    -> (10, 'Aarti', 'Desai', 25, 'aarti.desai@specialforce.com');
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO BOOKINGS (BOOKINGID, PASSENGERID, SCHEDULEID, BOOKINGDATE, SEATNUMBER)
+    -> VALUES
+    -> (1, 1, 1, '2024-10-10', 12),
+    -> (2, 2, 1, '2024-10-11', 34),
+    -> (3, 3, 2, '2024-10-12', 56),
+    -> (4, 4, 3, '2024-10-13', 18),
+    -> (5, 5, 4, '2024-10-14', 22);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+SELECT * FROM TRAINS;
++---------+------------------+-----------+------------+
+| TRAINID | TRAINNAME        | TRAINTYPE | TOTALSEATS |
++---------+------------------+-----------+------------+
+|       1 | Rajdhani Express | Express   |        300 |
+|       2 | Tejas Express    | Superfast |        200 |
+|       3 | Shatabdi Express | Passenger |        250 |
+|       4 | Duronto Express  | Superfast |        150 |
+|       5 | Garib Rath       | Express   |        350 |
++---------+------------------+-----------+------------+
+5 rows in set (0.02 sec)
+
+
+SELECT * FROM ROUTES;
++---------+--------------+------------+-------------+
+| ROUTEID | STARTSTATION | ENDSTATION | DISTANCE_KM |
++---------+--------------+------------+-------------+
+|       1 | DELHI        | MUMBAI     |        1400 |
+|       2 | KOLKATA      | CHENNAI    |        1650 |
+|       3 | JAIPUR       | AHMEDABAD  |         650 |
++---------+--------------+------------+-------------+
+3 rows in set (0.00 sec)
+
+
+SELECT * FROM SCHEDULES;
++------------+---------+---------+---------------------+---------------------+
+| SCHEDULEID | TRAINID | ROUTEID | DEPARTURETIME       | ARRIVALTIME         |
++------------+---------+---------+---------------------+---------------------+
+|          1 |       1 |       1 | 2024-10-20 09:00:00 | 2024-10-20 21:00:00 |
+|          2 |       2 |       2 | 2024-10-21 08:30:00 | 2024-10-21 22:00:00 |
+|          3 |       3 |       3 | 2024-10-22 06:00:00 | 2024-10-22 14:00:00 |
+|          4 |       4 |       1 | 2024-10-23 10:00:00 | 2024-10-23 22:00:00 |
+|          5 |       5 |       2 | 2024-10-24 07:00:00 | 2024-10-24 21:00:00 |
++------------+---------+---------+---------------------+---------------------+
+5 rows in set (0.00 sec)
+
+
+SELECT * FROM PASSENGERS;
++-------------+-----------+----------+------+--------------------------------+
+| PASSENGERID | FIRSTNAME | LASTNAME | AGE  | EMAIL                          |
++-------------+-----------+----------+------+--------------------------------+
+|           1 | Rajesh    | Sharma   |   45 | rajesh.sharma@specialforce.com |
+|           2 | Priya     | Mehra    |   32 | priya.mehra@specialforce.com   |
+|           3 | Ankit     | Verma    |   29 | ankit.verma@specialforce.com   |
+|           4 | Kavita    | Gupta    |   40 | kavita.gupta@specialforce.com  |
+|           5 | Arun      | Patel    |   50 | arun.patel@specialforce.com    |
+|           6 | Neha      | Joshi    |   27 | neha.joshi@specialforce.com    |
+|           7 | Suresh    | Nair     |   33 | suresh.nair@specialforce.com   |
+|           8 | Pooja     | Reddy    |   36 | pooja.reddy@specialforce.com   |
+|           9 | Vikram    | Singh    |   42 | vikram.singh@specialforce.com  |
+|          10 | Aarti     | Desai    |   25 | aarti.desai@specialforce.com   |
++-------------+-----------+----------+------+--------------------------------+
+10 rows in set (0.01 sec)
+
+
+SELECT * FROM BOOKINGS;
+mysql> SELECT * FROM BOOKINGS;
++-----------+-------------+------------+-------------+------------+
+| BOOKINGID | PASSENGERID | SCHEDULEID | BOOKINGDATE | SEATNUMBER |
++-----------+-------------+------------+-------------+------------+
+|         1 |           1 |          1 | 2024-10-10  |         12 |
+|         2 |           2 |          1 | 2024-10-11  |         34 |
+|         3 |           3 |          2 | 2024-10-12  |         56 |
+|         4 |           4 |          3 | 2024-10-13  |         18 |
+|         5 |           5 |          4 | 2024-10-14  |         22 |
++-----------+-------------+------------+-------------+------------+
+5 rows in set (0.00 sec)
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+☆ TASK 2
+• Add Constraints After Data Insertion (Strictly write after data insertion) 
+
+ALTER TABLE TRAINS ADD PRIMARY KEY (TRAINID);
+ALTER TABLE ROUTES ADD PRIMARY KEY (ROUTEID);
+ALTER TABLE SCHEDULES ADD PRIMARY KEY (SCHEDULEID);
+ALTER TABLE PASSENGERS ADD PRIMARY KEY (PASSENGERID);
+ALTER TABLE BOOKINGS ADD PRIMARY KEY (BOOKINGID);
+
+ALTER TABLE SCHEDULES ADD FOREIGN KEY (TRAINID) REFERENCES TRAINS(TRAINID);
+ALTER TABLE SCHEDULES ADD FOREIGN KEY (ROUTEID) REFERENCES ROUTES(ROUTEID);
+ALTER TABLE BOOKINGS ADD FOREIGN KEY (PASSENGERID) REFERENCES PASSENGERS(PASSENGERID);
+ALTER TABLE BOOKINGS ADD FOREIGN KEY (SCHEDULEID) REFERENCES SCHEDULES(SCHEDULEID);
+
+
+
+
+DESC TRAINS;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| TRAINID    | int         | NO   | PRI | NULL    |       |
+| TRAINNAME  | varchar(50) | YES  |     | NULL    |       |
+| TRAINTYPE  | varchar(20) | YES  |     | NULL    |       |
+| TOTALSEATS | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+
+DESC ROUTES;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| ROUTEID      | int         | NO   | PRI | NULL    |       |
+| STARTSTATION | varchar(50) | YES  |     | NULL    |       |
+| ENDSTATION   | varchar(50) | YES  |     | NULL    |       |
+| DISTANCE_KM  | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+SCHEDULES;
++---------------+----------+------+-----+---------+-------+
+| Field         | Type     | Null | Key | Default | Extra |
++---------------+----------+------+-----+---------+-------+
+| SCHEDULEID    | int      | NO   | PRI | NULL    |       |
+| TRAINID       | int      | YES  | MUL | NULL    |       |
+| ROUTEID       | int      | YES  | MUL | NULL    |       |
+| DEPARTURETIME | datetime | YES  |     | NULL    |       |
+| ARRIVALTIME   | datetime | YES  |     | NULL    |       |
++---------------+----------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+DESC PASSENGERS;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| PASSENGERID | int          | NO   | PRI | NULL    |       |
+| FIRSTNAME   | varchar(30)  | YES  |     | NULL    |       |
+| LASTNAME    | varchar(30)  | YES  |     | NULL    |       |
+| AGE         | int          | YES  |     | NULL    |       |
+| EMAIL       | varchar(100) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+DESC BOOKINGS;
++-------------+------+------+-----+---------+-------+
+| Field       | Type | Null | Key | Default | Extra |
++-------------+------+------+-----+---------+-------+
+| BOOKINGID   | int  | NO   | PRI | NULL    |       |
+| PASSENGERID | int  | YES  | MUL | NULL    |       |
+| SCHEDULEID  | int  | YES  | MUL | NULL    |       |
+| BOOKINGDATE | date | YES  |     | NULL    |       |
+| SEATNUMBER  | int  | YES  |     | NULL    |       |
++-------------+------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+☆ TASK 3
+• Joins and Queries  
+
+
+1. Query 1: Write a query to retrieve the train name, route details, and schedule for all trains using an INNER JOIN between the Trains, Routes, and Schedules tables. 
+
+
+SELECT T.TRAINNAME, R.STARTSTATION, R.ENDSTATION, S.DEPARTURETIME, S.ARRIVALTIME FROM TRAINS T
+INNER JOIN SCHEDULES S ON T.TRAINID = S.TRAINID
+INNER JOIN ROUTES R ON S.ROUTEID = R.ROUTEID;
+
+
++------------------+--------------+------------+---------------------+---------------------+
+| TRAINNAME        | STARTSTATION | ENDSTATION | DEPARTURETIME       | ARRIVALTIME         |
++------------------+--------------+------------+---------------------+---------------------+
+| Rajdhani Express | DELHI        | MUMBAI     | 2024-10-20 09:00:00 | 2024-10-20 21:00:00 |
+| Duronto Express  | DELHI        | MUMBAI     | 2024-10-23 10:00:00 | 2024-10-23 22:00:00 |
+| Tejas Express    | KOLKATA      | CHENNAI    | 2024-10-21 08:30:00 | 2024-10-21 22:00:00 |
+| Garib Rath       | KOLKATA      | CHENNAI    | 2024-10-24 07:00:00 | 2024-10-24 21:00:00 |
+| Shatabdi Express | JAIPUR       | AHMEDABAD  | 2024-10-22 06:00:00 | 2024-10-22 14:00:00 |
++------------------+--------------+------------+---------------------+---------------------+
+5 rows in set (0.00 sec)
+
+-------------------------------------------------------------------------------------------
+2. Query 2: Write a query to retrieve all trains that don't have any bookings using a LEFT JOIN between the Trains and Bookings tables. 
+
+
+SELECT T.TRAINID, T.TRAINNAME FROM TRAINS T
+LEFT JOIN SCHEDULES S ON T.TRAINID = S.TRAINID
+LEFT JOIN BOOKINGS B ON S.SCHEDULEID = B.SCHEDULEID
+WHERE B.BOOKINGID IS NULL;
+
+
++---------+------------+
+| TRAINID | TRAINNAME  |
++---------+------------+
+|       5 | Garib Rath |
++---------+------------+
+1 row in set (0.00 sec)
+
+-------------------------------------------------------------------------------------------
+3. Query 3: Write a query to find all passengers who have booked seats for trains traveling a distance of more than 500 km using a RIGHT JOIN and subquery. 
+
+
+SELECT P.FIRSTNAME, P.LASTNAME FROM PASSENGERS P 
+RIGHT JOIN BOOKINGS B ON P.PASSENGERID = B.PASSENGERID
+WHERE B.SCHEDULEID IN(
+	SELECT S.SCHEDULEID FROM SCHEDULES S
+	JOIN ROUTES R ON S.ROUTEID = R.ROUTEID
+	WHERE R.DISTANCE_KM > 500
+		);
+
++-----------+----------+
+| FIRSTNAME | LASTNAME |
++-----------+----------+
+| Rajesh    | Sharma   |
+| Priya     | Mehra    |
+| Arun      | Patel    |
+| Ankit     | Verma    |
+| Kavita    | Gupta    |
++-----------+----------+
+5 rows in set (0.00 sec)
+
+-------------------------------------------------------------------------------------------
+4. Query 4: Write a query to list all train schedules, even if there are no passengers booked, using an OUTER JOIN.
+
+
+SELECT T.TRAINNAME, S.DEPARTURETIME, S.ARRIVALTIME FROM SCHEDULES S
+LEFT JOIN BOOKINGS B ON S.SCHEDULEID = B.SCHEDULEID
+LEFT JOIN TRAINS T ON S.TRAINID = T.TRAINID;
+
++------------------+---------------------+---------------------+
+| TRAINNAME        | DEPARTURETIME       | ARRIVALTIME         |
++------------------+---------------------+---------------------+
+| Rajdhani Express | 2024-10-20 09:00:00 | 2024-10-20 21:00:00 |
+| Rajdhani Express | 2024-10-20 09:00:00 | 2024-10-20 21:00:00 |
+| Tejas Express    | 2024-10-21 08:30:00 | 2024-10-21 22:00:00 |
+| Shatabdi Express | 2024-10-22 06:00:00 | 2024-10-22 14:00:00 |
+| Duronto Express  | 2024-10-23 10:00:00 | 2024-10-23 22:00:00 |
+| Garib Rath       | 2024-10-24 07:00:00 | 2024-10-24 21:00:00 |
++------------------+---------------------+---------------------+
+6 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+☆ TASK 4
+• Normalization 
+
+1. Normalize the tables to the 3rd Normal Form (3NF) to eliminate redundancy and ensure data integrity. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+☆ TASK 5
+• Sub Queries
+
+
+1. Query 5: Write a query to calculate the total number of passengers for each train route. 
+
+SELECT R.ROUTEID, COUNT(DISTINCT B.PASSENGERID) TOTAL_PASSENGERS_ON_ROUTE FROM BOOKINGS B
+JOIN SCHEDULES S ON B.SCHEDULEID = S.SCHEDULEID
+JOIN ROUTES R ON S.ROUTEID = R.ROUTEID
+GROUP BY R.ROUTEID;
+
+
+
+-------------------------------------------------------------------------------------------
+
+2. Query 6: Write a query to find the average number of passengers booked per train. 
+
+
+SELECT AVG(TOTAL_PASSENGERS) AVG_PASSENGERS FROM (
+SELECT S.TRAINID, COUNT(B.PASSENGERID) AS TOTAL_PASSENGERS FROM SCHEDULES S
+JOIN BOOKINGS B ON S.SCHEDULEID = B.SCHEDULEID
+GROUP BY S.TRAINID) AS TT;
+
+-------------------------------------------------------------------------------------------
+
+
+3. Query 7: Write a query to find the train with the highest number of bookings.
+
+
+SELECT T.TRAINID, T.TRAINNAME, COUNT(*) TOTAL_BOOKINGS FROM TRAINS T
+JOIN SCHEDULES S ON T.TRAINID = S.TRAINID
+JOIN BOOKINGS B ON S.SCHEDULEID = B.SCHEDULEID
+GROUP BY T.TRAINID
+ORDER BY TOTAL_BOOKINGS DESC
+LIMIT 1;
+
+
+
++---------+------------------+----------------+
+| TRAINID | TRAINNAME        | TOTAL_BOOKINGS |
++---------+------------------+----------------+
+|       1 | Rajdhani Express |              2 |
++---------+------------------+----------------+
+1 row in set (0.01 sec)
+
+
+-------------------------------------------------------------------------------------------
+
+
+4. Query 8: Write a query to find the total seats booked per train route where the booking date is between 01-Jan-2023 and 31-Dec-2023.
+
+
+SELECT R.ROUTEID, COUNT(*) AS SEATS_BOOKED FROM BOOKINGS B
+JOIN SCHEDULES S ON B.SCHEDULEID = S.SCHEDULEID
+JOIN ROUTES R ON S.ROUTEID = R.ROUTEID
+WHERE B.BOOKINGDATE BETWEEN '2023-01-01' AND '2023-12-31'
+GROUP BY R.ROUTEID;
+
+Empty set (0.01 sec)
+
+IT'S GIVING EMPTY SET BECAUSE THERE ARE NO BOOKINGS BETWEEN THE GIVEN DATE.
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+5. Query 9: Write a query to list all bookings where the passenger's age is greater than 60. 
+
+
+SELECT * FROM BOOKINGS B
+JOIN PASSENGERS P ON B.PASSENGERID = P.PASSENGERID
+WHERE P.AGE > 60;
+
+Empty set (0.00 sec)
+
+IT'S GIVING EMPTY SET BECAUSE THERE ARE NO PERSONS WHO ARE MORE THAN 60 YEARS OF AGE.
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+☆ TASK 6
+• Stored Procedures and Functions 
+
+
+1. Write a stored procedure to update the number of available seats in a train after a booking has been made.
+
+
+ALTER TABLE TRAINS
+ADD COLUMN AVAILABLESEATS INT;
+
+UPDATE TRAINS
+SET AVAILABLESEATS = TOTALSEATS;
+
+DELIMITER //
+
+CREATE PROCEDURE AVAILABLE_SEATS(SCHEDULE_ID INT)
+BEGIN
+	DECLARE TRAIN_ID INT;
+	SELECT TRAINID INTO TRAIN_ID FROM SCHEDULES
+	WHERE SCHEDULEID = SCHEDULE_ID;
+
+	UPDATE TRAINS
+	SET AVAILABLESEATS = AVAILABLESEATS-1
+	WHERE TRAINID = TRAIN_ID;
+END //
+
+DELIMITER ;
+
+
+
+CALL AVAILABLE_SEATS(1);
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+2. Write a function to calculate the total travel time (in hours) between two stations based on departure and arrival times from the Schedules table. 
+
+
+DELIMITER //
+
+CREATE FUNCTION TOTAL_TRAVEL_TIME(DEPARTURE DATETIME, ARRIVAL DATETIME)
+RETURNS DECIMAL(5,2)
+DETERMINISTIC
+BEGIN
+	RETURN TIMESTAMPDIFF(MINUTE, DEPARTURE, ARRIVAL) / 60;
+END //
+
+DELIMITER ;
+
+
+SELECT TRAINID,  TOTAL_TRAVEL_TIME(DEPARTURETIME, ARRIVALTIME) AS TOTAL_TRAVEL_TIME FROM SCHEDULES;
+
+
+
++---------+-------------------+
+| TRAINID | TOTAL_TRAVEL_TIME |
++---------+-------------------+
+|       1 |             12.00 |
+|       2 |             13.50 |
+|       3 |              8.00 |
+|       4 |             12.00 |
+|       5 |             14.00 |
++---------+-------------------+
+5 rows in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+☆ TASK 7
+• Views and Indexes
+
+
+
+1. Create a view named PassengerBookingsView that combines passenger details, train information, and booking details in one query.
+
+
+CREATE VIEW PassengerBookingsView AS
+SELECT P.FIRSTNAME, P.LASTNAME, T.TRAINNAME, T.TRAINID,  B.SEATNUMBER FROM PASSENGERS P
+JOIN BOOKINGS B ON P.PASSENGERID = B.PASSENGERID
+JOIN SCHEDULES S ON S.SCHEDULEID = B.SCHEDULEID
+JOIN TRAINS T ON T.TRAINID = S.TRAINID; 
+
+
+SELECT * FROM PassengerBookingsView;
+
+
+mysql> SELECT * FROM PassengerBookingsView;
++-----------+----------+------------------+---------+------------+
+| FIRSTNAME | LASTNAME | TRAINNAME        | TRAINID | SEATNUMBER |
++-----------+----------+------------------+---------+------------+
+| Rajesh    | Sharma   | Rajdhani Express |       1 |         12 |
+| Priya     | Mehra    | Rajdhani Express |       1 |         34 |
+| Ankit     | Verma    | Tejas Express    |       2 |         56 |
+| Kavita    | Gupta    | Shatabdi Express |       3 |         18 |
+| Arun      | Patel    | Duronto Express  |       4 |         22 |
++-----------+----------+------------------+---------+------------+
+5 rows in set (0.00 sec)
+
+
+
+2. Create an index on the Bookings table to improve the performance of queries filtering by BookingDate.
+
+
+
+CREATE INDEX idx_booking_date ON BOOKINGS(BOOKINGDATE);
+
+
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+☆ TASK 8
+• Temporary Tables 
+
+
+1. Create a temporary table to store the schedule of all trains departing on a specific day (for example, 15-Oct-2023), and then query it. 
+
+
+
+CREATE TEMPORARY TABLE TEMP_TRAIN_SCHEDULE AS
+SELECT * FROM SCHEDULES
+WHERE DATE(DEPARTURETIME) = '2023-10-15';
+
+
+SELECT * FROM TEMP_TRAIN_SCHEDULE;
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+☆ TASK 9
+• Cursors 
+
+
+1. Write a basic cursor to iterate over the passengers who have booked more than 5 tickets. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+☆ TASK 10
+• ACID Properties and Transactions
+
+
+1. Ensure the database follows ACID properties by using transactions:
+	o Begin a transaction before updating seat availability.
+	o Use a savepoint before deleting any booking records.
+	o Rollback if an error occurs, ensuring no changes are made to the database.
+	o Commit the transaction only after all changes have been successfully applied. 
+
+
+START TRANSACTION;
+
+UPDATE TRAINS SET AVAILABLESEATS = TOTALSEATS -1 
+WHERE TRAINID = 1;
+
+SAVEPOINT BEFOREDELETE;
+
+DELETE FROM BOOKINGS
+WHERE BOOKINGID = 1;
+
+COMMIT;
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+☆ TASK 11
+• Triggers (Understand which trigger to use when and for what) 
+
+
+1. Create a Trigger that automatically assigns a seat number to passengers when a booking is created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Create a Trigger that updates the total available seats in the train after a booking is confirmed. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+☆ TASK 12
+• UNION and UNION ALL
+
+
+1. Write a query to combine the results of two queries that return passengers booked on trains for two different routes.
+
+
+SELECT P.* FROM PASSENGERS P
+JOIN BOOKINGS B ON P.PASSENGERID = B.PASSENGERID
+JOIN SCHEDULES S ON B.SCHEDULEID = S.SCHEDULEID
+WHERE S.ROUTEID = 1
+
+UNION
+
+SELECT P.* FROM PASSENGERS P
+JOIN BOOKINGS B ON P.PASSENGERID = B.PASSENGERID
+JOIN SCHEDULES S ON B.SCHEDULEID = S.SCHEDULEID
+WHERE S.ROUTEID = 2;
+
+
++-------------+-----------+----------+------+------------------------------+
+| PASSENGERID | FIRSTNAME | LASTNAME | AGE  | EMAIL                        |
++-------------+-----------+----------+------+------------------------------+
+|           2 | Priya     | Mehra    |   32 | priya.mehra@specialforce.com |
+|           5 | Arun      | Patel    |   50 | arun.patel@specialforce.com  |
+|           3 | Ankit     | Verma    |   29 | ankit.verma@specialforce.com |
++-------------+-----------+----------+------+------------------------------+
+3 rows in set (0.01 sec)
+
+
+
+2. Write a query to combine the results of all bookings made on different dates. 
+
+
+SELECT * FROM BOOKINGS WHERE BOOKINGDATE = '2024-10-12'
+UNION ALL
+SELECT * FROM BOOKINGS WHERE BOOKINGDATE = '2024-10-13';
+
++-----------+-------------+------------+-------------+------------+
+| BOOKINGID | PASSENGERID | SCHEDULEID | BOOKINGDATE | SEATNUMBER |
++-----------+-------------+------------+-------------+------------+
+|         3 |           3 |          2 | 2024-10-12  |         56 |
+|         4 |           4 |          3 | 2024-10-13  |         18 |
++-----------+-------------+------------+-------------+------------+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+☆ TASK 13
+• Copying Tables 
+
+
+1. Copy the structure of the Passengers table into a new table named OldPassengers.
+
+
+CREATE TABLE OLDPASSENGERS LIKE PASSENGERS;
+
+-- INSERT INTO OLDPASSENGERS SELECT * FROM PASSENGERS;
+
+
+
+2. Copy all the data from the Bookings table into another table named ArchivedBookings. 
+
+
+CREATE TABLE ARCHIVEDBOOKINGS AS
+SELECT * FROM BOOKINGS;
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
