@@ -1,0 +1,105 @@
+
+
+1. Select from any table a number and determine whether it is within a given range (for example, between 1 and 10). 
+
+
+DELIMITER //
+
+CREATE FUNCTION IN_RANGE(NUM INT, MIN_RANGE INT, MAX_RANGE INT)
+RETURNS VARCHAR(40)
+DETERMINISTIC
+BEGIN
+	DECLARE RESULT VARCHAR(40);
+	IF NUM BETWEEN MIN_RANGE AND MAX_RANGE THEN
+		SET RESULT = 'NUMBER IS WITHIN RANGE.';
+	ELSE
+		SET RESULT = 'NUMBER IS NOT WITHIN RANGE.';
+	END IF;
+	RETURN RESULT;
+END //
+
+DELIMITER ;
+
+
+SELECT AMT, IN_RANGE(AMT, 500, 2000) FROM ORDERS;
+
++---------+-----------------------------+
+| AMT     | IN_RANGE(AMT, 500, 2000)    |
++---------+-----------------------------+
+|   18.69 | NUMBER IS NOT WITHIN RANGE. |
+|  767.19 | NUMBER IS WITHIN RANGE.     |
+| 1900.10 | NUMBER IS WITHIN RANGE.     |
+| 5160.45 | NUMBER IS NOT WITHIN RANGE. |
+| 1098.16 | NUMBER IS WITHIN RANGE.     |
+| 1713.23 | NUMBER IS WITHIN RANGE.     |
+|   75.75 | NUMBER IS NOT WITHIN RANGE. |
+| 1309.95 | NUMBER IS WITHIN RANGE.     |
++---------+-----------------------------+
+8 rows in set (0.00 sec)
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+2. Select from any table three positive integers representing the sides of a triangle, and determine whether they form a valid triangle. Hint: In a triangle, the sum of any two sides must always be greater than the third side. 
+
+
+DELIMITER //
+
+CREATE FUNCTION CHECK_TRIANGLE(SIDE1 INT, SIDE2 INT, SIDE3 INT)
+RETURNS VARCHAR (30)
+DETERMINISTIC
+BEGIN
+	IF SIDE1 + SIDE2 > SIDE3 AND SIDE1 + SIDE2 > SIDE3 AND SIDE1 + SIDE2 > SIDE3 THEN
+		RETURN 'IT IS VALID TRIANGLE.';
+	ELSE
+		RETURN 'IT IS INVALID TRIANGLE.';
+	END IF;
+END //
+
+DELIMITER ;
+		
+
+SELECT CNUM, SNUM, AMT, CHECK_TRIANGLE(CNUM, SNUM, AMT) FROM ORDERS;
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+3. Check if a given a year is a leap year. The condition is:- year should be (divisible by 4 and not divisible by 100) or (divisible by 4 and divisible by 400.). The year should be Selected from some table. 
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+4. Write a program that Selects from any table two character strings. Your program should then determine if one character string exists inside another character string. 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------

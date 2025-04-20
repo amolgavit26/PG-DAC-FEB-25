@@ -1,0 +1,249 @@
+
+
+1. Write a program that computes the perimeter and the area of a rectangle. Define your own values for the length and width. (Assuming that L and W are the length and width of the rectangle, Perimeter = 2*(L+W) and Area = L*W. 
+
+
+DELIMITER //
+CREATE PROCEDURE RECTANGLE_CALCULATION(LENGTH FLOAT, WIDTH FLOAT, OUT PERIMETER FLOAT, OUT AREA FLOAT)
+BEGIN
+	SET PERIMETER = 2 * (LENGTH + WIDTH);
+	SET AREA = LENGTH * WIDTH;
+END //
+DELIMITER ;
+
+Query OK, 0 rows affected (0.03 sec)
+
+
+
+
+mysql> CALL RECTANGLE_CALCULATION(2,3,@PERIMETER,@AREA);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT @PERIMETER PERIMETER, @AREA AREA;
++-----------+------+
+| PERIMETER | AREA |
++-----------+------+
+|        10 |    6 |
++-----------+------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+2. Write a program that declares an integer variable called num, assigns a value to it, and computes and inserts into the tempp table the value of the variable itself, its square, and its cube. 
+
+
+
+CREATE TABLE TEMPP(
+    num INT,
+    square FLOAT,
+    `cube` FLOAT
+);
+
+
+DELIMITER //
+CREATE PROCEDURE SQUARE_CUBE(NUM FLOAT)
+BEGIN
+	DECLARE SQUARE FLOAT;
+	DECLARE `CUBE` FLOAT;
+	SET SQUARE = NUM * NUM;
+	SET `CUBE` = NUM * NUM * NUM;
+	INSERT INTO TEMPP (NUM, SQUARE, `CUBE`)
+		VALUES(NUM, SQUARE, `CUBE`);
+END //
+DELIMITER ;
+
+Query OK, 0 rows affected (0.01 sec)
+
+
+CALL SQUARE_CUBE(10);
+SELECT NUM, SQUARE, `CUBE` FROM TEMPP;
+
++------+--------+------+
+| NUM  | SQUARE | CUBE |
++------+--------+------+
+|   10 |    100 | 1000 |
++------+--------+------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+3. Convert a temperature in Fahrenheit (F) to its equivalent in Celsius (C) and vice versa. The required formulae are:- C= (F-32)*5/9 
+F= 9/5*C + 32
+
+
+DELIMITER //
+
+CREATE PROCEDURE TEMP_CONVERSION(TEMP FLOAT, UNIT CHAR(1), OUT RESULT FLOAT)
+BEGIN
+	IF UPPER(UNIT) = 'F' THEN
+		SET RESULT = ROUND((TEMP - 32) * (5/9), 2);
+	ELSEIF UPPER(UNIT) = 'C' THEN
+		SET RESULT = ROUND((9/5) * TEMP + 32, 2);
+	ELSE
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'INVALID UNIT, PLEASE USE ''F'' OR ''C''.';
+	END IF;
+END //
+
+DELIMITER ;
+
+
+
+CALL TEMP_CONVERSION(100, 'F', @RESULT);
+
+SELECT @RESULT AS RESULT;
+
++--------------------+
+| RESULT             |
++--------------------+
+| 37.779998779296875 |
++--------------------+
+1 row in set (0.00 sec)
+
+
+DROP PROCEDURE TEMP_CONVERSION;
+
+
+
+CALL TEMP_CONVERSION(100, 'C', @RESULT);
+
+SELECT @RESULT AS RESULT;
+
++--------+
+| RESULT |
++--------+
+|    212 |
++--------+
+1 row in set (0.00 sec)
+
+
+
+CALL TEMP_CONVERSION(100, 'M', @RESULT);
+ERROR 1644 (45000): INVALID UNIT, PLEASE USE 'F' OR 'C'.
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+4. Convert a number of inches into yards, feet, and inches. For example, 124 inches equals 3 yards, 1 foot, and 4 inches. 
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE INCH_CONVERSION(NUM FLOAT, OUT YARD FLOAT, OUT FOOT FLOAT, OUT INCH FLOAT)
+BEGIN
+	SET YARD = FLOOR(NUM / 36);
+	SET NUM = NUM % 36;
+
+	SET FOOT= FLOOR(NUM / 12);
+	SET INCH = NUM % 12;
+END //
+
+DELIMITER ;
+
+
+CALL INCH_CONVERSION(100, @YARD, @FOOT, @INCH);
+
+SELECT @YARD, @FOOT, @INCH;
+
+
++-------+-------+-------+
+| @YARD | @FOOT | @INCH |
++-------+-------+-------+
+|     2 |     2 |     4 |
++-------+-------+-------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+5. Write a program that enables a user to input an integer. The program should then state whether the integer is evenly divisible by 5. 
+
+
+DELIMITER //
+
+CREATE PROCEDURE DIVISIBLE_BY_5(NUM INT, OUT RESULT VARCHAR(40))
+BEGIN
+	IF NUM % 5 = 0 THEN
+		SET RESULT = 'NUMBER IS DIVISIBLE BY 5.';
+	ELSE
+		SET RESULT = 'NUMBER IS NOT DIVISIBLE BY 5.';
+	END IF;
+END //
+
+DELIMITER ;
+
+
+
+CALL DIVISIBLE_BY_5(55, @RESULT);
+
+SELECT @RESULT;
+
+
++---------------------------+
+| @RESULT                   |
++---------------------------+
+| NUMBER IS DIVISIBLE BY 5. |
++---------------------------+
+1 row in set (0.00 sec)
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+6. Your block should read in two real numbers and tell whether the product of the two numbers is equal to or greater than 100. 
+
+
+DELIMITER //
+
+CREATE PROCEDURE CHECK_PRODUCT(NUM1 FLOAT, NUM2 FLOAT, OUT RESULT VARCHAR(70))
+BEGIN
+	DECLARE PRODUCT FLOAT;
+	SET PRODUCT = NUM1 * NUM2;
+
+	IF PRODUCT >= 100 THEN
+		SET RESULT = 'THE PRODUCT OF GIVEN TWO NUMBERS IS GREATER OR EQUAL TO THAN 100';
+	ELSE
+		SET RESULT = 'THE PRODUCT OF GIVEN TWO NUMBERS IS LESS THAN 100';
+	END IF;
+END //
+
+DELIMITER ;
+
+
+
+CALL CHECK_PRODUCT(6, 9, @RESULT);
+
+SELECT @RESULT;
+
++---------------------------------------------------+
+| @RESULT                                           |
++---------------------------------------------------+
+| THE PRODUCT OF GIVEN TWO NUMBERS IS LESS THAN 100 |
++---------------------------------------------------+
+1 row in set (0.00 sec)
+
+
+CALL CHECK_PRODUCT(15, 9, @RESULT);
+
+SELECT @RESULT;
+
++------------------------------------------------------------------+
+| @RESULT                                                          |
++------------------------------------------------------------------+
+| THE PRODUCT OF GIVEN TWO NUMBERS IS GREATER OR EQUAL TO THAN 100 |
++------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
