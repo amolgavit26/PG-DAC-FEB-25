@@ -1,22 +1,85 @@
 
-# :books: Library Management System :ledger:
-## This is a Console Based Application to manage the library.
 
-### Mini-Project based on core-Java concepts
+# 🌿 Simple Login Page
 
-**Object-Oriented Programming (OOP)** – Uses classes, objects, encapsulation and polymorphism to manage books, members, and the library.
-
-**Collections Framework** – Uses List (ArrayList), Map (HashMap), and Set (HashSet) to efficiently store and manage books and members.
-
-**Book & Member Management** – Allows adding books and members, storing details like title, author, ISBN, and member ID.
-
-**Borrow & Return Functionality** – Members can borrow and return books easly.
-
-**Exception Handling** – Custom exceptions handle errors like unavailable books, invalid member IDs, and already borrowed books.
-
-**Library Statistics & Display** – Provides data about total books, members, and borrowed books, along with a list of borrowed books.
+## This project is a **simple and elegant login page** designed using **HTML** and **CSS**. It features a clean green-themed interface, perfect for beginner projects, small applications, or templates for larger projects.
 
 
-## Technologies Used
+---
 
-[![My Skills](https://skillicons.dev/icons?i=java)](https://skillicons.dev) ![Notepad++ Icon](https://img.shields.io/badge/-90E59A?style=for-the-badge&logo=notepad%2B%2B&logoColor=black)
+## 📄 About the Project
+
+- **Login Box** centered both vertically and horizontally.
+- **Input Fields** for username and password.
+- **Login Button** with hover effects.
+- **Registration Link** for users who are not registered.
+- **Responsive Design** for different screen sizes.
+- **Clean and Minimalistic UI** with a soft green color palette.
+
+---
+
+## 🚀 Project Structure
+
+```
+/project-folder
+│
+├── Sign_In.html    # Main HTML file containing the form structure
+├── Sign_In.css     # Styling file for design and responsiveness
+├── Sign_In.png     # Screenshot of the login page
+└── README.md       # Project description and usage guide
+```
+
+## 📚 Files Description
+
+| File           | Description                                              |
+|----------------|-----------------------------------------------------------|
+| `Sign_In.html` | Contains the structure of the login form.                 |
+| `Sign_In.css`  | Contains the styling for the login form and layout.        |
+| `Sign_In.png`  | Preview image showcasing the final look of the login form. |
+
+---
+
+
+## Technologies and Tools Used
+
+[![My Skills](https://skillicons.dev/icons?i=html,css,vscode)](https://skillicons.dev) 
+
+
+
+## 📸 Preview
+
+Here’s how the page looks:
+
+![Contact Page Preview](Sign_In.png) 
+
+
+
+## 🔥 Future Improvements
+
+- Add backend functionality for login authentication.
+- Create a registration page linked to the "Create an account" link.
+- Improve responsiveness for mobile devices.
+- Add error messages for incorrect login attempts.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
