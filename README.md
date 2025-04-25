@@ -4,4 +4,4 @@
 
 ## Technologies Used
 
-[![My Skills](https://skillicons.dev/icons?i=linux,java,mysql,mongodb,vscode,html,css)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=linux,java,mysql,mongodb,vscode,html,css,js)](https://skillicons.dev)
