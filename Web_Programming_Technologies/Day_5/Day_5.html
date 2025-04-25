@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+
+<head>
+<meta charset="UTF-8">
+<title>Registration-Form</title>
+<link rel="stylesheet" href="file.css">
+</head>
+
+
+<body>
+
+
+
+
+
+    <script>
+        a = 6;
+        b = 2;
+        c = a+b;
+
+        console.log("sum is " + c);
+        console.log("sum of " + a + " and " + b + " is " + c);
+        console.log(`sum of ${a} and ${b} is ${c}`);
+
+
+
+        a = 2;
+        b = 2.0;
+        console.log(a==b);
+        console.log(a===b);     /*check value as well as datatype*/
+
+        a = 2;
+        b = "2";
+        console.log(a==b);
+        console.log(a===b);
+
+
+        a = 2;
+        console.log(a*=4);
+
+        a = 2;
+        b = 5;
+        c = a > b ? a : b;            /* V3 = Condition ? V1 : V2;*/
+        console.log(c)
+
+
+        num = -5;
+        console.log(a>0 ? "Positive" : "Negative");
+
+        if(num>0){
+            console.log("Number is Positive");
+        }else{
+            console.log("Number is Negative");
+        }
+
+
+        rollno = 105;
+
+        if(rollno == 101){
+            console.log("Gappu");
+        }else if(rollno == 102){
+            console.log("Tappu");
+        }else if(rollno == 103){
+            console.log("Pappu");
+        }else{
+            console.log("Not Found");
+        }
+
+
+        num = 8
+
+        if(num > 1 && num < 10){
+            console.log("Yes");
+        }else{
+            console.log("No");
+        }
+
+
+        num = 9
+
+        if(num >1){
+            if(num <10){
+                console.log("Yes");
+            }else{
+                console.log("No");
+            }
+        }
+
+        m = 84;
+
+        if(m>=91 && m<=100){
+            console.log("A+");
+        }else if(m>=81 && m<=90){       /* && m<=90 is useless*/
+            console.log("A");
+        }else if(m>=71 && m<=80){       /* && m<=80 is useless*/
+            console.log("B");
+        }else{
+            console.log("Fail");
+        }
+
+
+
+        // C1 true C2 true
+        // C1 true C1 fale
+        // C1 fale C2 true
+
+        /*
+        if(C1){
+            if(c2){
+                S1
+            }else{
+                C2
+            }
+        }else{ 
+            S3
+        }
+        */
+
+
+        rollno = 102;
+
+        switch(rollno){
+            case 101 :
+                console.log("Gappu");
+                break;
+            case 102 :
+                console.log("Tappu");
+                break;
+            case 103 :
+                console.log("Pappu");
+                break;
+            default:
+            console.log("Not Found");
+
+        }
+
+
+
+        num = 1
+        while(num <= 5){
+            console.log("Hello World");
+            num++;
+        }
+
+
+        num = 1
+        while(num <= 5){
+            console.log(num);
+            num++;
+        }
+
+
+        num = 5
+        while(num >= 1){
+            console.log(num);
+            num--;
+        }
+
+
+        for(x=1; x<5; x++){
+            console.log(x)
+        }
+
+
+        for(x=1; x<=10; x++){
+            for(y=1; y<=5; y++){
+                document.write("*");
+            }
+        document.write("<br>")
+        }
+        
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
