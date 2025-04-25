@@ -1,22 +1,47 @@
 
-# :books: Library Management System :ledger:
-## This is a Console Based Application to manage the library.
-
-### Mini-Project based on core-Java concepts
-
-**Object-Oriented Programming (OOP)** – Uses classes, objects, encapsulation and polymorphism to manage books, members, and the library.
-
-**Collections Framework** – Uses List (ArrayList), Map (HashMap), and Set (HashSet) to efficiently store and manage books and members.
-
-**Book & Member Management** – Allows adding books and members, storing details like title, author, ISBN, and member ID.
-
-**Borrow & Return Functionality** – Members can borrow and return books easly.
-
-**Exception Handling** – Custom exceptions handle errors like unavailable books, invalid member IDs, and already borrowed books.
-
-**Library Statistics & Display** – Provides data about total books, members, and borrowed books, along with a list of borrowed books.
+# 🎉 Event Registration Form
+## This project is a **Digital Marketing Workshop Registration Form** created using HTML and CSS. It provides a simple and styled user interface for participants to register for an upcoming event.
 
 
-## Technologies Used
+## ✨ Features
 
-[![My Skills](https://skillicons.dev/icons?i=java)](https://skillicons.dev) ![Notepad++ Icon](https://img.shields.io/badge/-90E59A?style=for-the-badge&logo=notepad%2B%2B&logoColor=black)
+- Responsive two-column layout
+- Contact form with fields:
+  - First Name
+  - Last Name
+  - Email
+  - Phone Number
+  - Query/Message
+- Styled submit button with hover effects
+- Company contact information section
+- Social media icons for Facebook, Instagram, LinkedIn, and Twitter
+- Neat and clean design
+
+
+## 📂 Project Structure
+
+- `Registration_Form.html`  
+  Contains the HTML structure and form inputs.
+
+- `file.css`  
+  External CSS file for styling and layout.
+
+- `Assets/Images/`  
+  Folder containing images used in the project (e.g., logo, social media icons).
+
+---
+
+
+## Technologies and Tools Used
+
+[![My Skills](https://skillicons.dev/icons?i=html,css,vscode)](https://skillicons.dev) 
+
+
+
+## 📸 Preview
+
+Here’s how the page looks:
+
+![Contact Page Preview](Registration_Form.png) 
+
+
