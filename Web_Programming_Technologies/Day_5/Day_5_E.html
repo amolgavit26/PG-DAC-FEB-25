@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration-Form</title>
+    <link rel="stylesheet" href="file.css">
+    </head>
+
+
+
+
+
+    <body>
+
+
+
+
+
+        <script>
+
+            /*
+
+            a = [10,20,30,40];
+            b = [1,2,3,4];
+
+            c = [a,b];
+            console.log(c);
+
+            c = [...a,b];       // ... Spread Operator
+            console.log(c);
+
+            c = [...a, ...b];    
+            console.log(c);
+            document.write(c);
+
+
+            sid = 101;
+            sname = "Jivita"
+
+            student = {
+                id : sid,
+                name : sname
+            }
+
+            console.log(student);
+
+
+
+            sid = 101;
+            sname = "Harshada"
+
+            student = {
+                sid : sid,      // we can specify key name same as variable
+                sname           // or the shortcut is directly put variable name
+            }
+
+            console.log(student);
+
+
+
+
+
+
+            o1 = {
+                id : 911,
+                name : "Robin"
+            }
+
+            o2 = {
+                marks : 86,
+                phone : 0123456789
+            }
+
+
+            o3 = {...o1, ...o2
+            }
+
+            console.log(o3);
+
+
+
+            x = "id";
+            obj = {
+                [x] : 198
+            }
+            console.log(obj);       // if we want to the value of x as a key of my json object
+
+
+
+
+            function add(x,y){      // function in JS
+                z = x+y;
+                return z;
+            }
+
+            result = add(5,9);
+
+            console.log(result);
+
+
+
+            function checkEligibility(age){
+                if(age >= 18){
+                    console.log("He is eligible to vote.");
+                }else{
+                    console.log("No, He is not eligible to vote.");
+                }
+            }
+
+            checkEligibility(18);
+
+
+            obj = function show(){
+                console.log("Hello World!!");
+            }
+            console.log(obj);
+            obj();
+
+            
+            function demo(){
+                a = 5;          // it automatically become globle variable
+                console.log("Inside func a = ",a);
+            }
+
+            demo();
+            console.log("Outside func a = ",a);
+
+
+
+
+            function demo(){
+                var aa = 10;         
+                console.log("Inside func a = ",aa);
+            }
+
+            demo();
+            console.log("Outside func a = ",aa);    // can't acceceble because it is not defined
+
+          
+            var aa = 10;
+            function demo(){
+                console.log("Inside func a = ",aa);
+            }
+
+            demo();
+            console.log("Outside func a = ",aa);    // acceceble because it now it is globle
+
+
+
+            var ab = 10;
+            console.log(ab);
+            var ab = 100;
+            console.log(ab);
+
+
+            
+            function show(){
+                if(true){
+                    var a = 5;
+                    console.log("Inside if a = ",a);
+                }
+                console.log("outside if a = ",a);   // this will acceceble outside the if block if we use "var"
+            }
+            show();
+
+
+
+            function show(){
+                if(true){
+                    let a = 5;
+                    console.log("Inside if a = ",a);
+                }
+                console.log("outside if a = ",a);   // this will not acceceble outside the if block if we use "let"
+            }
+            show();
+
+            
+            //console.log(xy);
+            // let xy = 10;
+
+            
+            
+
+            function show1(){
+                    console.log("Inside func show");
+                }
+
+
+            function demo(args){
+                console.log("Inside func demo", args);
+                args();
+            }
+            
+            // a function can pass a funtion as argument  to another funtion
+            // a funtion that is passed as arguments of another funtion is called as callback funtiion.
+            demo(show1);     // here show is a callback funtion
+            
+
+            
+
+            
+            function demo(args){
+                console.log("Inside func demo", args);
+                args();
+            }
+            
+            demo(function show1(){      // giving name to this argument funtion is useless "Show"
+                    console.log("Inside func show");
+                });
+
+
+
+            
+
+
+
+
+            function demo(args){
+                console.log("Inside func demo", args);
+                args();
+            }
+            
+            demo(function (){           
+                    console.log("Inside func show");
+                });
+
+                // This is called as a anonymous callback funtions
+
+            
+
+
+
+            function sum(a, b){
+                var c = a+b;
+                return c;
+            }
+
+            const rsz = sum(2,7);
+            console.log(rsz)
+
+
+            var sum = function(a, b){
+                var c = a+b;
+                return c;
+            }
+
+            const rs = sum(2,7);
+            console.log(rs)
+            
+
+
+
+
+            
+
+
+
+
+        // a new syntax ha sbeen introduce in ordr to erite the anonymous funtion i.e. arrow funtion
+            // to have syntactical benifits we have this arrow funtion
+
+        var sum = (a,b) => {
+            var c = a+b;
+            return c;
+        }
+
+        const rs = sum(2,8)
+        console.log(rs)
+
+        
+
+
+
+
+        // if arrow funtion having only one statement 
+        // and that is also return statement
+
+        var sum = (a,b) => a+b;
+
+        const rs = sum(2,8)
+        console.log(rs)
+
+        // if arrow funtion having only one argument 
+
+        var increment = a => a+5;
+
+        const rs = increment(2)
+        console.log(rs)
+
+
+    
+
+
+
+
+
+
+    // Array Function
+
+    var arr = [1,9,7,3,10,7,9,6,7,4,7,8]
+
+    arr.forEach((value, index) => {
+        console.log(index, value);
+    });
+
+
+    //push()
+    //arr.filter()
+
+    // method 1
+    var evenarr = arr.filter((value) => {
+        if(value % 2 == 0){
+            return true;
+        }else{
+            return false;
+        }
+    });
+
+    console.log(evenarr);
+
+    // method 2
+    var evenarr = arr.filter(value => value%2 == 0);
+
+    console.log(evenarr);
+
+
+
+        
+        
+
+    
+
+
+
+    // arr.map()
+
+    var arr = [1,9,7,3,10,7,9,6,7,4,7,8]
+
+    // Method 1
+
+    var newarr = arr.map((value) => {
+        return value*2;
+    })
+
+    console.log(newarr)
+
+
+    // Method 2
+    var newarr = arr.map(value => value*2);
+
+    console.log(newarr);
+
+
+
+    */
+
+
+
+    // arr.reduce()
+
+
+
+
+
+
+
+        </script>
+
+</body>
+
+
+
+
+
+</html>
