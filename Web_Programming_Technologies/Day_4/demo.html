@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration-Form</title>
+    <link rel="stylesheet" href="Sign_In.css">
+</head>
+
+
+<body>
+
+
+    <script>
+        a = [10,20,"hello", true, 20];
+        console.log(a);
+        console.log(a[2]);
+        console.log(a.length);
+
+
+        for(i=0; i<a.length; i++){
+            console.log(a[i]);
+        }
+
+        a = [5,4,18,3,7,9,132,8,7,12,7,5,2,3,7,7]
+
+        for(i=0; i<a.length; i++){
+            if(a[i]%2 == 0){
+                console.log(a[i]);
+            }
+            
+        }
+
+
+        a = [5,4,18,3,7,9,2,8,7,12,7,5,2,3,7,7];
+
+        b = a[0];
+
+        for(i=1; i<a.length; i++){
+            if(a[i] > b){
+                b = a[i]
+            }
+        }
+
+        console.log(b);
+
+
+
+
+        a = [[1,8,6,3,7,2,3],[48,7,5,2,36,9,2],[5,6,3,7,9,2]]
+        console.log(a);
+        console.log(a.length);
+
+        for(i=0; i<a.length; i++){
+            console.log(a[i]);
+        }
+
+
+
+        a = [[1,8,6,3],[48,7,5],[5,6,3]]
+
+
+        for(i=0; i<a.length; i++){
+            for(j=0; j<a[i].length; j++){
+                console.log(a[i][j]);
+            }
+            
+        }
+
+
+        student = {
+            id : 101,
+            name : "Jivita",
+            marks : 91,
+            phone : "0123456789"
+        }
+
+        console.log(student);
+
+        console.log(student.id);
+        console.log(student.name);
+
+
+
+        student = {
+            id : 101,
+            name : "Jivita",
+            marks : 91,
+            phone : ["0123456789", "9876543210"],
+            address : {
+                houseNo : "A-156",
+                area : "Subhash Nagar",
+                city : "Roha",
+                state : "Maharashtra"
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+
+</html>
