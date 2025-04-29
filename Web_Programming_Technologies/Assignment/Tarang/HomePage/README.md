@@ -1,36 +1,41 @@
 
-# :books: Contact Page :ledger:
-## This project is a simple and clean **Contact Us** page designed using **HTML5** and **CSS3**.
+# Car Rental and Booking Platform
 
-### It features a responsive form layout for users to submit their contact details and queries, along with contact information and social media links.
-
-
-## ✨ Features
-
-- Responsive two-column layout
-- Contact form with fields:
-  - First Name
-  - Last Name
-  - Email
-  - Phone Number
-  - Query/Message
-- Styled submit button with hover effects
-- Company contact information section
-- Social media icons for Facebook, Instagram, LinkedIn, and Twitter
-- Neat and clean design
+This project is a **frontend UI** for a car rental and booking service. It features a visually appealing landing page that displays various available cars, 
+with options to initiate a rental request. This is ideal for building the interface of a car booking web application.
 
 
-## 📁 Project Structure
+## 🚗 Features
+
+- Responsive navigation bar with site logo and links to key pages
+- Background image with a blur effect for aesthetic depth
+- Interactive car listing section with images and "Rent this car" buttons
+- Social media footer with icons and links
+- Custom styles using an external CSS stylesheet
+
+
+## 📁 File Structure
 
 ```
-/Assets
-  /Images
-    FaceBook.png
-    Instagram.png
-    LinkedIn.png
-    Twitter.png
-Contact_page.html
-Contact_page.css
+/
+├── HomePage.html          # Main HTML file (landing page)
+├── HomePage.css           # CSS styling for layout and visuals
+├── Assets/
+│   └── Images/
+│       ├── Background.jpg
+│       ├── logo.jpg
+│       ├── FaceBook.png
+│       ├── Instagram.png
+│       ├── LinkedIn.png
+│       ├── Twitter.png
+│       └── AllCars/
+│           ├── Baleno.png
+│           ├── exter.png
+│           ├── wagonr.png
+│           ├── tigor.png
+│           ├── aura.png
+│           ├── Nexon.png
+│           └── Carens.png
 ```
 
 
@@ -43,5 +48,21 @@ Contact_page.css
 ## 📸 Preview
 
 Here’s how the page looks:
+![Project Preview](Home_Page_Header.jpg)
 
-![Contact Page Preview](Contact_Page.png) 
+
+
+## 🔗 Future Improvements
+
+- Add a working booking system with a backend (Node.js, Django, etc.)
+- Implement user login and registration functionality
+- Make the layout fully responsive for mobile devices
+- Add search and filter features for cars
+
+
+
+
+
+
+
+
