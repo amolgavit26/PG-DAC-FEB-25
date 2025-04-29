@@ -48,9 +48,8 @@ with options to initiate a rental request. This is ideal for building the interf
 ## 📸 Preview
 
 Here’s how the page looks:
-![Project Preview](Home_Page_Header.jpg)
-
-
+![Project Preview](Home_Page_Header.png)
+![Project Preview](Home_Page_Footer.png)
 
 ## 🔗 Future Improvements
 

@@ -1,37 +1,28 @@
 
-# :books: Contact Page :ledger:
-## This project is a simple and clean **Contact Us** page designed using **HTML5** and **CSS3**.
+# Contact Page
 
-### It features a responsive form layout for users to submit their contact details and queries, along with contact information and social media links.
+This is a simple and visually appealing **Contact Us** page for a Car Rental and Booking Platform, designed using **HTML** and **CSS**. The page includes a contact form, contact information, and social media links, all presented on a clean, car-themed background.
 
 
-## ✨ Features
+## 🌟 Features
 
-- Responsive two-column layout
-- Contact form with fields:
-  - First Name
-  - Last Name
-  - Email
-  - Phone Number
-  - Query/Message
-- Styled submit button with hover effects
-- Company contact information section
-- Social media icons for Facebook, Instagram, LinkedIn, and Twitter
-- Neat and clean design
+- Responsive contact form with fields for name, email, phone number, and message
+- Contact details section with location and social media icons
+- Styled navigation bar with internal links (Home, Log In, Contact Us)
+- Custom background with overlaid containers
+- Hover effects on navigation and social links
 
 
 ## 📁 Project Structure
 
 ```
-/Assets
-  /Images
-    FaceBook.png
-    Instagram.png
-    LinkedIn.png
-    Twitter.png
-Contact_page.html
-Contact_page.css
+├── Contact_page.html       # Main HTML file
+├── Contact_page.css        # CSS styling file
+├── Contact_Page.png        # Screenshot of the Contact Page
+└── Assets/
+    └── Images/             # Contains logo and social media icons (not provided in this repo)
 ```
+
 
 
 ## Technologies and Tools Used
@@ -43,5 +34,7 @@ Contact_page.css
 ## 📸 Preview
 
 Here’s how the page looks:
-
 ![Contact Page Preview](Contact_Page.png) 
+
+
+
