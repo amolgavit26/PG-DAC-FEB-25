@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        function gfetchData(url, callback) {
+            setTimeout(() => {
+                const error = Math.random() > 0.5;
+
+                if(error){
+                    callback("Error: ",null);
+                }else{
+                    const data = url;
+                    callback(null, data);
+                }
+                
+            }, 3000);
+        }
+
+
+        function processData(data, callback) {
+            setTimeout(() => {
+                var compeleteData = data.toUpperCase();
+                callback(compeleteData);
+            }, 1000);
+
+        }
+
+
+        gfetchData("https://www.linkedin.com/in/amolgavit26/", (er, response) => {
+            if(er){
+                console.log(er);
+            }else{
+                processData(response, () => {
+                    console.log(response);
+                });
+                
+            }
+            
+        });
+
+    </script>
+
+</body>
+
+
+</html>

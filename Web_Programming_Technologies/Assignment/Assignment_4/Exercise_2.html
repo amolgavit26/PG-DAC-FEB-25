@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function element(arr, callback){
+            for(let i = 0; i < arr.length; i++){
+                callback(arr[i], i);
+            }
+        }
+
+        element([1,2,5,8,7,2,6,99], (element, index) => {
+            console.log(`Index ${index} : Element ${element * 2}`);
+        });
+
+
+    </script>
+
+</body>
+
+
+</html>

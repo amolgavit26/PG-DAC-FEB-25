@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function changeUpper(data, callback) {
+            return callback(data);
+        }
+
+        function toUpperCase(inputData) {
+            return inputData.toUpperCase();
+        }
+
+        var str = changeUpper("Amol Gavit", toUpperCase);
+        console.log(str);
+
+
+    </script>
+
+</body>
+
+
+</html>

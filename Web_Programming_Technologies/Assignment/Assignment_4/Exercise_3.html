@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function getData(url, callback){
+            setTimeout(() => {
+                callback(url);
+            }, 3000);
+        }
+
+        getData("https://www.linkedin.com/in/amolgavit26/", (data) => {
+            console.log(data);
+        });
+
+    </script>
+
+</body>
+
+
+</html>

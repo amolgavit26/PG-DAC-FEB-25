@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function getData(url, callback){
+            setTimeout(() => {
+                const error = Math.random() > 0.5;
+
+                if(error){
+                    callback("Error: ",null);
+                }else{
+                    const data = url;
+                    callback(null, data);
+                }
+                
+            }, 3000);
+        }
+
+        getData("https://www.linkedin.com/in/amolgavit26/", (er, response) => {
+            if(er){
+                console.log(er);
+            }else{
+                console.log(response);
+            }
+            
+        });
+
+    </script>
+
+</body>
+
+
+</html>
