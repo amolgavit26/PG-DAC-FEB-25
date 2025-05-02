@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<head>
+
+</head>
+
+
+
+<body>
+
+
+
+
+    <script>
+
+        /*
+
+        class student{
+            constructor(){
+                console.log("hello")
+            }
+        }
+
+        var s1 = new student();
+        var s2 = new student();
+
+        
+
+        class student{
+            constructor(){
+                this.id = 101;
+                this.name = "Jivita";
+            }
+        }
+
+        var s1 = new student();
+        console.log(s1.id, s1.name);
+
+        var s2 = new student();
+        console.log(s2.id, s2.name);
+
+        
+
+        class student{
+            constructor(id, name){
+                this.id = id;
+                this.name = name;
+            }
+        }
+
+        var s1 = new student(101, "Jivita");
+        console.log(s1.id, s1.name);
+
+        var s2 = new student(102, "Robin");
+        console.log(s2.id, s2.name);
+
+        
+
+
+        class student{
+
+            constructor(id, name){
+                this.id = id;
+                this.name = name;
+            }
+
+            display(){
+                console.log(this.id, this.name);
+            }
+
+        }
+
+        var s1 = new student(101, "Jivita");
+        s1.display();
+        
+
+        
+
+
+        class Rectangle{
+            constructor(l, b){
+                this.l = l;
+                this.b = b;
+            }
+            getArea(){
+                return this.l*this.b;
+            }
+            getPerimeter(){
+                return 2*(this.l + this.b);
+            }
+
+
+        }
+
+        var r1 = new Rectangle(4, 2);
+
+        const area = r1.getArea();
+        console.log(area);
+
+        console.log(r1.getPerimeter());
+
+
+        
+
+
+        class A{
+
+            constructor(){
+                this.x = 18;
+                this.y = 20;
+            }
+
+            show(){
+                console.log("Hello A");
+            }
+        }
+
+        class B extends A{
+            
+        }
+
+        var bObj = new B();
+        bObj.show()
+        console.log(bObj.x, bObj.y);
+
+    
+
+
+        class A{
+
+            constructor(){
+                this.x = 18;
+                this.y = 20;
+            }
+
+            show(){
+                console.log("Hello A");
+            }
+        }
+
+        class B extends A{
+            constructor(){
+                super();
+                this.z = 10;
+            }
+            
+        }
+
+        var bObj = new B();
+        bObj.show()
+        console.log(bObj.x, bObj.y, bObj.z);
+
+
+        
+
+
+        setTimeout(()=> {
+            console.log("hello");
+        }, 2000);
+
+        console.log("Bye");
+
+
+        
+
+
+        
+
+
+        console.log("Calculating sum.....");
+        setTimeout(()=>{
+            var x = 50;
+            var y = 10;
+            var z = x+y;
+            console.log(z);
+        }, 1000);
+
+
+        console.log("Calculating fac.....");
+        setTimeout(()=>{
+            var x = 5;
+            var f = 1;
+            for(var i = 1; i<=x; i++){
+                f *=i;
+            }
+
+            console.log(f);
+        }, 2000);
+
+
+        
+
+
+
+            //if there are multiple async operation and we want to sync them  we 
+            // required to do nesting of earch oeration sequencially
+        setTimeout(() => {
+            console.log("hi");
+
+            setTimeout(() => {
+                console.log("hello");
+
+                setTimeout(() => {
+                    console.log("bye");
+                }, 5000);
+            }, 1000)
+        }, 3000);
+
+
+        // ^^^^^ this is called callback hell ^^^^^ -- nesting of callback funtions
+        // we avoid these callback hell
+
+
+        //  to solve this we use promise:-
+        //  for any task first create a promise
+        //  Now promise will have 3 states  
+        //      1   Pending:- the promise task is not exceuted yet   
+        //      2   Fullfill:- in case of successful excectuion
+        //      3   Rejected:-  in case of any failure
+        //  now on the basis of promise state, we have to take suitable action
+        
+        // in JS:
+        // 1. Create a promise object:
+        //      var myPromise = new Promise(()=>{
+        //            This is called promise executor function
+        //      write your logic here
+        //              });                                                               
+        
+
+
+        var evenPromise = new Promise((resolve, reject)=>{
+            var num = 9;
+            if(num % 2 == 0){
+                resolve();
+            }else{
+                reject();
+            }
+        });
+
+        evenPromise.then(()=>{
+            console.log("Promise reolve");
+        }).catch(()=>{
+            console.log("Promise reject");
+        });
+
+
+
+
+        */
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
