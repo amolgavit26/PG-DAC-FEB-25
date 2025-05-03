@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURD Operation using js</title>
+</head>
+
+<body>
+
+    <div>
+        <table id="head-table" border="1">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <script>
+
+        // Read
+
+        async function fetchData() {
+            const response = await fetch("http://localhost:3000/students");
+            const data = await response.json();
+            const headTable = document.getElementById("head-table");
+
+            data.forEach((value, index) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+            <td>${value.id}</td>
+            <td>${value.title}</td>
+            <td>${value.body}</td>
+            <td><button onclick="deleteData(${value.id})">Delete</button></td>
+            `;
+                headTable.appendChild(tr);
+            });
+        }
+
+        
+
+
+        // Delete
+
+        async function deleteData(id) {
+            const response = await fetch("http://localhost:3000/students/"+id,{
+                method:"DELETE"
+            });
+            const data = await response.json();
+            
+        }
+
+        fetchData();
+
+
+    </script>
+
+</body>
+
+</html>
