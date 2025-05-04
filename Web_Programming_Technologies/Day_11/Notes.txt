@@ -1,0 +1,19 @@
+
+
+API: Application Programming Interface
+
+Ung API we can use functionalities and services of one application into
+another application
+
+API's can accessed cross thechnology
+ 
+
+Securing API using login authentication:
+
+Restaurent ---> Selft service
+
+
+
+
+
+
