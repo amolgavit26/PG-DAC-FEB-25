@@ -1,6 +1,20 @@
 # 📝 Task Management App
 
-A full-stack task management system built with **React (frontend)**, **Express (backend)**, and **MySQL (database)**. Users can create, view, and manage tasks marked as "Pending" or "Completed".
+A full-stack task management system built with **React (frontend)**, **Express (backend)**, and **MySQL (database)**. <br>
+Users can create, view, and manage tasks marked as "Pending" or "Completed".
+
+---
+
+
+## ✅ Features
+
+- Add new tasks
+- View all tasks
+- Mark tasks as completed
+- See lists of pending and completed tasks
+- Delete completed tasks.
+- Toast notifications for actions
+- Clean and responsive UI using Bootstrap
 
 ---
 
@@ -46,23 +60,25 @@ Task-Management/
 
 ## 📦 Dependencies
 
-### Backend (Express)
+### 🔧 Backend (`Express`)
+| Package            | Version   |
+|--------------------|-----------|
+| express            | ^5.1.0    |
+| cors               | ^2.8.5    |
+| http-status-codes  | ^2.3.0    |
+| mysql2             | ^3.14.1   |
 
-- **express** ^5.1.0
-- **cors** ^2.8.5
-- **http-status-codes** ^2.3.0
-- **mysql2** ^3.14.1
-
-### Frontend (React + Vite)
-
-- **react** ^19.1.0
-- **react-dom** ^19.1.0
-- **react-router-dom** ^6.30.0
-- **react-bootstrap** ^2.10.9
-- **bootstrap** ^5.3.6
-- **axios** ^1.9.0
-- **react-toastify** ^11.0.5
-- **react-router-bootstrap** ^0.26.3
+### 💻 Frontend (`React`)
+| Package                 | Version   |
+|--------------------------|-----------|
+| react                   | ^19.1.0   |
+| react-dom               | ^19.1.0   |
+| react-router-dom        | ^6.30.0   |
+| react-bootstrap         | ^2.10.9   |
+| react-router-bootstrap  | ^0.26.3   |
+| bootstrap               | ^5.3.6    |
+| axios                   | ^1.9.0    |
+| react-toastify          | ^11.0.5   |
 
 ---
 
@@ -71,7 +87,7 @@ Task-Management/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Task-Management.git
+git clone https://github.com/amolgavit26/Task-Management.git
 cd Task-Management
 ```
 
@@ -102,16 +118,7 @@ npm run dev
 
 ---
 
-## ✅ Features
 
-- Add new tasks
-- View all tasks
-- Mark tasks as completed
-- See lists of pending and completed tasks
-- Toast notifications for actions
-- Clean and responsive UI using Bootstrap
-
----
 
 ## ⚙️ Environment Setup Notes
 
@@ -123,12 +130,6 @@ npm run dev
 
 ---
 
-## 🧾 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
 ## 🙌 Author
 
-Developed by [Your Name] – feel free to contribute or fork!
+Developed by Amol Gavit – feel free to contribute or fork!
