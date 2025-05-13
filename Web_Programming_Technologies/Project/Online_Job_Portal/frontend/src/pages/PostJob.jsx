@@ -1,4 +1,4 @@
-// src/pages/PostJob.jsx
+
 
 import React, { useState } from "react";
 import { postJob } from "../services/userService";

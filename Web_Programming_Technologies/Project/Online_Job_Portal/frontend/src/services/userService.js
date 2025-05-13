@@ -7,7 +7,6 @@ const getAuthToken = () => {
     const token = localStorage.getItem("token");
     if (!token) {
         console.error("No token found");
-        // Optionally, you could redirect the user to login or show a message
         return null;
     }
     return token;
@@ -22,12 +21,12 @@ export function signup(userData) {
 }
 
 export const postJob = (data) => {
-    const token = getAuthToken(); // Get the token using the helper function
+    const token = getAuthToken(); 
     if (!token) {
         return Promise.reject(new Error("Authentication required"));
     }
 
-    console.log("Token being sent:", token); // Log the token for debugging
+    console.log("Token being sent:", token); 
 
     return axios.post(`${API_URL}/job-post`, data, {
         headers: {
@@ -48,7 +47,7 @@ export const getJobList1 = () => {
 
 // Update a specific job
 export const editJob = (jobId, updatedData) => {
-    const token = getAuthToken(); // Get the token using the helper function
+    const token = getAuthToken();
     if (!token) {
         return Promise.reject(new Error("Authentication required"));
     }
@@ -63,7 +62,7 @@ export const editJob = (jobId, updatedData) => {
 
 // Delete a specific job
 export const deleteJob = (jobId) => {
-    const token = getAuthToken(); // Get the token using the helper function
+    const token = getAuthToken(); 
     if (!token) {
         return Promise.reject(new Error("Authentication required"));
     }
@@ -77,6 +76,6 @@ export const deleteJob = (jobId) => {
 
 // Logout user and clear the token from localStorage
 export const logoutUser = () => {
-    localStorage.removeItem("token"); // Clear the token from localStorage
+    localStorage.removeItem("token"); 
     return axios.get(`${API_URL}/logout`, { withCredentials: true });
 };

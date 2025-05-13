@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table, Container, Spinner, Button, Modal, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getJobList1, editJob, deleteJob } from "../services/userService"; // Adjust path if needed
+import { getJobList1, editJob, deleteJob } from "../services/userService"; 
 import { Alert } from "react-bootstrap";
 
 
@@ -143,7 +143,6 @@ const EditJob = () => {
 
 
 
-            {/* Modal */}
             <Modal show={showModal} onHide={handleCloseModal}>
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Job: {selectedJob?.role}</Modal.Title>

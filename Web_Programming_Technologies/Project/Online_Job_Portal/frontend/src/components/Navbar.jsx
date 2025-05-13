@@ -12,9 +12,8 @@ const Navigationbar = () => {
       setIsAuthenticated(!!token);
     };
 
-    checkAuth(); // Check on initial render
+    checkAuth();
 
-    // Listen for login/logout events
     window.addEventListener("login", checkAuth);
     window.addEventListener("logout", checkAuth);
 
@@ -26,7 +25,7 @@ const Navigationbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.dispatchEvent(new Event("logout")); // 👈 Dispatch logout event
+    window.dispatchEvent(new Event("logout"));
     setIsAuthenticated(false);
     navigate('/');
   };

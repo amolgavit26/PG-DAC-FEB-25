@@ -9,7 +9,7 @@ import Feedback from './pages/Feedback';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
-import EditJob from './pages/EditJob';  {/* <-- Corrected Import */}
+import EditJob from './pages/EditJob'; 
 import PostJob from './pages/PostJob';
 
 import { ToastContainer } from 'react-toastify';
@@ -23,7 +23,7 @@ function App() {
       <div className="app">
         <Navigationbar />
 
-        {/* Toast notifications container */}
+        
         <ToastContainer
           position="top-center"
           autoClose={3000}
@@ -42,11 +42,11 @@ function App() {
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/jobs" element={<Jobs />} />
-            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+            
             <Route path="/contact" element={<Contact />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/about" element={<About />} />
-            <Route path="/edit-jobs" element={<EditJob />} /> {/* <-- NEW ROUTE */}
+            <Route path="/edit-jobs" element={<EditJob />} /> 
           <Route path="/post-job" element={<PostJob />} />
           </Routes>
         </div>

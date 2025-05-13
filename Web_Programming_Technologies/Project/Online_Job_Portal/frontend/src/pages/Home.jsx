@@ -5,7 +5,7 @@ import './HomePage.css';
 const Home = () => {
   return (
     <div className="home-page">
-      {/* Hero Section */}
+      
       <header className="hero-section">
         <div className="hero-content">
           <h1>Welcome to Our Application Portal</h1>
@@ -29,7 +29,7 @@ const Home = () => {
         </div>
       </header>
 
-      {/* Features Section */}
+      
       <section className="features-section">
         <h2>Why Choose us ?</h2>
         <div className="features-grid">
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
+    
       <section className="final-cta">
         <h2>Ready to Get Started?</h2>
         <Link to="/signup" className="btn btn-large btn-success">

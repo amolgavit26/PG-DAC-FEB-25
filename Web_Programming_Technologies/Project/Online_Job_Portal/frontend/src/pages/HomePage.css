@@ -89,7 +89,7 @@
   padding: 30px;
   border-radius: 8px;
   background-color: rgb(49, 69, 63); 
-   backdrop-filter: blur(20px); 
+  backdrop-filter: blur(20px); 
   transition: transform 0.3s ease;
   color: #cfe6d7;
 }
@@ -109,7 +109,7 @@
   padding: 80px 0;
   text-align: center;
   background-color: rgb(49, 69, 63); 
-   backdrop-filter: blur(20px); 
+  backdrop-filter: blur(20px); 
   border-radius: 8px;
   margin-top: 40px;
 }

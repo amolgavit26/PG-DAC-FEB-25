@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <div>
       <div style={styles.div}>
-      {/* <p style={styles.text}>© {new Date().getFullYear()} Job Portal. All rights reserved.</p> */}
       <p style={styles.text}> Made with ❤️ from Aarya , Amol & Aditya</p>
       </div>
     </div>

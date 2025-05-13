@@ -48,7 +48,6 @@ const Jobs = () => {
 
   const handleSubmitApplication = () => {
     toast.success(`Applied for: ${selectedJob?.role}`);
-    // Submit logic goes here
     handleCloseModal();
   };
 
@@ -82,7 +81,6 @@ const Jobs = () => {
         ))}
       </div>
 
-      {/* Modal */}
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Apply for {selectedJob?.role}</Modal.Title>
