@@ -1,62 +1,72 @@
-# 🧑‍💼 SmartHire Careers – Online Job Portal (Frontend)
+# 🧑‍💼 SmartHire Careers – Online Job Portal (Fullstack)
 
-Welcome to **SmartHire Careers**, an online job application platform built with **React** and **Bootstrap**, designed to connect job seekers and employers. This is the frontend codebase of the full-stack project.
+SmartHire Careers is a fullstack online job portal that connects job seekers and employers. It features user authentication, job management, feedback submission, and role-based access control. The project is built with **React.js** (Frontend), **Node.js/Express.js** (Backend), and **MySQL** (Database).
 
 ---
 
 ## 🚀 Features
 
 ### ✅ Authentication
-- **Sign Up** and **Sign In** pages for new and existing users.
-- Token-based login using `localStorage`.
-- Authenticated routes for job posting and editing.
+- User **Sign Up**, **Sign In**, and **Logout** functionality.
+- JWT-based session management.
 
 ### 💼 Job Management
-- Post jobs with fields like Role, Company Name, Details.
-- View job listings dynamically from backend.
-- Edit or delete existing jobs (Admin/Employer functionality).
-- Apply to jobs via a popup form.
+- Post, edit, and delete job listings (Admin/Employer roles).
+- View dynamic job listings from the backend.
+- Apply for jobs via a popup form.
 
-### 📋 Forms
-- **Contact Form**: For user inquiries.
-- **Feedback Form**: Collects user feedback with rating and comments.
+### 💬 Feedback & Contact
+- Submit feedback with ratings and comments.
+- Contact form for inquiries.
 
-### 📚 Static Pages
-- **Home Page** with hero section, features, and call-to-action.
-- **About Us** with team bios and project mission.
-- **Footer** with links, branding, and legal info.
+### 🧑‍💻 Role-Based Access
+- Admin and Employer access for job management and user control.
+- Public users can view jobs, contact, and provide feedback.
 
 ---
 
-## 🗂️ Folder Structure
+## 🧱 Technologies Used
 
-```
+### Frontend
+- React, React Router DOM
+- React Bootstrap, Bootstrap, CSS
+- Axios, React Toastify
+
+### Backend
+- Node.js, Express.js
+- MySQL (via mysql2)
+- JWT, bcrypt
+- Middleware: cookie-parser, cors
+
+---
+
+## 📁 Project Structure
+
+### Frontend (`/frontend`)
+
+```plaintext
 /src
-├── components
-│   ├── Navbar.jsx
-│   ├── Footer.jsx
-│   └── JobCard.jsx
-├── pages
-│   ├── About.jsx
-│   ├── Contact.jsx
-│   ├── EditJob.jsx
-│   ├── Feedback.jsx
-│   ├── Home.jsx
-│   ├── Jobs.jsx
-│   ├── PostJob.jsx
-│   ├── Signin.jsx
-│   └── Signup.jsx
-├── services
-│   └── userService.js
-├── styles
-│   └── HomePage.css
+├── components/
+├── pages/
+├── services/
+├── styles/
 ├── App.jsx
 └── main.jsx
 ```
 
+### Backend (`/backend`)
+
+```plaintext
+/backend
+├── app.js
+├── middleware/
+├── routes/
+└── src/config/
+```
+
 ---
 
-## 🔗 Routes
+## 🔗 Frontend Routes
 
 | Path           | Component     | Access         |
 |----------------|---------------|----------------|
@@ -72,47 +82,94 @@ Welcome to **SmartHire Careers**, an online job application platform built with 
 
 ---
 
-## 🔐 Authentication Logic
+## 📘 Backend API Endpoints
 
-- JWT stored in `localStorage` after login.
-- Token is sent in headers for protected routes like:
-  - POST `/job-post`
-  - PUT `/job-edit/:id`
-  - DELETE `/job-delete/:id`
+### Auth
+| Method | Endpoint  | Description        |
+|--------|-----------|--------------------|
+| POST   | `/signup` | Register user      |
+| POST   | `/signin` | Login user         |
+| GET    | `/logout` | Logout user        |
+
+### Users
+| Method | Endpoint    | Description                   |
+|--------|-------------|-------------------------------|
+| GET    | `/allUsers` | Paginated list of users       |
+| GET    | `/user/:id` | Retrieve user by ID (JWT)     |
+| PUT    | `/user/:id` | Update user (Admin only)      |
+| DELETE | `/user/:id` | Delete user (Admin only)      |
+
+### Jobs
+| Method | Endpoint          | Description                       |
+|--------|-------------------|-----------------------------------|
+| POST   | `/job-post`       | Post job (Admin/Employer only)    |
+| GET    | `/job-get`        | Retrieve all jobs                 |
+| PUT    | `/job-edit/:id`   | Edit job (Admin/Employer only)    |
+| DELETE | `/job-delete/:id` | Delete job (Admin/Employer only)  |
+
+### Feedback
+| Method | Endpoint         | Description                     |
+|--------|------------------|---------------------------------|
+| POST   | `/feedback-post` | Submit feedback (Public)        |
+| GET    | `/feedback-get`  | View feedback (Admin only)      |
 
 ---
 
-## 🛠️ Technologies Used
+## 🗄️ Database Tables
 
-| Purpose        | Library              |
-|----------------|----------------------|
-| UI Components  | React Bootstrap      |
-| Routing        | React Router DOM     |
-| API Calls      | Axios                |
-| Notifications  | React Toastify       |
-| Styling        | CSS + Bootstrap      |
-| State Handling | React Hooks          |
+### `usertable`
+| Column    | Type                              |
+|-----------|-----------------------------------|
+| id        | INT                               |
+| firstname | VARCHAR(30)                       |
+| lastname  | VARCHAR(30)                       |
+| email     | VARCHAR(100), UNIQUE              |
+| password  | VARCHAR(100) (hashed)             |
+| role      | tinyint(1) (0=employer, 1=admin)  |
+
+### `job_data`
+| Column  | Type          |
+|---------|---------------|
+| id      | INT           |
+| role    | VARCHAR(50)   |
+| skills  | VARCHAR(500)  |
+| details | VARCHAR(1000) |
+
+### `feedback`
+| Column    | Type         |
+|-----------|--------------|
+| firstname | VARCHAR(30)  |
+| lastname  | VARCHAR(30)  |
+| email     | VARCHAR(100) |
+| rating    | TINYINT      |
+| comments  | TEXT         |
 
 ---
 
 ## ⚙️ Setup Instructions
 
 ### Prerequisites
-- Node.js and npm installed
+- Node.js, npm, and MySQL installed
 
-### Install Dependencies
+### Backend Setup
 
 ```bash
+cd backend
 npm install
+node app.js
 ```
 
-### Start Development Server
+> Ensure MySQL is running and the credentials match in `src/config/dbconfig.js`.
+
+### Frontend Setup
 
 ```bash
+cd frontend
+npm install
 npm run dev
 ```
 
-> Ensure your backend is running on `http://localhost:7800` as expected by `userService.js`.
+> The frontend expects the backend at `http://localhost:7800`.
 
 ---
 
@@ -133,4 +190,4 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📌 Credits
 
 - Logo sourced from [PngTree](https://pngtree.com/freepng/hand-painted-hand-drawn-business-business-business-career_3923421.html)
-- React, Bootstrap, Axios, and Toastify libraries
+- React, Bootstrap, Axios, Toastify, Express, MySQL, and other open-source libraries

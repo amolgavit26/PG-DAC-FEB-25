@@ -1,5 +1,5 @@
 
-# 🧾 Online Job Portal – Backend
+# 🧾 SmartHire Careers – Online Job Portal (Backend)
 
 A backend service for an Online Job Portal, built with **Node.js**, **Express.js**, and **MySQL**. It supports user authentication, job management, feedback collection, and role-based authorization.
 
