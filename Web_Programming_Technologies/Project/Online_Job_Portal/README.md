@@ -173,21 +173,17 @@ npm run dev
 
 ---
 
-## 👨‍💻 Authors
+## 📸 Preview
 
-- **Aarya Sanjay Dange** – Frontend
-- **Amol Nethu Gavit** – Backend
-- **Aditya Raj Harsh** – Frontend
+Here’s how the page looks:
+
+![Home Page 1 Preview](HomePage1.png) 
+![Home Page 2 Preview](HomePage2.png) 
+![AllJobs Page Preview](AllJobs.png) 
+![Feedback Page Preview](Feedback.png) 
+![SignUp Page Preview](SignUp.png) 
+![SignIn Page Preview](SignIn.png) 
+![PostJob Page Preview](PostJob.png) 
+![EditJob Page Preview](EditJob.png) 
 
 ---
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 📌 Credits
-
-- Logo sourced from [PngTree](https://pngtree.com/freepng/hand-painted-hand-drawn-business-business-business-career_3923421.html)
-- React, Bootstrap, Axios, Toastify, Express, MySQL, and other open-source libraries
