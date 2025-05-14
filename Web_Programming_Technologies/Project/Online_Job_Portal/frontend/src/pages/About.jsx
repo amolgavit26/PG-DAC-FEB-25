@@ -56,7 +56,7 @@ Used HTML, CSS, JavaScript, and front-end frameworks (React, Bootstrap) for UI d
           <p>Developed and managed the server-side logic and application functionalities. Worked with database for data storage and retrieval. Ensured data integrity and system reliability through proper architecture.</p>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amolgavit158121@gmail.com" target="_blank">amolgavit158121@gmail.com</a>
           <br></br>🔗<a href="https://www.linkedin.com/in/amolgavit26/" target="_blank"> LinkedIn </a>
-          🔗<a href="hhttps://github.com/amolgavit26" target="_blank"> Github </a>
+          🔗<a href="https://github.com/amolgavit26" target="_blank"> Github </a>
           
         </div>
         <div className="info-card">
