@@ -185,5 +185,7 @@ Here’s how the page looks:
 ![SignIn Page Preview](SignIn.png) 
 ![PostJob Page Preview](PostJob.png) 
 ![EditJob Page Preview](EditJob.png) 
+![About Us 1 Page Preview](AboutUs1.png)
+![About Us 2 Page Preview](AboutUs2.png)
 
 ---
