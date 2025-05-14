@@ -115,22 +115,3 @@ npm run dev
 > Ensure your backend is running on `http://localhost:7800` as expected by `userService.js`.
 
 ---
-
-## 👨‍💻 Authors
-
-- **Aarya Sanjay Dange** – Frontend
-- **Amol Nethu Gavit** – Backend
-- **Aditya Raj Harsh** – Frontend
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 📌 Credits
-
-- Logo sourced from [PngTree](https://pngtree.com/freepng/hand-painted-hand-drawn-business-business-business-career_3923421.html)
-- React, Bootstrap, Axios, and Toastify libraries
