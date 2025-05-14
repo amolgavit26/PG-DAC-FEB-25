@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:7800";
 
-// Function to get the token from localStorage
+// to get the token from localStorage
 const getAuthToken = () => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -36,7 +36,7 @@ export const postJob = (data) => {
     });
 };
 
-// Get all jobs from the backend API
+
 export const getJobList = () => {
     return axios.get(`${API_URL}/job-get`);
 };
@@ -47,7 +47,7 @@ export const getJobList1 = () => {
 
 // Update a specific job
 export const editJob = (jobId, updatedData) => {
-    const token = getAuthToken();
+    const token = getAuthToken(); 
     if (!token) {
         return Promise.reject(new Error("Authentication required"));
     }

@@ -27,7 +27,7 @@ const SignUp = () => {
     e.preventDefault();
     setError('');
 
-    const dataToSubmit = { ...userData, role: 0 };
+    const dataToSubmit = { ...userData, role: 0 }; // Set default role (e.g., 0 for candidate)
 
     try {
       const response = await signup(dataToSubmit);

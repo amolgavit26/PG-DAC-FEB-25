@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Signin from './pages/Signin';
 import SignUp from './pages/SignUp';
 import Jobs from './pages/Jobs';
-import Dashboard from './pages/Dashboard';
+
 import Feedback from './pages/Feedback';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -23,7 +23,7 @@ function App() {
       <div className="app">
         <Navigationbar />
 
-        
+       
         <ToastContainer
           position="top-center"
           autoClose={3000}

@@ -48,6 +48,7 @@ const Jobs = () => {
 
   const handleSubmitApplication = () => {
     toast.success(`Applied for: ${selectedJob?.role}`);
+   
     handleCloseModal();
   };
 

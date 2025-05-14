@@ -29,7 +29,7 @@ const Home = () => {
         </div>
       </header>
 
-      
+     
       <section className="features-section">
         <h2>Why Choose us ?</h2>
         <div className="features-grid">
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </section>
 
-    
+      
       <section className="final-cta">
         <h2>Ready to Get Started?</h2>
         <Link to="/signup" className="btn btn-large btn-success">
