@@ -1,0 +1,58 @@
+package com.cdac.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static com.cdac.utils.DBUtils.*;
+
+import com.cdac.pojos.User;
+
+public class ConnectioDaoImpl implements UserDao {
+	//Dependency - DB Connection - DBUtils
+
+	private Connection connection;
+	private PreparedStatement pst1;
+	
+	public ConnectioDaoImpl() throws ClassNotFoundException, SQLException {
+		//Establish DB cn
+		openConnection();
+		connection = getConnection();
+		// Create PreparedStatement
+		String sql = "select * from users where email = ? and password = ?";
+		pst1 = connection.prepareStatement(sql);
+		System.out.println("user dao Created");
+	}
+	
+	
+	
+	@Override
+	public User signIn(String email, String pwd) throws SQLException {
+		//1. set In parameters
+		pst1.setString(1,email);
+		pst1.setString(2,pwd);
+		
+		//2. execute quey n prosess RST
+		try (ResultSet rst = pst1.executeQuery()) {
+			
+			if (rst.next()) {
+				//success
+				return new User(rst.getInt(1), rst.getString(2), rst.getString(3),rst.getString(4), 
+						rst.getString(5), rst.getDate(6), rst.getBoolean(7), rst.getString(8));
+			}
+			return null;
+		}
+		
+	}
+	
+	// clean up - close db resource (PST, DB cn)
+	public void cleanUp() throws SQLException {
+		if(pst1 != null) {
+			pst1.close();
+			pst1 = null;
+		}
+		closeConnection();
+	}
+
+}

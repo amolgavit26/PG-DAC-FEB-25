@@ -1,0 +1,5 @@
+package com.cdac.pojos;
+
+public class User {
+
+}

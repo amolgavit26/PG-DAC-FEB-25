@@ -1,0 +1,6 @@
+package com.cdac.dao;
+
+public interface UserDao {
+// sign in using layer
+	//  signin(email, password) throws SQL Exception
+}

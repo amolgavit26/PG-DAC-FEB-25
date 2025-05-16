@@ -1,0 +1,15 @@
+package com.cdac.dao;
+
+import java.sql.SQLException;
+
+import com.cdac.pojos.User;
+
+public class UserDaoImpl implements UserDao {
+
+	@Override
+	public User signIn(String email, String pwd) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
