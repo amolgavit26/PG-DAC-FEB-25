@@ -21,12 +21,14 @@ import java.time.LocalDateTime;
  * /test1 value:- fully qualified servlet class name (eg -
  * com.cdac.pages.Servlet1)
  */
-@WebServlet("/test1")
+@WebServlet("/test1")			// there is another option as well in .xml
 public class Servlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+
+
 	/**
-	 * @see Servlet#init(ServletConfig)
+	 * @see Servlet#init(ServletConfig)  
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("in init");
