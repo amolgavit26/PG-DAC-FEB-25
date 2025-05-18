@@ -75,7 +75,7 @@ static class History{
 			System.out.println("Visit First.");
 		}
 	}
-	
+}
 	
 	
 	public static void main(String args[]){
