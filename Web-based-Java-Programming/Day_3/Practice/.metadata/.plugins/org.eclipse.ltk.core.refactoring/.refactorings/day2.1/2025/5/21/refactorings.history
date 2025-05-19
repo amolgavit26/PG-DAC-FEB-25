@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 packages to &apos;day_3_voting/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;day2.1&apos;&#x0D;&#x0A;- Destination element: &apos;day_3_voting/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     day2.1/src/com.cdac.dao&#x0D;&#x0A;     day2.1/src/com.cdac.utils&#x0D;&#x0A;     day2.1/src/com.cdac.pojos" description="Copy packages" destination="=day_3_voting/src\/main\/java" element1="/src&lt;com.cdac.dao" element2="/src&lt;com.cdac.utils" element3="/src&lt;com.cdac.pojos" flags="589830" fragments="3" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1747543668235" version="1.0"/>
+</session>

@@ -1,0 +1,24 @@
+
+May 18, 2025 13:26:52.98 NEW SESSION
+May 18, 2025 13:26:53.00 [18124:27396:0518/132652.959:ERROR:chrome\browser\policy\cloud\fm_registration_token_uploader.cc:179] Client is missing for kUser scope
+May 18, 2025 13:26:53.01 [18124:27396:0518/132652.983:ERROR:chrome\browser\policy\cloud\fm_registration_token_uploader.cc:179] Client is missing for kUser scope
+May 18, 2025 13:26:53.16 [18124:16780:0518/132653.163:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:26:53.23 [18124:16780:0518/132653.239:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:26:53.69 Created TensorFlow Lite XNNPACK delegate for CPU.
+May 18, 2025 13:26:53.72 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+May 18, 2025 13:27:03.36 [18124:27396:0518/132703.367:ERROR:components\device_event_log\device_event_log_impl.cc:202] [13:27:03.357] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+May 18, 2025 13:27:18.42 [18124:16780:0518/132718.428:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:27:19.79 [18124:16780:0518/132719.799:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:28:01.64 [18124:16780:0518/132801.644:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:28:05.37 [18124:16780:0518/132805.376:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:29:25.33 [18124:16780:0518/132925.339:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:29:40.03 [18124:16780:0518/132940.036:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:32:12.10 [18124:16780:0518/133212.104:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:32:27.15 [18124:16780:0518/133227.154:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:38:00.53 [18124:16780:0518/133800.536:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 13:38:57.72 [18124:16780:0518/133857.720:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+May 18, 2025 14:05:08.00 [18124:16780:0518/140508.008:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+May 18, 2025 14:05:08.01 [18124:16780:0518/140508.009:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+May 18, 2025 14:05:09.15 [18124:16780:0518/140509.150:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+May 18, 2025 14:05:09.15 [18124:16780:0518/140509.150:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+May 18, 2025 14:58:07.25 [18124:27396:0518/145807.255:ERROR:mojo\public\cpp\bindings\lib\interface_endpoint_client.cc:725] Message 1 rejected by interface blink.mojom.WidgetHost

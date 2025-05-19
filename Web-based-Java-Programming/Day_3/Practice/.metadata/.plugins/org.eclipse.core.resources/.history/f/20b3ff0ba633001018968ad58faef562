@@ -1,0 +1,56 @@
+package com.cdac.pages;
+
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+import com.cdac.dao.UserDaoImpl;
+
+import static com.cdac.utils.DBUtils.*;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	private UserDaoImpl userDao;
+
+	/**
+	 * @see Servlet#init()
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		try {
+			// open cn and create the dao instance
+			openConnection();
+
+			// create dao instance   
+			userDao = new UserDaoImpl();
+		}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	/**
+	 * @see Servlet#destroy()
+	 */
+	public void destroy() {
+		// dao - clean up, close cn
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// set const type, read request data, invoke dao's method - signin
+	}
+
+}

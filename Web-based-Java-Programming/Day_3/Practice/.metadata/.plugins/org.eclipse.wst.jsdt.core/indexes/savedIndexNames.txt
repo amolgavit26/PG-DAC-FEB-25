@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+E:\DAC\Notes\WJP\Day_3\Practice\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3231859324.index
+315113540.index
+3416781153.index
+973614805.index
+2622905437.index
+3556505539.index
+1616802437.index

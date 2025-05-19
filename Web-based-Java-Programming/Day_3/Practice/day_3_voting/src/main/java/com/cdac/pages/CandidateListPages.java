@@ -1,0 +1,43 @@
+package com.cdac.pages;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URLDecoder;
+
+/**
+ * Servlet implementation class AdminPage
+ */
+@WebServlet("/candidate_list")
+public class CandidateListPages extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletReq uest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		try (PrintWriter pw = response.getWriter()){
+			pw.print("in candidate list page.<br>");
+			
+			// get the cookie from request header
+			Cookie[] cookies = request.getCookies();
+			if(cookies != null) {
+				// => getting a cokkie/s from the header
+				Cookie c1 = cookies[0];
+				String decodedString = URLDecoder.decode(c1.getValue(), "utf-8");
+				pw.print("<h5>user details from cookie "+ decodedString + "</h5>" );
+			} else {	// => no cookies
+				pw.print("<h5>No Cookies Session tracking failed</h5>" );
+			} 
+			pw.print("user email  " + request.getParameter("em"));
+		}
+	} 
+
+}

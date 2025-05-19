@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Servlet1.java&apos; to &apos;day_3.1/src/main/java/com.cdac.pages&apos;&#x0D;&#x0A;- Original project: &apos;day_3.1&apos;&#x0D;&#x0A;- Destination element: &apos;day_3.1/src/main/java/com.cdac.pages&apos;&#x0D;&#x0A;- Original element: &apos;com.cdac.pages.Servlet1.java&apos;" description="Copy compilation unit" destination="/src\/main\/java&lt;com.cdac.pages" element1="/src\/main\/java&lt;com.cdac.pages{Servlet1.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1747542153438" units="1" version="1.0"/>
+</session>
