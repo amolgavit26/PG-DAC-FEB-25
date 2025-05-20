@@ -14,6 +14,7 @@ The repository is organized into the following modules:
 - **Data Structures and Algorithms**
 - **Database Technologies**
 - **Web Programming Technologies**
+- **Web Programming with Java**
 
 Each module directory contains relevant *assignments*, code samples, resources and *projects* to aid in understanding the respective subjects.
 
