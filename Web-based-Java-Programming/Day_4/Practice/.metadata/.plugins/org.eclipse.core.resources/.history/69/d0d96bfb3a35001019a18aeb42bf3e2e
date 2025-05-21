@@ -1,0 +1,11 @@
+package com.cdac.dao;
+
+import java.sql.SQLException;
+
+import com.sun.tools.javac.util.List;
+
+public interface CandidateDao {
+
+	// get all candidates
+	List<Candidate>getAllCandidates() throws SQLException;
+}

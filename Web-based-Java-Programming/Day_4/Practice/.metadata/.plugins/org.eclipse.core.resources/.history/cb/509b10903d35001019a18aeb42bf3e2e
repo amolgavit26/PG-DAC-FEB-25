@@ -1,0 +1,16 @@
+package com.cdac.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.cdac.pojos.Candidate;
+
+public class CandidateDaoImpl implements CandidateDao {
+
+	@Override
+	public List<Candidate> getAllCandidates() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
