@@ -1,0 +1,112 @@
+package com.cdac.pages;
+
+import static com.cdac.utils.DBUtils.closeConnection;
+import static com.cdac.utils.DBUtils.openConnection;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.cdac.dao.UserDaoImpl;
+import com.cdac.pojos.User;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet(value = "/", loadOnStartup = 1)
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private UserDaoImpl userDao;
+
+	/**
+	 * @see Servlet#init()
+	 */
+	/*
+	 * overriding form of the method can't throw any new checked exceptions
+	 */
+	@Override
+	public void init() throws ServletException {
+		ServletContext ctx = getServletContext();
+
+		try {
+			// get ctx params from ServletContext
+			String url = ctx.getInitParameter("db_url");
+			String userName = ctx.getInitParameter("user_name");
+			String pwd = ctx.getInitParameter("password");
+
+			// open cn
+			openConnection(url, userName, pwd);
+			// create dao instances
+			userDao = new UserDaoImpl();
+
+		} catch (Exception e) {
+			System.out.println(e);
+
+			throw new ServletException("err in init", e);
+		}
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
+			/*
+			 * Navigation logic
+			 */
+			// 1. get servlet path - exclud query string
+			String path = req.getServletPath();
+			System.out.println(path);
+			String prefix = "/WEB-INF/views";
+			String suffix = ".jsp";
+			String viewName = null;
+			switch (path) {
+			case "/":
+				listAllUsers(req);
+				viewName = prefix + "list" + suffix;
+				break;
+			}
+			
+			// 2. forward 
+			RequestDispatcher rd = req.getRequestDispatcher(viewName);
+			rd.forward(req, resp);
+		} catch (Exception e) {
+			throw new ServletException("err in do get", e);
+		}
+	}
+
+	private void listAllUsers(HttpServletRequest req) throws SQLException {
+		// Invoke dao's method
+		List<User> users = userDao.listUsers();
+
+		// add the results under the request scope
+		// since RD'd forward will be used for the navigation
+		req.setAttribute("user_list", users);
+
+	}
+
+	/**
+	 * @see Servlet#destroy()
+	 */
+	@Override
+	public void destroy() {
+		System.out.println("in destroy");
+		try {
+			userDao.cleanUp();
+			closeConnection();
+		} catch (Exception e) {
+			System.out.println("in destroy " + e);
+		}
+	}
+
+}

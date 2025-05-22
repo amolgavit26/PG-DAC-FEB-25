@@ -1,0 +1,96 @@
+2:00:08 Tab14 FinishNav218
+2:00:08 Tab14 PageLoad
+2:00:13 Tab14 StartNav219 #typed
+2:00:13 Tab14 FinishNav219
+2:00:13 Tab14 PageLoad
+2:02:33 Microsoft.Shutdown.OnWindowClosing
+2:02:33 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+2:02:33 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+2:02:33 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseAllTabs
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseTabs
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseTabs_EdgeBeforeClosingAllTabs
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_TabClosable
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosingAll
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseWebContentses
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseWebContentses_FastShutdown
+2:02:33 Microsoft.Shutdown.TabStripModel.ShouldRunUnloadListenerBeforeClosing_false
+2:02:33 Tab1 RenderProcessGone
+2:02:33 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+2:02:33 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+2:02:33 Browser1 Close Tab1 at 0
+2:02:33 Tab1 WebContentsDestroyed
+2:02:33 Microsoft.Shutdown.OnWindowClosing
+2:02:33 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:33 Widget Closed: BrowserFrame
+2:02:33 Microsoft.Shutdown.OnWindowClosing
+2:02:33 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:33 Microsoft.Browser_Removed
+2:02:33 Microsoft.Shutdown.OnWindowClosing
+2:02:33 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+2:02:33 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+2:02:33 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseAllTabs
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseTabs
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseTabs_EdgeBeforeClosingAllTabs
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_TabClosable
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosingAll
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseWebContentses
+2:02:33 Microsoft.Shutdown.TabStripModel.CloseWebContentses_FastShutdown
+2:02:33 Microsoft.Shutdown.TabStripModel.ShouldRunUnloadListenerBeforeClosing_false
+2:02:33 Tab2 RenderProcessGone
+2:02:33 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
+2:02:33 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+2:02:33 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+2:02:33 Browser2 Close Tab2 at 0
+2:02:33 Tab2 WebContentsDestroyed
+2:02:33 Microsoft.Shutdown.OnWindowClosing
+2:02:33 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:33 Widget Closed: BrowserFrame
+2:02:33 Microsoft.Shutdown.OnWindowClosing
+2:02:33 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:33 Microsoft.Browser_Removed
+2:02:40 Microsoft.Shutdown.OnWindowClosing
+2:02:40 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+2:02:40 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+2:02:40 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:40 Microsoft.Shutdown.TabStripModel.CloseAllTabs
+2:02:40 Microsoft.Shutdown.TabStripModel.CloseTabs
+2:02:40 Microsoft.Shutdown.TabStripModel.CloseTabs_EdgeBeforeClosingAllTabs
+2:02:40 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl
+2:02:40 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_TabClosable
+2:02:40 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosingAll
+2:02:40 Microsoft.Shutdown.TabStripModel.CloseWebContentses
+2:02:40 Microsoft.Shutdown.TabStripModel.CloseWebContentses_FastShutdown
+2:02:40 Microsoft.Shutdown.TabStripModel.ShouldRunUnloadListenerBeforeClosing_false
+2:02:40 Tab3 RenderProcessGone
+2:02:40 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
+2:02:40 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+2:02:40 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+2:02:40 Browser3 Close Tab3 at 0
+2:02:40 Tab3 WebContentsDestroyed
+2:02:40 Microsoft.Shutdown.OnWindowClosing
+2:02:40 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:40 Widget Closed: BrowserFrame
+2:02:40 Microsoft.Shutdown.OnWindowClosing
+2:02:40 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:02:40 Microsoft.Browser_Removed
+2:05:18 Tab14 StartNav220 #typed
+2:05:18 Tab14 FinishNav220
+2:05:18 Tab14 PageLoad
+2:05:20 Tab14 StartNav221 #typed
+2:05:20 Tab14 FinishNav221
+2:05:20 Tab14 PageLoad
+2:05:22 Tab14 StartNav222 #typed
+2:05:22 Tab14 FinishNav222
+2:05:22 Tab14 PageLoad
+2:05:24 Tab14 StartNav223 #typed
+2:05:24 Tab14 FinishNav223
+2:05:24 Tab14 PageLoad
+2:05:33 Tab14 StartNav224 #typed
+2:05:33 Tab14 FinishNav224
+2:05:33 Tab14 PageLoad
+2:05:50 Microsoft.Shutdown.OnWindowClosing
