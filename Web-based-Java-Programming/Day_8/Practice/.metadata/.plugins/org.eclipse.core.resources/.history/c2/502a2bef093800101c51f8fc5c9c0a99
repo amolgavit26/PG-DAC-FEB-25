@@ -1,0 +1,13 @@
+package com.cdac.dao;
+
+import com.cdac.entities.User;
+
+public class UserDaoImpl implements UserDao {
+
+	@Override
+	public String signUp(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

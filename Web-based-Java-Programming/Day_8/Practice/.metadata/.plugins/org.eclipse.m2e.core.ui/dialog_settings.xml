@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="E:\DAC\Notes\WJP\Day_8\day8-data\code\day8_hibernate"/>
 			<item value="E:\DAC\Notes\WJP\template projects\hibernate_template_project"/>
 		</list>
 		<list key="projectNameTemplate">
