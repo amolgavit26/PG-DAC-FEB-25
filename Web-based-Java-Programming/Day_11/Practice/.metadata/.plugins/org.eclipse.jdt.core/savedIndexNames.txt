@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+E:\DAC\Notes\WJP\Day_11\Practice\.metadata\.plugins\org.eclipse.jdt.core
+417273378.index
+2860929722.index
+4145225017.index
+1865797976.index
