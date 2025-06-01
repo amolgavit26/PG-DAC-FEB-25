@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="E:\DAC\Notes\WJP\Day_14\day14-data\code\day14_spring_mvc_hibernate"/>
+			<item value="E:\DAC\Notes\WJP\Day_14\day14-data\code\day14_spring_mvc"/>
+			<item value="E:\DAC\Notes\WJP\template projects\spring_boot_mvc_template\spring_boot_mvc_template"/>
+			<item value="E:\DAC\Notes\WJP\template projects\spring_boot_mvc_template"/>
+			<item value="E:\DAC\Notes\WJP\template projects\spring_mvc_hibernate"/>
+			<item value="E:\DAC\Notes\WJP\template projects\test_spring_core"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>
