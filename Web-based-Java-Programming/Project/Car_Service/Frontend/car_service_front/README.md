@@ -42,11 +42,11 @@ Welcome to the frontend of the **Car Service Booking Portal**, built with **Reac
 │   ├── Home.jsx                   # Landing page
 │   ├── About.jsx                  # About the company
 │   ├── ContactUs.jsx              # Contact form
-│   ├── Feedback.jsx              # Feedback form
-│   ├── Services.jsx              # User booking services
-│   ├── AdminDashboard.jsx        # Admin panel for workshops & requests
-│   ├── Login.jsx                 # Sign in page
-│   └── Signup.jsx                # Register page
+│   ├── Feedback.jsx               # Feedback form
+│   ├── Services.jsx               # User booking services
+│   ├── AdminDashboard.jsx         # Admin panel for workshops & requests
+│   ├── Login.jsx                  # Sign in page
+│   └── Signup.jsx                 # Register page
 ├── App.jsx
 ├── main.jsx
 └── index.css
