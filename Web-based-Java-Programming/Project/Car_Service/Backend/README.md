@@ -1,7 +1,8 @@
 
-# 🧾 CarServiceHub - Car Service Platform (Backend)
+# 🚗 CarServiceHub - Car Service Platform (Backend) 🧑‍🔧
 
-A backend service for a Car Service Booking Platform, built with **Spring Boot**, **Java**, and **MySQL**. It supports user authentication, workshop management, service requests, and admin functionalities with JWT-based authorization.
+A backend service for a Car Service Booking Platform, built with **Spring Boot**, **Java**, and **MySQL**. 
+It supports user authentication, workshop management, service requests, and admin functionalities with JWT-based authorization.
 
 ---
 
@@ -141,7 +142,7 @@ The app will be available at: `http://localhost:8080`
 
 ---
 
-## 🗄️ Database Tables (Simplified)
+## 🗄️ Database Tables
 
 ### `user`
 | Column     | Type           |
@@ -174,11 +175,4 @@ The app will be available at: `http://localhost:8080`
 
 ---
 
-## 🧪 Testing
-
-```bash
-mvn test
-```
-
----
 
