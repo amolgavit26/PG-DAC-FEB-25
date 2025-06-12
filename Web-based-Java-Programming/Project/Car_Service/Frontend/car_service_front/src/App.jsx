@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'; 
@@ -18,7 +20,9 @@ function App() {
     <Router>
       <div className="d-flex flex-column min-vh-100">
         <Navbar />
-        
+
+        <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
+
         <div className="flex-grow-1">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -39,7 +43,7 @@ function App() {
           </Routes>
         </div>
 
-        <Footer /> 
+        <Footer />
       </div>
     </Router>
   );

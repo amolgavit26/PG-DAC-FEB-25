@@ -54,17 +54,22 @@ public class AuthController {
 
 
     @PostMapping("/signin")
-    public Map<String, String> signin(@RequestBody AuthRequest authRequest) {
-        Authentication auth = authManager.authenticate(
-                new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
+    public ResponseEntity<?> signin(@RequestBody AuthRequest authRequest) {
+        User user = userRepo.findByEmail(authRequest.getEmail()).orElse(null);
 
-        User user = userRepo.findByEmail(authRequest.getEmail()).orElseThrow();
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", "Email not found"));
+        }
 
-        // ✅ Updated to include userId in token
+        if (!encoder.matches(authRequest.getPassword(), user.getPassword())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error", "Incorrect password"));
+        }
+
         String token = jwtUtil.generateToken(user.getEmail(), user.getRole().name(), user.getId());
 
-        return Map.of("token", token);
+        return ResponseEntity.ok(Map.of("token", token));
     }
+
 
 
     @PostMapping("/logout")

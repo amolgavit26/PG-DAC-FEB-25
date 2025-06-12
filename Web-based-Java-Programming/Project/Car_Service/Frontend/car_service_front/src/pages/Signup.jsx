@@ -24,7 +24,7 @@ const Signup = () => {
     const nameRegex = /^[A-Za-z]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-console.log(passwordRegex.test("cdac123"));
+
     if (!nameRegex.test(user.firstName)) {
       toast.error("First name should contain only letters and be at least 2 characters.");
       return false;
@@ -52,10 +52,15 @@ console.log(passwordRegex.test("cdac123"));
     try {
       await axios.post('http://localhost:8080/auth/signup', user);
       toast.success('Registration successful! Please sign in.');
-      navigate('/signin');
+      setTimeout(() => navigate('/signin'), 2000);
     } catch (err) {
-      const errorMessage = err.response?.data?.message || 'Registration failed!';
-      toast.error(errorMessage);
+      const backendMessage = err.response?.data;
+
+      if (typeof backendMessage === 'string' && backendMessage.includes('Email is already registered')) {
+        toast.error("This email is already registered. Please sign in or use another email.");
+      } else {
+        toast.error("Registration failed. Please try again.");
+      }
     }
   };
 

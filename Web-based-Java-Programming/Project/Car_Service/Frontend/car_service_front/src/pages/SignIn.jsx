@@ -16,12 +16,28 @@ const SignIn = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await axios.post("http://localhost:8080/auth/signin", credentials);
+    const res = await axios.post(
+      "http://localhost:8080/auth/signin",
+      credentials,
+      {
+        validateStatus: (status) => status < 500
+      }
+    );
+
+    if (res.status !== 200) {
+      const message = res.data.error;
+      if (message === "Email not found") {
+        toast.error("Email not registered. Please sign up.");
+      } else if (message === "Incorrect password") {
+        toast.error("Wrong password. Please try again.");
+      } else {
+        toast.error("Login failed. " + message);
+      }
+      return; // Prevent decoding invalid token
+    }
+
     const { token } = res.data;
-
     const decoded = jwtDecode(token);
-    console.log("Decoded token:", decoded); // <-- check this in console
-
     const role = decoded.role;
     const userId = decoded.userId || decoded.id || decoded.sub;
 
@@ -42,7 +58,8 @@ const handleSubmit = async (e) => {
     navigate(role === "ADMIN" ? "/admin/dashboard" : "/services");
 
   } catch (err) {
-    toast.error(err.message || "Invalid email or password");
+    console.error("Login error:", err);
+    toast.error("An unexpected error occurred.");
   }
 };
 
@@ -52,11 +69,27 @@ const handleSubmit = async (e) => {
       <div className="signin-box">
         <h2>Sign In</h2>
         <form onSubmit={handleSubmit}>
-          <input type="email" name="email" placeholder="Email" value={credentials.email} onChange={handleChange} required />
-          <input type="password" name="password" placeholder="Password" value={credentials.password} onChange={handleChange} required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={credentials.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={credentials.password}
+            onChange={handleChange}
+            required
+          />
           <button type="submit">Login</button>
         </form>
-        <div className="signup-link">Don't have an account? <a href="/signup">Sign Up</a></div>
+        <div className="signup-link">
+          Don't have an account? <a href="/signup">Sign Up</a>
+        </div>
       </div>
     </div>
   );
