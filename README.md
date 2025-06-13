@@ -14,7 +14,6 @@ The repository is organized into the following modules:
 - **Data Structures and Algorithms**
 - **Database Technologies**
 - **Web Programming Technologies**
-- **Web Programming with Java**
 - **Web-Based Java Programming**
 - **C++ Programming**
 
