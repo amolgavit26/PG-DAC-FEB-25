@@ -16,6 +16,7 @@ The repository is organized into the following modules:
 - **Web Programming Technologies**
 - **Web Programming with Java**
 - **Web-Based Java Programming**
+- **C++ Programming**
 
 Each module directory contains relevant *assignments*, code samples, resources and *projects* to aid in understanding the respective subjects.
 
