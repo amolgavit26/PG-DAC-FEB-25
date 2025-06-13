@@ -15,7 +15,7 @@ The repository is organized into the following modules:
 - **Database Technologies**
 - **Web Programming Technologies**
 - **Web Programming with Java**
-- **Advance Java Programming**
+- **Web-Based Java Programming**
 
 Each module directory contains relevant *assignments*, code samples, resources and *projects* to aid in understanding the respective subjects.
 
@@ -23,7 +23,7 @@ Each module directory contains relevant *assignments*, code samples, resources a
 
 The assignments and projects in this repository utilize the following technologies:
 
-[![My Skills](https://skillicons.dev/icons?i=linux,java,mysql,mongodb,vscode,html,css,js,express,nodejs,react)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=linux,java,mysql,mongodb,vscode,html,css,js,express,nodejs,react,selenium,hibernate,spring,eclipse,cpp)](https://skillicons.dev)
 <!---![My Skills](https://skillicons.dev/icons?i=linux,java,mysql,mongodb,vscode,html,css,js,express,nodejs)--->
 
 These tools are integral to the PG-DAC curriculum and are used across various modules for developing and demonstrating concepts.
