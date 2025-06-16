@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructorAndDestructors",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectInitializer", "ObjectInitializer\ObjectInitializer.csproj", "{386396C4-5C91-4DF6-8B52-827CCFE96860}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignmen1", "Assignmen1\Assignmen1.csproj", "{63F7C83A-2C09-405F-9111-2B8606E9CEF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{386396C4-5C91-4DF6-8B52-827CCFE96860}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{386396C4-5C91-4DF6-8B52-827CCFE96860}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{386396C4-5C91-4DF6-8B52-827CCFE96860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F7C83A-2C09-405F-9111-2B8606E9CEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F7C83A-2C09-405F-9111-2B8606E9CEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F7C83A-2C09-405F-9111-2B8606E9CEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F7C83A-2C09-405F-9111-2B8606E9CEF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
