@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\bin\Debug\net9.0\AbstractClasses.exe
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\bin\Debug\net9.0\AbstractClasses.deps.json
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\bin\Debug\net9.0\AbstractClasses.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\bin\Debug\net9.0\AbstractClasses.dll
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\bin\Debug\net9.0\AbstractClasses.pdb
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\AbstractClasses.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\AbstractClasses.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\AbstractClasses.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\AbstractClasses.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\AbstractClasses.dll
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\refint\AbstractClasses.dll
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\AbstractClasses.pdb
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\AbstractClasses.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_2\Code\AbstractClasses\obj\Debug\net9.0\ref\AbstractClasses.dll

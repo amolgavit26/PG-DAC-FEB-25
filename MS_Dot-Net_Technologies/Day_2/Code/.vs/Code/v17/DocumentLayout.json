@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3B0B521D-633C-4216-876C-E3F4C391E726}|StaticMembers\\StaticMembers.csproj|e:\\dac\\notes\\dnet\\day_2\\code\\staticmembers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B0B521D-633C-4216-876C-E3F4C391E726}|StaticMembers\\StaticMembers.csproj|solutionrelative:staticmembers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F61C1538-0AB0-4FB9-92BE-9D0F8D3E9AD0}|TestAccessSpecifiers\\TestAccessSpecifiers.csproj|e:\\dac\\notes\\dnet\\day_2\\code\\testaccessspecifiers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F61C1538-0AB0-4FB9-92BE-9D0F8D3E9AD0}|TestAccessSpecifiers\\TestAccessSpecifiers.csproj|solutionrelative:testaccessspecifiers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0635F7AD-9DB8-4F7A-86BB-19EDA13CF0E8}|OverloadingHidingAndOverriding\\OverloadingHidingAndOverriding.csproj|e:\\dac\\notes\\dnet\\day_2\\code\\overloadinghidingandoverriding\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0635F7AD-9DB8-4F7A-86BB-19EDA13CF0E8}|OverloadingHidingAndOverriding\\OverloadingHidingAndOverriding.csproj|solutionrelative:overloadinghidingandoverriding\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B18F62E5-35D4-43AE-8DB2-E5B198D57A1F}|InterfaceExample1\\InterfaceExample1.csproj|e:\\dac\\notes\\dnet\\day_2\\code\\interfaceexample1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F62E5-35D4-43AE-8DB2-E5B198D57A1F}|InterfaceExample1\\InterfaceExample1.csproj|solutionrelative:interfaceexample1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C80D8AF-69B2-49B2-B322-0835F702B5C0}|InheritanceExample1\\InheritanceExample1.csproj|e:\\dac\\notes\\dnet\\day_2\\code\\inheritanceexample1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C80D8AF-69B2-49B2-B322-0835F702B5C0}|InheritanceExample1\\InheritanceExample1.csproj|solutionrelative:inheritanceexample1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B36E1C4B-926A-4F25-A799-52827824FA97}|ConstructorsInInheritance\\ConstructorsInInheritance.csproj|e:\\dac\\notes\\dnet\\day_2\\code\\constructorsininheritance\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B36E1C4B-926A-4F25-A799-52827824FA97}|ConstructorsInInheritance\\ConstructorsInInheritance.csproj|solutionrelative:constructorsininheritance\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AE4538F-EEF7-486A-8830-99CDF8709EFB}|AbstractClasses\\AbstractClasses.csproj|e:\\dac\\notes\\dnet\\day_2\\code\\abstractclasses\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AE4538F-EEF7-486A-8830-99CDF8709EFB}|AbstractClasses\\AbstractClasses.csproj|solutionrelative:abstractclasses\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\TestAccessSpecifiers\\Program.cs",
+              "RelativeDocumentMoniker": "TestAccessSpecifiers\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\TestAccessSpecifiers\\Program.cs",
+              "RelativeToolTip": "TestAccessSpecifiers\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T05:45:58.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\StaticMembers\\Program.cs",
+              "RelativeDocumentMoniker": "StaticMembers\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\StaticMembers\\Program.cs",
+              "RelativeToolTip": "StaticMembers\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T05:45:33.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\OverloadingHidingAndOverriding\\Program.cs",
+              "RelativeDocumentMoniker": "OverloadingHidingAndOverriding\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\OverloadingHidingAndOverriding\\Program.cs",
+              "RelativeToolTip": "OverloadingHidingAndOverriding\\Program.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAUwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T05:45:14.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\InterfaceExample1\\Program.cs",
+              "RelativeDocumentMoniker": "InterfaceExample1\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\InterfaceExample1\\Program.cs",
+              "RelativeToolTip": "InterfaceExample1\\Program.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAA0wCgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T05:44:50.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\InheritanceExample1\\Program.cs",
+              "RelativeDocumentMoniker": "InheritanceExample1\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\InheritanceExample1\\Program.cs",
+              "RelativeToolTip": "InheritanceExample1\\Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAUwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T05:44:27.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\ConstructorsInInheritance\\Program.cs",
+              "RelativeDocumentMoniker": "ConstructorsInInheritance\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\ConstructorsInInheritance\\Program.cs",
+              "RelativeToolTip": "ConstructorsInInheritance\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T05:43:42.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\AbstractClasses\\Program.cs",
+              "RelativeDocumentMoniker": "AbstractClasses\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_2\\Code\\AbstractClasses\\Program.cs",
+              "RelativeToolTip": "AbstractClasses\\Program.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAUwEIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T05:42:55.083Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
