@@ -1,4 +1,4 @@
-﻿namespace Assignment1
+﻿namespace Assignment2
 {
     internal class Program
     {
@@ -24,6 +24,7 @@
         int empNo;          // must be greater than 0
         decimal basic;      //must be between some range
         short deptNo;       // must be > 0
+
 
         public string Name
         {
@@ -81,6 +82,7 @@
                 }
             }
         }
+
         public short DeptNo
         {
             get
