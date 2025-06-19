@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\bin\Debug\net9.0\CollectionsExample.exe
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\bin\Debug\net9.0\CollectionsExample.deps.json
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\bin\Debug\net9.0\CollectionsExample.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\bin\Debug\net9.0\CollectionsExample.dll
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\bin\Debug\net9.0\CollectionsExample.pdb
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\CollectionsExample.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\CollectionsExample.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\CollectionsExample.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\CollectionsExample.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\CollectionsExample.dll
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\refint\CollectionsExample.dll
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\CollectionsExample.pdb
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\CollectionsExample.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_4\Code\CollectionsExample\obj\Debug\net9.0\ref\CollectionsExample.dll

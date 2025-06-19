@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\bin\Debug\net9.0\ActionFuncPredicate.exe
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\bin\Debug\net9.0\ActionFuncPredicate.deps.json
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\bin\Debug\net9.0\ActionFuncPredicate.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\bin\Debug\net9.0\ActionFuncPredicate.dll
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\bin\Debug\net9.0\ActionFuncPredicate.pdb
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ActionFuncPredicate.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ActionFuncPredicate.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ActionFuncPredicate.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ActionFuncPredicate.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ActionFuncPredicate.dll
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\refint\ActionFuncPredicate.dll
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ActionFuncPredicate.pdb
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ActionFuncPredicate.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_4\Code\ActionFuncPredicate\obj\Debug\net9.0\ref\ActionFuncPredicate.dll

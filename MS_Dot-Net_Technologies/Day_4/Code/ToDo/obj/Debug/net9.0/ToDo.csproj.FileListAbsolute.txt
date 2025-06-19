@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\bin\Debug\net9.0\ToDo.exe
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\bin\Debug\net9.0\ToDo.deps.json
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\bin\Debug\net9.0\ToDo.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\bin\Debug\net9.0\ToDo.dll
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\bin\Debug\net9.0\ToDo.pdb
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ToDo.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ToDo.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ToDo.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ToDo.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ToDo.dll
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\refint\ToDo.dll
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ToDo.pdb
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ToDo.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_4\Code\ToDo\obj\Debug\net9.0\ref\ToDo.dll

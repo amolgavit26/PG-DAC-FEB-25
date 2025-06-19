@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\bin\Debug\net9.0\Lambdas.exe
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\bin\Debug\net9.0\Lambdas.deps.json
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\bin\Debug\net9.0\Lambdas.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\bin\Debug\net9.0\Lambdas.dll
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\bin\Debug\net9.0\Lambdas.pdb
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\Lambdas.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\Lambdas.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\Lambdas.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\Lambdas.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\Lambdas.dll
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\refint\Lambdas.dll
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\Lambdas.pdb
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\Lambdas.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_4\Code\Lambdas\obj\Debug\net9.0\ref\Lambdas.dll

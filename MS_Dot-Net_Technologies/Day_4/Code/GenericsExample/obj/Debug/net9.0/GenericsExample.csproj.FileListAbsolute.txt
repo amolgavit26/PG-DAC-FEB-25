@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\bin\Debug\net9.0\GenericsExample.exe
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\bin\Debug\net9.0\GenericsExample.deps.json
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\bin\Debug\net9.0\GenericsExample.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\bin\Debug\net9.0\GenericsExample.dll
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\bin\Debug\net9.0\GenericsExample.pdb
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\GenericsExample.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\GenericsExample.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\GenericsExample.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\GenericsExample.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\GenericsExample.dll
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\refint\GenericsExample.dll
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\GenericsExample.pdb
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\GenericsExample.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_4\Code\GenericsExample\obj\Debug\net9.0\ref\GenericsExample.dll

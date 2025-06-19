@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Trainings\\JKJun25\\Day4\\",
+  "WorkspaceRootPath": "E:\\DAC\\Notes\\DNET\\Day_4\\Vikram\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44DAC8C0-5968-4E8B-8D5B-D6F82D483669}|DelegatesExample\\DelegatesExample.csproj|d:\\trainings\\jkjun25\\day4\\delegatesexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44DAC8C0-5968-4E8B-8D5B-D6F82D483669}|DelegatesExample\\DelegatesExample.csproj|solutionrelative:delegatesexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F98A354-FBD9-4BF6-AD4C-67E15B1F8BC5}|ActionFuncPredicate\\ActionFuncPredicate.csproj|e:\\dac\\notes\\dnet\\day_4\\vikram\\actionfuncpredicate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F98A354-FBD9-4BF6-AD4C-67E15B1F8BC5}|ActionFuncPredicate\\ActionFuncPredicate.csproj|solutionrelative:actionfuncpredicate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25361BDA-7508-47CE-9183-4254103E5E58}|AnonymousMethods\\AnonymousMethods.csproj|e:\\dac\\notes\\dnet\\day_4\\vikram\\anonymousmethods\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25361BDA-7508-47CE-9183-4254103E5E58}|AnonymousMethods\\AnonymousMethods.csproj|solutionrelative:anonymousmethods\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F4E3137-34F2-488E-AF7F-2AA54F408E12}|Lambdas\\Lambdas.csproj|e:\\dac\\notes\\dnet\\day_4\\vikram\\lambdas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F4E3137-34F2-488E-AF7F-2AA54F408E12}|Lambdas\\Lambdas.csproj|solutionrelative:lambdas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,13 +32,39 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Trainings\\JKJun25\\Day4\\DelegatesExample\\Program.cs",
-              "RelativeDocumentMoniker": "DelegatesExample\\Program.cs",
-              "ToolTip": "D:\\Trainings\\JKJun25\\Day4\\DelegatesExample\\Program.cs*",
-              "RelativeToolTip": "DelegatesExample\\Program.cs*",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA0wEcAAAApAAAAAAAAAA==",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_4\\Vikram\\ActionFuncPredicate\\Program.cs",
+              "RelativeDocumentMoniker": "ActionFuncPredicate\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_4\\Vikram\\ActionFuncPredicate\\Program.cs",
+              "RelativeToolTip": "ActionFuncPredicate\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwCAAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:57:10.19Z",
+              "WhenOpened": "2025-06-19T17:45:05.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_4\\Vikram\\AnonymousMethods\\Program.cs",
+              "RelativeDocumentMoniker": "AnonymousMethods\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_4\\Vikram\\AnonymousMethods\\Program.cs",
+              "RelativeToolTip": "AnonymousMethods\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T17:45:00.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_4\\Vikram\\Lambdas\\Program.cs",
+              "RelativeDocumentMoniker": "Lambdas\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_4\\Vikram\\Lambdas\\Program.cs",
+              "RelativeToolTip": "Lambdas\\Program.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswEoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:25:34.93Z",
               "EditorCaption": ""
             }
           ]

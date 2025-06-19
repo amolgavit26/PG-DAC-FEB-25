@@ -64,12 +64,38 @@
             objDel();
 
         }
-        static void Main()
+        static void Main4()
         {
             //DelAdd objAdd = new DelAdd(Add);
             DelAdd objAdd = Add;
-
             Console.WriteLine(objAdd(20,10));
+
+            Console.WriteLine();
+            objAdd += Subtract;
+            //ans = objAdd(20,10);
+            Console.WriteLine(objAdd(20, 10));
+
+            //int ans;
+            //ans = Add(20, 10);
+            //ans = Subtract(20, 10);
+            //Console.WriteLine(ans);
+        }
+        static void Main5()
+        {
+            Del1 objDel = (Del1) Delegate.Combine(new Del1(Display), new Del1(Show), new Del1(Display));
+            objDel();
+
+            Console.WriteLine();
+            //objDel = (Del1)Delegate.Remove(objDel, new Del1(Display));
+            objDel = (Del1)Delegate.RemoveAll(objDel, new Del1(Display));
+            objDel();
+        }
+        static void Main6()
+        {
+            //Console.WriteLine(CallMathOperation(new DelAdd(Add)));
+            Console.WriteLine(CallMathOperation(Add,1,2));
+            Console.WriteLine(CallMathOperation(Subtract,5,3));
+
         }
         static void Display()
         {
@@ -79,9 +105,45 @@
         {
             Console.WriteLine("Show");
         }
+
+        //func to call is passed as a paramter
+        static int CallMathOperation(DelAdd objDel, int a, int b)//objDel = Add
+        {
+            //return objDel(20, 10);
+            return objDel(a, b);
+        }
         static int Add(int a, int b)
         {
             return a + b;
+        }
+        static int Subtract(int a, int b)
+        {
+            return a - b;
+        }
+
+        static void Main()
+        {
+            //Class1.Display();
+
+            Del1 o1 = Class1.Display;
+            o1();
+
+            Class1 objClass1 = new Class1();
+            //objClass1.Show();
+            o1 = objClass1.Show;
+            o1();
+        }
+    }
+
+    public class Class1
+    {
+        public static void Display()
+        {
+            Console.WriteLine("Display");
+        }
+        public void Show()
+        {
+            Console.WriteLine("Show");
         }
     }
 }

@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\bin\Debug\net9.0\AnonymousMethods.exe
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\bin\Debug\net9.0\AnonymousMethods.deps.json
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\bin\Debug\net9.0\AnonymousMethods.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\bin\Debug\net9.0\AnonymousMethods.dll
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\bin\Debug\net9.0\AnonymousMethods.pdb
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\AnonymousMethods.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\AnonymousMethods.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\AnonymousMethods.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\AnonymousMethods.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\AnonymousMethods.dll
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\refint\AnonymousMethods.dll
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\AnonymousMethods.pdb
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\AnonymousMethods.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_4\Code\AnonymousMethods\obj\Debug\net9.0\ref\AnonymousMethods.dll
