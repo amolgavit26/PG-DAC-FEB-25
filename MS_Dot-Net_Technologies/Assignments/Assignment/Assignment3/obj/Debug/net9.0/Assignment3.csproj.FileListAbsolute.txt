@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\bin\Debug\net9.0\Assignment3.exe
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\bin\Debug\net9.0\Assignment3.deps.json
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\bin\Debug\net9.0\Assignment3.runtimeconfig.json
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\bin\Debug\net9.0\Assignment3.dll
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\bin\Debug\net9.0\Assignment3.pdb
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\Assignment3.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\Assignment3.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\Assignment3.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\Assignment3.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\Assignment3.dll
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\refint\Assignment3.dll
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\Assignment3.pdb
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\Assignment3.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Assignments\Assignment\Assignment3\obj\Debug\net9.0\ref\Assignment3.dll
