@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\bin\Debug\net9.0\ExceptionHandling2.exe
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\bin\Debug\net9.0\ExceptionHandling2.deps.json
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\bin\Debug\net9.0\ExceptionHandling2.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\bin\Debug\net9.0\ExceptionHandling2.dll
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\bin\Debug\net9.0\ExceptionHandling2.pdb
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ExceptionHandling2.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ExceptionHandling2.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ExceptionHandling2.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ExceptionHandling2.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ExceptionHandling2.dll
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\refint\ExceptionHandling2.dll
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ExceptionHandling2.pdb
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ExceptionHandling2.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_5\Code\ExceptionHandling2\obj\Debug\net9.0\ref\ExceptionHandling2.dll

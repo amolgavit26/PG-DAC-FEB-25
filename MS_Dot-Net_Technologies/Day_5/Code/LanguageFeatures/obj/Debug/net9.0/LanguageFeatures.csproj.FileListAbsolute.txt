@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\bin\Debug\net9.0\LanguageFeatures.exe
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\bin\Debug\net9.0\LanguageFeatures.deps.json
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\bin\Debug\net9.0\LanguageFeatures.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\bin\Debug\net9.0\LanguageFeatures.dll
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\bin\Debug\net9.0\LanguageFeatures.pdb
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.dll
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\refint\LanguageFeatures.dll
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.pdb
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\LanguageFeatures.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_5\Code\LanguageFeatures\obj\Debug\net9.0\ref\LanguageFeatures.dll

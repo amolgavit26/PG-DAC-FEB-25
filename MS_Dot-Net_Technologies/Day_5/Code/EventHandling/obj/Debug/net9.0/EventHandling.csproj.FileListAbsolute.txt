@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\bin\Debug\net9.0\EventHandling.exe
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\bin\Debug\net9.0\EventHandling.deps.json
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\bin\Debug\net9.0\EventHandling.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\bin\Debug\net9.0\EventHandling.dll
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\bin\Debug\net9.0\EventHandling.pdb
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\EventHandling.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\EventHandling.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\EventHandling.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\EventHandling.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\EventHandling.dll
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\refint\EventHandling.dll
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\EventHandling.pdb
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\EventHandling.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_5\Code\EventHandling\obj\Debug\net9.0\ref\EventHandling.dll

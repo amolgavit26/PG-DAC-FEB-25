@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\bin\Debug\net9.0\ExtensionMethods.exe
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\bin\Debug\net9.0\ExtensionMethods.deps.json
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\bin\Debug\net9.0\ExtensionMethods.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\bin\Debug\net9.0\ExtensionMethods.dll
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\bin\Debug\net9.0\ExtensionMethods.pdb
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ExtensionMethods.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ExtensionMethods.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ExtensionMethods.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ExtensionMethods.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ExtensionMethods.dll
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\refint\ExtensionMethods.dll
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ExtensionMethods.pdb
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ExtensionMethods.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_5\Code\ExtensionMethods\obj\Debug\net9.0\ref\ExtensionMethods.dll
