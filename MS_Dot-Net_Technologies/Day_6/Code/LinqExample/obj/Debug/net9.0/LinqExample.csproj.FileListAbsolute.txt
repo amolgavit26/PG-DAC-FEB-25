@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\bin\Debug\net9.0\LinqExample.exe
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\bin\Debug\net9.0\LinqExample.deps.json
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\bin\Debug\net9.0\LinqExample.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\bin\Debug\net9.0\LinqExample.dll
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\bin\Debug\net9.0\LinqExample.pdb
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\LinqExample.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\LinqExample.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\LinqExample.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\LinqExample.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\LinqExample.dll
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\refint\LinqExample.dll
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\LinqExample.pdb
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\LinqExample.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_6\Code\LinqExample\obj\Debug\net9.0\ref\LinqExample.dll
