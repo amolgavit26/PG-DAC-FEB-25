@@ -1,0 +1,108 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D11B7813-5252-423F-BCE4-79D385985E3F}|LockIn9\\LockIn9.csproj|e:\\dac\\notes\\dnet\\day_7\\code\\lockin9\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11B7813-5252-423F-BCE4-79D385985E3F}|LockIn9\\LockIn9.csproj|solutionrelative:lockin9\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6DF214-3595-4B63-9EF8-55EA720902C6}|SynchronizationInThreads\\SynchronizationInThreads.csproj|e:\\dac\\notes\\dnet\\day_7\\code\\synchronizationinthreads\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6DF214-3595-4B63-9EF8-55EA720902C6}|SynchronizationInThreads\\SynchronizationInThreads.csproj|solutionrelative:synchronizationinthreads\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0648F23C-30D5-4D5E-A60B-9A643B56A5A3}|ThreadingExamples3\\ThreadingExamples3.csproj|e:\\dac\\notes\\dnet\\day_7\\code\\threadingexamples3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0648F23C-30D5-4D5E-A60B-9A643B56A5A3}|ThreadingExamples3\\ThreadingExamples3.csproj|solutionrelative:threadingexamples3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{972A4635-7750-4475-AC81-6E56F7CA5F06}|ThreadExample2\\ThreadExample2.csproj|e:\\dac\\notes\\dnet\\day_7\\code\\threadexample2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{972A4635-7750-4475-AC81-6E56F7CA5F06}|ThreadExample2\\ThreadExample2.csproj|solutionrelative:threadexample2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53889054-6F9F-4CE3-91AF-E9EC8772A1E2}|ThreadingExamples\\ThreadingExamples.csproj|e:\\dac\\notes\\dnet\\day_7\\code\\threadingexamples\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53889054-6F9F-4CE3-91AF-E9EC8772A1E2}|ThreadingExamples\\ThreadingExamples.csproj|solutionrelative:threadingexamples\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\LockIn9\\Program.cs",
+              "RelativeDocumentMoniker": "LockIn9\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\LockIn9\\Program.cs",
+              "RelativeToolTip": "LockIn9\\Program.cs",
+              "ViewState": "AgIAALECAAAAAAAAAAAgwOwCAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T10:23:03.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\SynchronizationInThreads\\Program.cs",
+              "RelativeDocumentMoniker": "SynchronizationInThreads\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\SynchronizationInThreads\\Program.cs*",
+              "RelativeToolTip": "SynchronizationInThreads\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T10:22:36.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\ThreadingExamples3\\Program.cs",
+              "RelativeDocumentMoniker": "ThreadingExamples3\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\ThreadingExamples3\\Program.cs",
+              "RelativeToolTip": "ThreadingExamples3\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T10:00:28.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\ThreadExample2\\Program.cs",
+              "RelativeDocumentMoniker": "ThreadExample2\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\ThreadExample2\\Program.cs",
+              "RelativeToolTip": "ThreadExample2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T10:50:19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\ThreadingExamples\\Program.cs",
+              "RelativeDocumentMoniker": "ThreadingExamples\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\Day_7\\Code\\ThreadingExamples\\Program.cs",
+              "RelativeToolTip": "ThreadingExamples\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T09:12:47.489Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
