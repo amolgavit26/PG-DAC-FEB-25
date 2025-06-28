@@ -1,0 +1,14 @@
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\bin\Debug\net9.0\ReflectionExample1.exe
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\bin\Debug\net9.0\ReflectionExample1.deps.json
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\bin\Debug\net9.0\ReflectionExample1.runtimeconfig.json
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\bin\Debug\net9.0\ReflectionExample1.dll
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\bin\Debug\net9.0\ReflectionExample1.pdb
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ReflectionExample1.GeneratedMSBuildEditorConfig.editorconfig
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ReflectionExample1.AssemblyInfoInputs.cache
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ReflectionExample1.AssemblyInfo.cs
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ReflectionExample1.csproj.CoreCompileInputs.cache
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ReflectionExample1.dll
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\refint\ReflectionExample1.dll
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ReflectionExample1.pdb
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ReflectionExample1.genruntimeconfig.cache
+E:\DAC\Notes\DNET\Day_11\Code\ReflectionExample1\obj\Debug\net9.0\ref\ReflectionExample1.dll
