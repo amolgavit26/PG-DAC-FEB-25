@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\DAC\\Notes\\DNET\\WebSites\\Code\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A3BC15D4-5277-4480-96DF-0B5D5FD76804}|WebApplication1\\WebApplication1.csproj|e:\\dac\\notes\\dnet\\websites\\code\\webapplication1\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3BC15D4-5277-4480-96DF-0B5D5FD76804}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3BC15D4-5277-4480-96DF-0B5D5FD76804}|WebApplication1\\WebApplication1.csproj|e:\\dac\\notes\\dnet\\websites\\code\\webapplication1\\controllers\\defaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3BC15D4-5277-4480-96DF-0B5D5FD76804}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\defaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3BC15D4-5277-4480-96DF-0B5D5FD76804}|WebApplication1\\WebApplication1.csproj|e:\\dac\\notes\\dnet\\websites\\code\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3BC15D4-5277-4480-96DF-0B5D5FD76804}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\WebSites\\Code\\WebApplication1\\Views\\Default\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Default\\Index.cshtml",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\WebSites\\Code\\WebApplication1\\Views\\Default\\Index.cshtml*",
+              "RelativeToolTip": "WebApplication1\\Views\\Default\\Index.cshtml*",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-28T17:14:02.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DefaultController.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\WebSites\\Code\\WebApplication1\\Controllers\\DefaultController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\DefaultController.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\WebSites\\Code\\WebApplication1\\Controllers\\DefaultController.cs*",
+              "RelativeToolTip": "WebApplication1\\Controllers\\DefaultController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:09:36.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAC\\Notes\\DNET\\WebSites\\Code\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "E:\\DAC\\Notes\\DNET\\WebSites\\Code\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwB4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T17:10:41.932Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
