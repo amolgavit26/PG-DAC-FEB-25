@@ -11,10 +11,6 @@ namespace ModelBinding.Controllers
         public ActionResult Index()
         {
             List<Employee> emps = Employee.GetAllEmployees();
-            //List<Employee> emps = new List<Employee>();
-            //emps.Add(new Employee { EmpNo = 1, Name = "Rohan", Basic = 12345, DeptNo = 10 });
-            //emps.Add(new Employee { EmpNo = 2, Name = "Shubham", Basic = 12345, DeptNo = 10 });
-            //emps.Add(new Employee { EmpNo = 3, Name = "Kajal", Basic = 12345, DeptNo = 10 });
             return View(emps);
         }
 
@@ -23,11 +19,11 @@ namespace ModelBinding.Controllers
         public ActionResult Details(int id)
         {
             Employee obj = Employee.GetSingleEmployee(id);
-            //Employee obj = new Employee();
-            //obj.EmpNo = id;
-            //obj.Name = "Kajal";
-            //obj.Basic = 12345;
-            //obj.DeptNo = 10;
+            if (obj == null)
+            {
+                ViewBag.message = "not found";
+                //return NotFound();
+            }
             return View(obj);
         }
 
@@ -42,31 +38,68 @@ namespace ModelBinding.Controllers
         // POST: EmployeesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+
+        //MODEL BINDING - Ensure PROPERTY names are same as HTML Control names
+        public ActionResult Create(Employee obj)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                Employee.Insert(obj);
+                //return RedirectToAction("Index");
+                ViewBag.message = "Success";
+                return View();
             }
-            catch
+            catch (Exception ex)
             {
+                ViewBag.message =  ex.Message;
                 return View();
             }
         }
 
+        ////BINDING - Ensure parameter names (variable names) are same as HTML Control names
+        //public ActionResult Create(int EmpNo, string Name, decimal Basic, int DeptNo )
+        //{
+        //    try
+        //    {
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
+        //public ActionResult Create(IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        string Name = collection["Name"];
+        //        string EmpNo = collection["EmpNo"];
+        //        string Basic = collection["Basic"];
+        //        string DeptNo = collection["DeptNo"];
+        //        //return RedirectToAction(nameof(Index));
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
+
         // GET: EmployeesController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Employee obj = Employee.GetSingleEmployee(id);
+            return View(obj);
         }
-
         // POST: EmployeesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Employee obj)
         {
             try
             {
+                Employee.Update(obj);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -78,16 +111,18 @@ namespace ModelBinding.Controllers
         // GET: EmployeesController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Employee obj = Employee.GetSingleEmployee(id);
+            return View(obj);
         }
-
         // POST: EmployeesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id,Employee obj)
         {
             try
             {
+                //Employee.Delete2(obj);
+                Employee.Delete(id);
                 return RedirectToAction(nameof(Index));
             }
             catch

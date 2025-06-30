@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\views\\employees\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:views\\employees\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|d:\\trainings\\jkjun25\\websites\\modelbinding\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{633322B2-4C86-44B6-96CA-12D91F9C0325}|ModelBinding.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,14 +56,14 @@
               "RelativeDocumentMoniker": "Models\\Employee.cs",
               "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Models\\Employee.cs",
               "RelativeToolTip": "Models\\Employee.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAF8AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAmwH8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T14:02:46.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -71,83 +71,79 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAUwB0AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T13:37:29.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T13:37:29.185Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Employees\\Delete.cshtml",
               "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Delete.cshtml",
               "RelativeToolTip": "Views\\Employees\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAA3wCgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-28T13:19:55.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Employees\\Edit.cshtml",
               "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Edit.cshtml",
               "RelativeToolTip": "Views\\Employees\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-28T13:19:17.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T13:19:17.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Employees\\Create.cshtml",
               "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Create.cshtml",
               "RelativeToolTip": "Views\\Employees\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-28T13:18:35.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Employees\\Index.cshtml",
-              "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Index.cshtml*",
-              "RelativeToolTip": "Views\\Employees\\Index.cshtml*",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAAAMAAAAAAAAAA==",
+              "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Index.cshtml",
+              "RelativeToolTip": "Views\\Employees\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAC0AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-28T13:17:52.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T13:17:52.281Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Employees\\Details.cshtml",
               "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Views\\Employees\\Details.cshtml",
               "RelativeToolTip": "Views\\Employees\\Details.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-28T13:16:24.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T13:16:24.556Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "EmployeesController.cs",
               "DocumentMoniker": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Controllers\\EmployeesController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmployeesController.cs",
-              "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Controllers\\EmployeesController.cs",
-              "RelativeToolTip": "Controllers\\EmployeesController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAUwB4AAAAbAAAAAAAAAA==",
+              "ToolTip": "D:\\Trainings\\JKJun25\\WebSites\\ModelBinding\\Controllers\\EmployeesController.cs*",
+              "RelativeToolTip": "Controllers\\EmployeesController.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAUwBQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T12:56:02.002Z",
               "EditorCaption": ""

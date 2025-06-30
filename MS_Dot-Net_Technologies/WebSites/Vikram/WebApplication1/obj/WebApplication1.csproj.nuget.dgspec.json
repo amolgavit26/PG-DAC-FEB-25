@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DAC\\Notes\\DNET\\WebSites\\Vikram\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\Trainings\\JKJun25\\WebSites\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "E:\\DAC\\Notes\\DNET\\WebSites\\Vikram\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\Trainings\\JKJun25\\WebSites\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DAC\\Notes\\DNET\\WebSites\\Vikram\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\Trainings\\JKJun25\\WebSites\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "E:\\DAC\\Notes\\DNET\\WebSites\\Vikram\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\amolg\\.nuget\\packages\\",
-        "outputPath": "E:\\DAC\\Notes\\DNET\\WebSites\\Vikram\\WebApplication1\\obj\\",
+        "projectPath": "D:\\Trainings\\JKJun25\\WebSites\\WebApplication1\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\vikra\\.nuget\\packages\\",
+        "outputPath": "D:\\Trainings\\JKJun25\\WebSites\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\amolg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vikra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
