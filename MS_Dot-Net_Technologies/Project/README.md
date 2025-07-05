@@ -1,132 +1,240 @@
 
-# 🧑‍🔧 Car Service Platform – Frontend
+# 📦 Sanchara – Courier Management System (Full Stack Project) 🚚
 
-Welcome to the frontend of the **Car Service Booking Portal**, built with **React**, **React Bootstrap**, and **Axios**. This application allows users to book car service appointments, browse workshops, and give feedback. Admins can manage workshops and view all service requests.
+A complete **CourierEase Online Delivery Platform**, built with a **React-based frontend** and a **.NET Core + SQL Server backend**. This system allows users to book courier shipments, track delivery status, and contact support. Admins and agents can manage users, shipments, and overall operations.
 
 ---
 
-## 🚀 Features
+## 🧩 Tech Stack Overview
+
+| Layer         | Technology                         |
+|---------------|------------------------------------|
+| Frontend      | React, React Router, Axios         |
+| Backend       | ASP.NET Core Web API, C#, EF Core  |
+| Database      | SQL Server                         |
+| Security      | JWT Authentication                 |
+| Build Tools   | npm (frontend), .NET CLI (backend) |
+
+---
+
+## 🔐 Key Features
 
 ### ✅ Authentication
-- **Signup** and **Login** functionality
-- JWT-based login using `localStorage`
-- Authenticated routes for service requests and admin dashboard
+- User **signup** and **login**
+- JWT-based security and role-based access (Customer, Admin, Agent)
+- Protected routes and headers
 
-### 🛠️ Workshop Management
-- View workshops without login
-- Admin can add, edit, delete workshops
-- Admin can view all service requests across workshops
+### 🚚 Shipment Management
+- Users can book courier deliveries
+- View and track shipment status
+- Admins and agents manage all shipments
 
-### 📅 Service Requests
-- Users can select a workshop and book a service appointment
-- Choose issue details and preferred time slot
-- Admin has full visibility of all bookings
+### 🧑 Admin Panel
+- Admins can manage users and assign couriers
+- Agents can update delivery statuses
 
-### 📋 Feedback & Contact
-- Feedback form for rating and suggestions
-- Contact form to reach out to the service team
+### 📋 Contact & Feedback
+- Public contact and feedback forms for queries
 
 ---
 
-## 🗂️ Folder Structure
+## 🗂️ Project Structure
 
+### 🔧 Backend (`/Backend/CourierEase_Backend`)
+```
+├── CourierEase.API/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── DTOs/
+│   ├── Services/
+│   ├── Interfaces/
+│   ├── Data/
+│   ├── Middleware/
+│   ├── appsettings.json
+│   └── Program.cs / Startup.cs
+├── CourierEase.sln
+```
+
+### 🎨 Frontend (`/Frontend`)
 ```
 /src
-├── assets/
-│   └── images/                    # Images for UI
 ├── components/
-│   ├── Navbar.jsx                 # Top navigation bar
-│   ├── Footer.jsx                 # Bottom footer
-│   └── ProtectedRoute.jsx         # Authenticated route wrapper
+│   ├── About.jsx
+│   ├── ContactUs.jsx
+│   ├── Feedback.jsx
+│   ├── Home.jsx
+│   ├── Admin/
+│   │   ├── AdminDashboard.jsx
+│   │   ├── OrdersList.jsx
+│   │   └── UsersList.jsx
+│   ├── Auth/
+│   │   ├── Login.jsx
+│   │   └── Signup.jsx
+│   ├── Layout/
+│   │   ├── Footer.jsx
+│   │   └── Navbar.jsx
+│   └── User/
+│       └── UserDashboard.jsx
 ├── pages/
-│   ├── Home.jsx                   # Landing page
-│   ├── About.jsx                  # About the company
-│   ├── ContactUs.jsx              # Contact form
-│   ├── Feedback.jsx               # Feedback form
-│   ├── Services.jsx               # User booking services
-│   ├── AdminDashboard.jsx         # Admin panel for workshops & requests
-│   ├── Login.jsx                  # Sign in page
-│   └── Signup.jsx                 # Register page
+│   └── AddOrder.jsx
+├── services/
+│   └── api.js
 ├── App.jsx
 ├── main.jsx
-└── index.css
+├── index.css
+└── App.css
 ```
 
 ---
 
-## 🔗 Routes
+## 🔗 Routing (Frontend)
 
-| Path             | Component         | Access         |
-|------------------|-------------------|----------------|
-| `/`              | Home              | Public         |
-| `/about`         | About             | Public         |
-| `/contact`       | ContactUs         | Public         |
-| `/feedback`      | Feedback          | Public         |
-| `/login`         | Login             | Public         |
-| `/signup`        | Signup            | Public         |
-| `/services`      | Services          | Authenticated  |
-| `/admin`         | AdminDashboard    | Admin Only     |
-
----
-
-## 🔐 Authentication Logic
-
-- JWT stored in `localStorage` after login
-- Token is sent via `Authorization` headers for protected API calls
-- Routes like `/services` and `/admin` are protected using a custom `ProtectedRoute` component
+| Path              | Component          | Access         |
+|-------------------|--------------------|----------------|
+| `/`               | Home               | Public         |
+| `/about`          | About              | Public         |
+| `/contact`        | ContactUs          | Public         |
+| `/feedback`       | Feedback           | Public         |
+| `/login`          | Login              | Public         |
+| `/signup`         | Signup             | Public         |
+| `/user/dashboard` | UserDashboard      | Authenticated  |
+| `/admin`          | AdminDashboard     | Admin Only     |
+| `/admin/orders`   | OrdersList         | Admin Only     |
+| `/admin/users`    | UsersList          | Admin Only     |
+| `/add-order`      | AddOrder           | Authenticated  |
 
 ---
 
-## 🛠️ Technologies Used
+## 🔐 Backend Authentication
 
-| Purpose          | Library           |
-|------------------|-------------------|
-| Frontend         | React             |
-| Styling          | Bootstrap, CSS    |
-| Routing          | React Router DOM  |
-| HTTP Requests    | Axios             |
-| Notifications    | React Toastify    |
-| Auth Handling    | JWT + LocalStorage|
+- Endpoints:
+  - `POST /api/auth/register`
+  - `POST /api/auth/login`
+- Use the JWT token from response in all protected requests:
+
+```
+Authorization: Bearer <your_token>
+```
+
+---
+
+## 📘 API Endpoints (Backend)
+
+### 🔑 Auth
+| Method | Endpoint            | Description              |
+|--------|---------------------|--------------------------|
+| POST   | `/api/auth/register`| Register user            |
+| POST   | `/api/auth/login`   | Login with credentials   |
+
+### 👤 Users
+| Method | Endpoint               | Description               |
+|--------|------------------------|---------------------------|
+| GET    | `/api/user/shipments`  | List user shipments       |
+| POST   | `/api/user/shipments`  | Book a new shipment       |
+
+### 🚚 Couriers
+| Method | Endpoint                | Description               |
+|--------|-------------------------|---------------------------|
+| GET    | `/api/admin/shipments`  | View all shipment records |
+| PUT    | `/api/agent/update`     | Update delivery status    |
+
+### 🧑 Admin
+| Method | Endpoint                | Description               |
+|--------|-------------------------|---------------------------|
+| GET    | `/api/admin/users`      | Manage platform users     |
+| POST   | `/api/admin/couriers`   | Add courier personnel     |
+
+---
+
+## 🧾 Database Schema
+
+### `Users`
+| Column     | Type     |
+|------------|----------|
+| Id         | int      |
+| Name       | string   |
+| Email      | string   |
+| Password   | string   |
+| Role       | string   |
+
+### `Shipments`
+| Column       | Type       |
+|--------------|------------|
+| Id           | int        |
+| SenderId     | int (FK)   |
+| ReceiverName | string     |
+| Address      | string     |
+| Status       | string     |
+| CourierId    | int (FK)   |
 
 ---
 
 ## ⚙️ Setup Instructions
 
-### Prerequisites
-- Node.js and npm installed
+### Backend
 
-### Installation
+1. Update your DB config in `appsettings.json`:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=CourierEaseDB;Trusted_Connection=True;"
+  },
+  "Jwt": {
+    "Key": "your_jwt_secret_key",
+    "Issuer": "CourierEaseAPI",
+    "Audience": "CourierEaseClient",
+    "DurationInMinutes": 60
+  }
+}
+```
+
+2. Run the backend:
+
+```bash
+dotnet restore
+dotnet ef database update
+dotnet run --project CourierEase.API
+```
+
+
+---
+
+### Frontend
+
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Development Server
+2. Run development server:
 
 ```bash
 npm run dev
 ```
 
-> Ensure the backend is running on `http://localhost:8080`
+
 
 ---
 
-## 🌐 API Integration
+## 📸 Preview
 
-- All authenticated API calls include the JWT token:
-  ```js
-  axios.get("/admin/service-requests", {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  });
-  ```
-- Example endpoints used:
-  - `/auth/signup`
-  - `/auth/login`
-  - `/api/workshops`
-  - `/user/service-requests`
-  - `/admin/workshops`
+Here’s how the page looks:
+
+![Home Page 1 Preview](HomePage.png)
+![Feedback Page Preview](Feedback.png) 
+![Contact Page Preview](ContactUs.png) 
+![SignUp Page Preview](SignUp.png) 
+![SignIn Page Preview](SignIn.png) 
+![Admin Dashboard Preview](AdminDashboard.png) 
+![Manage User Page Preview](ManageUser.png)
+![All Orders Page Preview](AllOrders.png)
+![Users Orders Page Preview](UsersOrder.png)
+![Add Order Page Preview](AddOrder.png)
+![About Us 1 Page Preview](AboutUs1.png)
+![About Us 2 Page Preview](AboutUs2.png)
+
+
 
 ---
-
