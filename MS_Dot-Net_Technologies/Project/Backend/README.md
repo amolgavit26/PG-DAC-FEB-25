@@ -1,177 +1,164 @@
 
-# 🚗 CarServiceHub - Car Service Platform (Backend) 🧑‍🔧
+# 📦 Sanchara - Courier Management System (Backend) 🚚
 
-A backend service for a Car Service Booking Platform, built with **Spring Boot**, **Java**, and **MySQL**. 
-It supports user authentication, workshop management, service requests, and admin functionalities with JWT-based authorization.
+A backend system for managing courier operations, built using **ASP.NET Core**, **C#**, and **Entity Framework Core**.  
+It supports user authentication, courier booking, delivery tracking, and role-based management for admins, delivery agents, and customers.
 
 ---
 
+
 ## ✅ Purpose
 
-This application provides the backend functionality for a car servicing portal, including:
+This application powers the backend of a courier service platform:
 
-- User registration and login with JWT-based authentication  
-- Role-based access (User, Admin)  
-- Workshop posting, editing, and deletion (Admin)  
-- Car service appointment creation and tracking (User/Admin)
-- Secure RESTful API structure
-- Data persistence via MySQL
+- Secure user registration and login using JWT  
+- Role-based access (Admin, Customer, Agent)  
+- Booking and tracking of courier deliveries  
+- Administrative control over couriers and users  
+- RESTful API endpoints for easy integration
 
 ---
 
 ## 📁 Project Structure
 
 ```
-Car_Service_Platform/
-├── src/
-│   ├── main/
-│   │   ├── java/com/carservice/
-│   │   │   ├── controller/             # REST Controllers
-│   │   │   ├── dao/                    # JPA Repositories
-│   │   │   ├── dto/                    # Data Transfer Objects
-│   │   │   ├── entity/                 # JPA Entities
-│   │   │   ├── security/               # JWT Security Configs
-│   │   │   └── service/                # Business Services
-│   │   └── resources/
-│   │       └── application.properties  # DB Config and JWT Secret
-├── pom.xml                             # Maven Configuration
+CourierEase_Backend/
+├── CourierEase.API/                  # Main Web API Project
+│   ├── Controllers/                  # API Controllers
+│   ├── Models/                       # Data Models / Entities
+│   ├── DTOs/                         # Data Transfer Objects
+│   ├── Services/                     # Business Logic Services
+│   ├── Interfaces/                   # Service Interfaces
+│   ├── Data/                         # EF DbContext and Migrations
+│   ├── Middleware/                   # Custom Middlewares (e.g., JWT)
+│   ├── appsettings.json              # Config (DB, JWT, etc.)
+│   └── Program.cs / Startup.cs       # App startup configuration
+├── CourierEase.sln                   # Visual Studio Solution File
 ```
 
 ---
 
 ## 🧱 Architecture & Technologies
 
-### 📦 Tech Stack
-
-| Layer              | Technology                     |
-|--------------------|---------------------------------|
-| Language           | Java 21                         |
-| Framework          | Spring Boot                    |
-| ORM & DB Access    | Spring Data JPA                 |
-| Security           | Spring Security + JWT           |
-| Database           | MySQL                           |
-| Build Tool         | Maven                           |
-| Authentication     | JWT                             |
+| Layer              | Technology                         |
+|--------------------|-------------------------------------|
+| Language           | C#                                  |
+| Framework          | ASP.NET Core Web API                |
+| ORM & DB Access    | Entity Framework Core               |
+| Authentication     | JWT Bearer Tokens                   |
+| Authorization      | Role-Based                          |
+| Database           | SQL Server                          |
+| Documentation      | Swagger (optional)                  |
 
 ---
 
 ## ⚙️ Configuration
 
-Edit the `application.properties` file with your local DB config:
+Update `appsettings.json`:
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/car_service_db
-spring.datasource.username=root
-spring.datasource.password=your_password
-
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-jwt.secret=your_secret_key
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=CourierEaseDB;Trusted_Connection=True;"
+  },
+  "Jwt": {
+    "Key": "your_jwt_secret_key",
+    "Issuer": "CourierEaseAPI",
+    "Audience": "CourierEaseClient",
+    "DurationInMinutes": 60
+  }
+}
 ```
 
 ---
 
 ## 🚀 How to Run
 
-1. Clone this repo:
+1. Open the solution in Visual Studio or VS Code.
+
+2. Restore dependencies:
 
    ```bash
-   git clone https://github.com/your-username/car-service-backend.git
-   cd car-service-backend/Backend/Car_Service_Platform
+   dotnet restore
    ```
 
-2. Set up your MySQL DB and update credentials in `application.properties`.
-
-3. Build the project:
+3. Apply migrations:
 
    ```bash
-   mvn clean install
+   dotnet ef database update
    ```
 
-4. Start the backend:
+4. Run the API:
 
    ```bash
-   mvn spring-boot:run
+   dotnet run --project CourierEase.API
    ```
 
-The app will be available at: `http://localhost:8080`
+API will be accessible at: `http://localhost:5000`
 
 ---
 
 ## 🔐 Authentication
 
-- Login endpoint: `/auth/login`
-- Register endpoint: `/auth/signup`
-- Use returned JWT token for accessing protected endpoints with:
-  
-  ```
-  Authorization: Bearer <your_token>
-  ```
+- `POST /api/auth/register` – Register new user  
+- `POST /api/auth/login` – Authenticate and get JWT  
+
+Use the token in headers:
+
+```
+Authorization: Bearer <your_token>
+```
 
 ---
 
 ## 📘 API Endpoints
 
 ### 🔑 Auth
-| Method | Endpoint       | Description           |
-|--------|----------------|-----------------------|
-| POST   | `/auth/signup` | Register a new user   |
-| POST   | `/auth/login`  | Login and get JWT     |
+| Method | Endpoint            | Description           |
+|--------|---------------------|-----------------------|
+| POST   | `/api/auth/register`| Register user         |
+| POST   | `/api/auth/login`   | Login with credentials|
 
-### 🧑 Users
-| Method | Endpoint                | Description                    |
-|--------|--------------------------|--------------------------------|
-| GET    | `/user/service-requests`| View logged-in user's requests |
-| POST   | `/user/service-requests`| Create new service request     |
+### 👤 Users
+| Method | Endpoint               | Description                |
+|--------|------------------------|----------------------------|
+| GET    | `/api/user/shipments`  | List user shipments        |
+| POST   | `/api/user/shipments`  | Book a new shipment        |
 
-### 🛠️ Workshops
-| Method | Endpoint              | Description                   |
-|--------|------------------------|-------------------------------|
-| GET    | `/api/workshops`       | View all workshops (public)   |
-| POST   | `/admin/workshops`     | Add workshop (admin only)     |
-| PUT    | `/admin/workshops/{id}`| Edit workshop                 |
-| DELETE | `/admin/workshops/{id}`| Delete workshop               |
+### 🚚 Couriers
+| Method | Endpoint                | Description               |
+|--------|-------------------------|---------------------------|
+| GET    | `/api/admin/shipments`  | All shipment records      |
+| PUT    | `/api/agent/update`     | Agent updates delivery    |
 
-### 📋 Service Requests
-| Method | Endpoint                       | Description                      |
-|--------|----------------------------------|----------------------------------|
-| GET    | `/admin/service-requests`       | Admin view of all service reqs   |
-| GET    | `/user/service-requests`        | View own service requests        |
-| POST   | `/user/service-requests`        | Create a service request         |
+### 🧑 Admin
+| Method | Endpoint                | Description               |
+|--------|-------------------------|---------------------------|
+| GET    | `/api/admin/users`      | Manage platform users     |
+| POST   | `/api/admin/couriers`   | Add courier personnel     |
 
 ---
 
-## 🗄️ Database Tables
+## 🗄️ Database Tables Overview
 
-### `user`
-| Column     | Type           |
-|------------|----------------|
-| id         | BIGINT         |
-| first_name | VARCHAR(255)   |
-| last_name  | VARCHAR(255)   |
-| email      | VARCHAR(255)   |
-| password   | VARCHAR(255)   |
-| role       | ENUM           |
+### `Users`
+| Column     | Type     |
+|------------|----------|
+| Id         | int      |
+| Name       | string   |
+| Email      | string   |
+| Password   | string   |
+| Role       | string   |
 
-### `workshop`
-| Column         | Type         |
-|----------------|--------------|
-| id             | BIGINT       |
-| name           | VARCHAR(255) |
-| address        | VARCHAR(255) |
-| contact_number | VARCHAR(255) |
-
-### `service_request`
-| Column           | Type           |
-|------------------|----------------|
-| id               | BIGINT         |
-| car_model        | VARCHAR(255)   |
-| customer_name    | VARCHAR(255)   |
-| issue_description| TEXT           |
-| appointment_date | DATETIME       |
-| user_id          | BIGINT (FK)    |
-| workshop_id      | BIGINT (FK)    |
+### `Shipments`
+| Column       | Type       |
+|--------------|------------|
+| Id           | int        |
+| SenderId     | int (FK)   |
+| ReceiverName | string     |
+| Address      | string     |
+| Status       | string     |
+| CourierId    | int (FK)   |
 
 ---
 
