@@ -1,0 +1,142 @@
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*SignUp*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{POST}
+https://localhost:7279/api/auth/register
+
+{
+  "email": "admin2@example.com",
+  "password": "cdac@123",
+  "role": "Admin",
+  "name": "Harshada"
+}
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*SignIn*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{POST}
+https://localhost:7279/api/auth/login
+
+{
+  "email": "admin1@example.com",
+  "password": "cdac@123"
+}
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Create Order*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{POST}
+https://localhost:7279/api/order/create
+
+{
+    "description": "Parcel to Nagpur",
+    "pickupAddress": "Pune",
+    "deliveryAddress": "Nagpur",
+    "userId": 3
+}
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Get all orders by user*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{GET}
+https://localhost:7279/api/order/user/1004
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*SignUp*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{GET}
+https://localhost:7279/api/order/2
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Update Order Status (A)*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{PUT}
+https://localhost:7279/api/order/updatestatus/2
+
+
+"In Transit"
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Support Query (Q--U)*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{POST}
+https://localhost:7279/api/supportquery/ask
+
+{
+  "question": "How to track my order?",
+  "userId": 1
+}
+
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Support Query All*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{GET}
+https://localhost:7279/api/supportquery/all
+
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Support Query (A--A)*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{POST}
+https://localhost:7279/api/supportquery/answer/3
+
+
+"Your order is on the way. You can track it using the tracking number."
+
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Get All Users (A)*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{GET}
+
+https://localhost:7279/api/user
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Get a users (A--U)*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{GET}
+
+https://localhost:7279/api/user/3
+
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Delete User (A)*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{DELETE}
+
+https://localhost:7279/api/user/3
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Update user (A)*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+{PUT}
+
+https://localhost:7279/api/user/4
+
+{
+  "name": "Amol Gavit",
+  "email": "admin1@example.com"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
